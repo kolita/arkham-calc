@@ -1,3 +1,20 @@
+/*ArkhamCalc
+Copyright (C) 2011  Matthew Cole
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.*/
+
 package com.kolita.arkhamcalc;
 
 import java.text.NumberFormat;
@@ -7,10 +24,12 @@ import android.os.Bundle;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-public class ArkhamCalc extends Activity {
+public class ArkhamCalc extends Activity
+{
 	private static final int DICE_MAX = 16;
 	private static final int TOUGH_MAX = 5;
 	
@@ -27,7 +46,8 @@ public class ArkhamCalc extends Activity {
 	private TextView mResultTextView;
 	
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
@@ -96,7 +116,8 @@ public class ArkhamCalc extends Activity {
     }
     
     @Override
-    protected void onSaveInstanceState(Bundle outState){
+    protected void onSaveInstanceState(Bundle outState)
+    {
     	super.onSaveInstanceState(outState);
     	
     	//save state
@@ -106,7 +127,8 @@ public class ArkhamCalc extends Activity {
     	outState.putBoolean("isCursed", mCurseCheckBox.isChecked());
     }
 
-	private void recalculate() {
+	private void recalculate()
+	{
 		//get input
 		int dice = mDiceSeekBar.getProgress() + 1;
 		int tough = mToughSeekBar.getProgress() + 1;
@@ -138,8 +160,26 @@ public class ArkhamCalc extends Activity {
 		mResultTextView.setTextColor(color);
 	}
 
-	private void setSeekBarValues() {
+	private void setSeekBarValues()
+	{
 		mDiceValue.setText(Integer.toString(mDiceSeekBar.getProgress() + 1));
 		mToughValue.setText(Integer.toString(mToughSeekBar.getProgress() + 1));
+	}
+	
+	private abstract class OnSeekBarProgressChangeListener implements OnSeekBarChangeListener
+	{
+		@Override
+		public abstract void onProgressChanged(SeekBar seekBar, int progress,
+				boolean fromUser);
+
+		@Override
+		public void onStartTrackingTouch(SeekBar seekBar) {
+			
+		}
+
+		@Override
+		public void onStopTrackingTouch(SeekBar seekBar) {
+			
+		}
 	}
 }
