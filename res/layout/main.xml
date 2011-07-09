@@ -55,16 +55,37 @@
 			android:text="Test"
 			android:layout_gravity="center_vertical" />
 	</LinearLayout>
-
-			<CheckBox android:id="@+id/blessCheckBox"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_marginTop="10px" 
-				android:text="Blessed" />
-			<CheckBox android:id="@+id/curseCheckBox"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content" 
-				android:layout_marginTop="10px"
-				android:text="Cursed" />    		
-
+	<TextView android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="16px"
+		android:layout_marginLeft="8px"
+		android:text="Chances:" />	
+	<LinearLayout android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="5px">
+		<SeekBar android:id="@+id/chanceSeekBar"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="8px"
+			android:layout_marginRight="4px"
+			android:layout_weight="1" />
+		<TextView android:id="@+id/chanceValue"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="4px"
+			android:layout_marginRight="8px"
+			android:text="Test"
+			android:layout_gravity="center_vertical" />
+	</LinearLayout>	
+	<CheckBox android:id="@+id/blessCheckBox"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10px" 
+		android:text="Blessed" />
+	<CheckBox android:id="@+id/curseCheckBox"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:layout_marginTop="10px"
+		android:text="Cursed" />    		
 </LinearLayout>
