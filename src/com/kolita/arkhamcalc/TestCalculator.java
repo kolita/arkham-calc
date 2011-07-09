@@ -36,7 +36,7 @@ public class TestCalculator extends TestCase {
 		}
 		
 		double percentageWins = (double)totalWins / NUMBER_ITERATIONS;
-		assertEquals(percentageWins, new Calculator(8, 3, false, false).calculate(), EPS);
+		assertEquals(percentageWins, new Calculator(requiredDice, requiredSuccesses, false, false).calculate(), EPS);
 	}
 	
 	public void testCalculateBlessed() {
@@ -58,7 +58,7 @@ public class TestCalculator extends TestCase {
 		}
 		
 		double percentageWins = (double)totalWins / NUMBER_ITERATIONS;
-		assertEquals(percentageWins, new Calculator(6, 2, true, false).calculate(), EPS);
+		assertEquals(percentageWins, new Calculator(requiredDice, requiredSuccesses, true, false).calculate(), EPS);
 	}
 	
 	public void testCalculateCursed() {
@@ -80,11 +80,37 @@ public class TestCalculator extends TestCase {
 		}
 		
 		double percentageWins = (double)totalWins / NUMBER_ITERATIONS;
-		assertEquals(percentageWins, new Calculator(3, 1, false, true).calculate(), EPS);
+		assertEquals(percentageWins, new Calculator(requiredDice, requiredSuccesses, false, true).calculate(), EPS);
 	}
 	
 	public void testCalculateNoSuccesses() {
 		assertEquals(0.0, new Calculator(2, 3, false, false).calculate(), 0.0);
+	}
+	
+	public void testCalculateChances() {
+		int requiredDice = 7;
+		int requiredSuccesses = 4;
+		int requiredChances = 3;
+		int totalWins = 0;
+		
+		for (int i = 0; i < NUMBER_ITERATIONS; i++) {
+			for (int j = 0; j < requiredChances; j++) {
+				int totalSuccesses = 0;
+				for (int k = 0; k < requiredDice; k++) {
+					int dieValue = getRandomDieValue();
+					if (dieValue >= 5) {
+						totalSuccesses++;
+					}
+				}
+				if (totalSuccesses >= requiredSuccesses) {
+					totalWins++;
+					break;
+				}
+			}
+		}
+		
+		double percentageWins = (double)totalWins / NUMBER_ITERATIONS;
+		assertEquals(percentageWins, new Calculator(requiredDice, requiredSuccesses, false, false).calculate(requiredChances), EPS);
 	}
 	
 	private int getRandomDieValue() {

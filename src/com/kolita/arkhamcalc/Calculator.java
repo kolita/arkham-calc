@@ -34,12 +34,24 @@ public class Calculator
 	
 	public double calculate()
 	{
+		return calculate(1);
+	}
+	
+	public double calculate(int numberOfChances)
+	{
 		double probOneSuccess = getProbOneSuccess();
 		double probSuccess = 0;
 		for(int i = mTough; i <= mDice; i++){
 			probSuccess += getProbExactSuccess(i, probOneSuccess);
 		}
-		return probSuccess;
+		return probSuccessWithChances(probSuccess, numberOfChances);
+	}
+	
+	private double probSuccessWithChances(double probSuccessOneChance, int numberOfChances)
+	{
+		double probFailureOneChance = 1 - probSuccessOneChance;
+		double probFailureAllChances = Math.pow(probFailureOneChance, numberOfChances) ;
+		return 1 - probFailureAllChances;
 	}
 	
 	private double getProbExactSuccess(int exactNumberDice, double probOneSuccess)
