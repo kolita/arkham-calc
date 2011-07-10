@@ -66,16 +66,24 @@ public class Calculator
 	private double handleIsShotgun(double currentProbSuccess)
 	{
 		final double probSix = (double)1 / 6;
-		for (int i = 1; i < mTough; i++) {
+		//go from one six to either all sixes or to the toughness, whichever comes first.
+		//once we get to the toughness (i.e. on a 5 to do 3, once we get to three sixes), 
+		//we've already counted in the base calculation.
+		for (int i = 1; i < mTough && i <= mDice; i++) {
 			double exactSixes = nCr(mDice, i) * Math.pow(probSix, i) * Math.pow(1 - probSix, mDice - i);
 			int remainingSuccessesRequired = mTough - 2 * i;
 			if (remainingSuccessesRequired <= 0) {
-				for (int j = i; j < mTough; j++) {
+				//i.e. we don't need any more successes - count all of the combinations where the other dice
+				//successes do not bring us to the toughness (since these have been counted in the base calc)
+				for (int j = i; j < mTough && j <= mDice; j++) {
 					currentProbSuccess += exactSixes * nCr(mDice - i, j - i) * Math.pow(1 - ((getProbOneSuccess() - probSix) * 6 / 5), mDice - j) * Math.pow((getProbOneSuccess() - probSix) * 6 / 5, j - i);
 				}
-			} else {
-				if (remainingSuccessesRequired <= mDice - i) {
-					currentProbSuccess += exactSixes * nCr(mDice - i, remainingSuccessesRequired) * Math.pow((getProbOneSuccess() - probSix) * 6 / 5, remainingSuccessesRequired) * Math.pow(1 - ((getProbOneSuccess() - probSix) * 6 / 5), mDice - i - remainingSuccessesRequired);
+			} else if (remainingSuccessesRequired <= mDice - i) {
+				//i.e. with the shotgun successes, it's still possible to win, but we'll need
+				//"normal" successes. This takes the remaining dice and figured out how many ways
+				//we can get that many successes
+				for (int j = remainingSuccessesRequired; i + j < mTough; j++) {
+					currentProbSuccess += exactSixes * nCr(mDice - i, j) * Math.pow((getProbOneSuccess() - probSix) * 6 / 5, j) * Math.pow(1 - ((getProbOneSuccess() - probSix) * 6 / 5), mDice - i - j);
 				}
 			}
 		}
