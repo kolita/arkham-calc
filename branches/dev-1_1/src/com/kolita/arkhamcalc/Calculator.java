@@ -52,10 +52,34 @@ public class Calculator
 	{
 		double probOneSuccess = getProbOneSuccess();
 		double probSuccess = 0;
-		for(int i = mTough; i <= mDice; i++){
+		for (int i = mTough; i <= mDice; i++) {
 			probSuccess += getProbExactSuccess(i, probOneSuccess);
 		}
+		
+		if (mIsShotgun) {
+			probSuccess = handleIsShotgun(probSuccess);
+		}
+		
 		return probSuccessWithChances(probSuccess, numberOfChances);
+	}
+	
+	private double handleIsShotgun(double currentProbSuccess)
+	{
+		final double probSix = (double)1 / 6;
+		for (int i = 1; i < mTough; i++) {
+			double exactSixes = nCr(mDice, i) * Math.pow(probSix, i) * Math.pow(1 - probSix, mDice - i);
+			int remainingSuccessesRequired = mTough - 2 * i;
+			if (remainingSuccessesRequired <= 0) {
+				for (int j = i; j < mTough; j++) {
+					currentProbSuccess += exactSixes * nCr(mDice - i, j - i) * Math.pow(1 - ((getProbOneSuccess() - probSix) * 6 / 5), mDice - j) * Math.pow((getProbOneSuccess() - probSix) * 6 / 5, j - i);
+				}
+			} else {
+				if (remainingSuccessesRequired <= mDice - i) {
+					currentProbSuccess += exactSixes * nCr(mDice - i, remainingSuccessesRequired) * Math.pow((getProbOneSuccess() - probSix) * 6 / 5, remainingSuccessesRequired) * Math.pow(1 - ((getProbOneSuccess() - probSix) * 6 / 5), mDice - i - remainingSuccessesRequired);
+				}
+			}
+		}
+		return currentProbSuccess;
 	}
 	
 	private double probSuccessWithChances(double probSuccessOneChance, int numberOfChances)
@@ -77,16 +101,16 @@ public class Calculator
 	
 	private long factorial(int n)
 	{
-		if(n <= 1) return 1;
+		if (n <= 1) return 1;
 		return n * factorial(n - 1);
 	}
 
 	private double getProbOneSuccess()
 	{
-		if(mIsBlessed){
+		if (mIsBlessed){
 			return (double)1 / 2;
 		}
-		if(mIsCursed){
+		if (mIsCursed){
 			return (double)1 / 6;
 		}
 		return (double)1 / 3;

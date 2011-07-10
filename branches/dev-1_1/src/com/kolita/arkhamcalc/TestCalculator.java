@@ -22,8 +22,8 @@ import java.util.Random;
 import junit.framework.TestCase;
 
 public class TestCalculator extends TestCase {
-	private static final int NUMBER_ITERATIONS = 1000000;
-	private static final double EPS = 0.01;
+	private static final int NUMBER_ITERATIONS = 10000000;
+	private static final double EPS = 0.001;
 	
 	private Random random;
 	
@@ -37,8 +37,8 @@ public class TestCalculator extends TestCase {
 	public void testCalculate() {
 		int requiredDice = 8;
 		int requiredSuccesses = 3;
-		int totalWins = 0;
 		
+		int totalWins = 0;
 		for (int i = 0; i < NUMBER_ITERATIONS; i++) {
 			int totalSuccesses = 0;
 			for (int j = 0; j < requiredDice; j++) {
@@ -59,8 +59,8 @@ public class TestCalculator extends TestCase {
 	public void testCalculateBlessed() {
 		int requiredDice = 6;
 		int requiredSuccesses = 2;
-		int totalWins = 0;
 		
+		int totalWins = 0;
 		for (int i = 0; i < NUMBER_ITERATIONS; i++) {
 			int totalSuccesses = 0;
 			for (int j = 0; j < requiredDice; j++) {
@@ -81,8 +81,8 @@ public class TestCalculator extends TestCase {
 	public void testCalculateCursed() {
 		int requiredDice = 3;
 		int requiredSuccesses = 1;
-		int totalWins = 0;
 		
+		int totalWins = 0;
 		for (int i = 0; i < NUMBER_ITERATIONS; i++) {
 			int totalSuccesses = 0;
 			for (int j = 0; j < requiredDice; j++) {
@@ -108,8 +108,8 @@ public class TestCalculator extends TestCase {
 		int requiredDice = 7;
 		int requiredSuccesses = 4;
 		int requiredChances = 3;
-		int totalWins = 0;
 		
+		int totalWins = 0;
 		for (int i = 0; i < NUMBER_ITERATIONS; i++) {
 			for (int j = 0; j < requiredChances; j++) {
 				int totalSuccesses = 0;
@@ -128,6 +128,116 @@ public class TestCalculator extends TestCase {
 		
 		double percentageWins = (double)totalWins / NUMBER_ITERATIONS;
 		assertEquals(percentageWins, new Calculator(requiredDice, requiredSuccesses, false, false).calculate(requiredChances), EPS);
+	}
+	
+	public void testCalculateShotgun() {
+		int requiredDice = 6;
+		int requiredSuccesses = 4;
+		
+		int totalWins = 0;
+		for (int i = 0; i < NUMBER_ITERATIONS; i++) {
+			int totalSuccesses = 0;
+			for (int j = 0; j < requiredDice; j++) {
+				int dieValue = getRandomDieValue();
+				if (dieValue == 6) {
+					totalSuccesses += 2;
+				} else if (dieValue == 5) {
+					totalSuccesses += 1;
+				}
+			}
+			if (totalSuccesses >= requiredSuccesses) {
+				totalWins++;
+			}
+		}
+		double percentageWins = (double)totalWins / NUMBER_ITERATIONS;
+		
+		Calculator calculator = new Calculator(requiredDice, requiredSuccesses, false, false);
+		calculator.setIsShotgun(true);
+		assertEquals(percentageWins, calculator.calculate(), EPS);
+	}
+	
+	public void testCalculateShotgunBlessed() {
+		int requiredDice = 6;
+		int requiredSuccesses = 3;
+		
+		int totalWins = 0;
+		for (int i = 0; i < NUMBER_ITERATIONS; i++) {
+			int totalSuccesses = 0;
+			for (int j = 0; j < requiredDice; j++) {
+				int dieValue = getRandomDieValue();
+				if (dieValue == 6) {
+					totalSuccesses += 2;
+				} else if (dieValue >= 4) {
+					totalSuccesses += 1;
+				}
+			}
+			if (totalSuccesses >= requiredSuccesses) {
+				totalWins++;
+			}
+		}
+		double percentageWins = (double)totalWins / NUMBER_ITERATIONS;
+		
+		Calculator calculator = new Calculator(requiredDice, requiredSuccesses, true, false);
+		calculator.setIsShotgun(true);
+		assertEquals(percentageWins, calculator.calculate(), EPS);
+	}
+	
+	public void testCalculateShotgunHuge() {
+		int requiredDice = 10;
+		int requiredSuccesses = 4;
+		
+		int totalWins = 0;
+		for (int i = 0; i < NUMBER_ITERATIONS; i++) {
+			int totalSuccesses = 0;
+			for (int j = 0; j < requiredDice; j++) {
+				int dieValue = getRandomDieValue();
+				if (dieValue == 6) {
+					totalSuccesses += 2;
+				} else if (dieValue == 5) {
+					totalSuccesses += 1;
+				}
+			}
+			if (totalSuccesses >= requiredSuccesses) {
+				totalWins++;
+			}
+		}
+		double percentageWins = (double)totalWins / NUMBER_ITERATIONS;
+		
+		Calculator calculator = new Calculator(requiredDice, requiredSuccesses, false, false);
+		calculator.setIsShotgun(true);
+		assertEquals(percentageWins, calculator.calculate(), EPS);
+	}
+	
+	public void testCalculateShotgunOneSuccess() {
+		Calculator shotgunCalc = new Calculator(4, 1, false, false);
+		shotgunCalc.setIsShotgun(true);
+		assertEquals(new Calculator(4, 1, false, false).calculate(), shotgunCalc.calculate());
+	}
+	
+	public void testCalculateShotgunImpossible() {
+		int requiredDice = 2;
+		int requiredSuccesses = 5;
+		
+		int totalWins = 0;
+		for (int i = 0; i < NUMBER_ITERATIONS; i++) {
+			int totalSuccesses = 0;
+			for (int j = 0; j < requiredDice; j++) {
+				int dieValue = getRandomDieValue();
+				if (dieValue == 6) {
+					totalSuccesses += 2;
+				} else if (dieValue == 5) {
+					totalSuccesses += 1;
+				}
+			}
+			if (totalSuccesses >= requiredSuccesses) {
+				totalWins++;
+			}
+		}
+		double percentageWins = (double)totalWins / NUMBER_ITERATIONS;
+		
+		Calculator calculator = new Calculator(requiredDice, requiredSuccesses, false, false);
+		calculator.setIsShotgun(true);
+		assertEquals(percentageWins, calculator.calculate(), EPS);
 	}
 	
 	private int getRandomDieValue() {
