@@ -23,6 +23,17 @@ public class Calculator
 	private int mTough;
 	private boolean mIsBlessed;
 	private boolean mIsCursed;
+	private boolean mIsShotgun;
+	
+	public boolean getIsShotgun()
+	{
+		return mIsShotgun;
+	}
+	
+	public void setIsShotgun(boolean value)
+	{
+		mIsShotgun = value;
+	}
 	
 	public Calculator(int dice, int tough, boolean isBlessed, boolean isCursed)
 	{

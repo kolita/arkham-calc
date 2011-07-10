@@ -46,6 +46,7 @@ public class ArkhamCalc extends Activity
 	private TextView mChanceValue;
 	private CheckBox mBlessCheckBox;
 	private CheckBox mCurseCheckBox;
+	private CheckBox mShotgunCheckBox;
 	private TextView mResultTextView;
 	
     @Override
@@ -63,12 +64,13 @@ public class ArkhamCalc extends Activity
     	mChanceValue = (TextView) findViewById(R.id.chanceValue);
     	mBlessCheckBox = (CheckBox) findViewById(R.id.blessCheckBox);
     	mCurseCheckBox = (CheckBox) findViewById(R.id.curseCheckBox);
+    	mShotgunCheckBox = (CheckBox) findViewById(R.id.shotgunCheckBox);
     	mResultTextView = (TextView) findViewById(R.id.resultTextView);
         
     	//setup controls
     	mDiceSeekBar.setMax(DICE_MAX - 1);
     	mToughSeekBar.setMax(TOUGH_MAX - 1);
-    	mChanceSeekBar.setMax(TOUGH_MAX - 1);
+    	mChanceSeekBar.setMax(CHANCE_MAX - 1);
     	
     	//attach callbacks
     	mDiceSeekBar.setOnSeekBarChangeListener(new OnSeekBarProgressChangeListener() {
@@ -99,6 +101,7 @@ public class ArkhamCalc extends Activity
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 				if(isChecked){
+					//can't be cursed and blessed at the same time
 					mCurseCheckBox.setChecked(false);
 				}
 				recalculate();
@@ -109,10 +112,17 @@ public class ArkhamCalc extends Activity
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 				if(isChecked){
+					//can't be cursed and blessed at the same time
 					mBlessCheckBox.setChecked(false);
 				}
 				recalculate();
 				
+			}
+		});
+    	mShotgunCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				recalculate();
 			}
 		});
     	
@@ -123,6 +133,7 @@ public class ArkhamCalc extends Activity
     		mChanceSeekBar.setProgress(savedInstanceState.getInt("chance"));
     		mBlessCheckBox.setChecked(savedInstanceState.getBoolean("isBlessed"));
     		mCurseCheckBox.setChecked(savedInstanceState.getBoolean("isCursed"));
+    		mShotgunCheckBox.setChecked(savedInstanceState.getBoolean("isShotgun"));
     	}
     	
     	//first calculation
@@ -141,6 +152,7 @@ public class ArkhamCalc extends Activity
     	outState.putInt("chance", mChanceSeekBar.getProgress());
     	outState.putBoolean("isBlessed", mBlessCheckBox.isChecked());
     	outState.putBoolean("isCursed", mCurseCheckBox.isChecked());
+    	outState.putBoolean("isShotgun", mShotgunCheckBox.isChecked());
     }
 
 	private void recalculate()
@@ -151,9 +163,11 @@ public class ArkhamCalc extends Activity
 		int chance = mChanceSeekBar.getProgress() + 1;
 		boolean isBlessed = mBlessCheckBox.isChecked();
 		boolean isCursed = mCurseCheckBox.isChecked();
+		boolean isShotgun = mShotgunCheckBox.isChecked();
 		
 		//calculate
 		Calculator calculator = new Calculator(dice, tough, isBlessed, isCursed);
+		calculator.setIsShotgun(isShotgun);
 		double result = calculator.calculate(chance);
 		
 		//set output

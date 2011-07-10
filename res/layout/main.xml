@@ -77,15 +77,28 @@
 			android:layout_marginRight="8px"
 			android:text="Test"
 			android:layout_gravity="center_vertical" />
-	</LinearLayout>	
-	<CheckBox android:id="@+id/blessCheckBox"
+	</LinearLayout>
+	<LinearLayout android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="5px"
+		android:weightSum="1.0">
+		<CheckBox android:id="@+id/blessCheckBox"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10px"
+			android:layout_weight="0.5"
+			android:text="Blessed" />
+		<CheckBox android:id="@+id/curseCheckBox"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:layout_marginTop="10px"
+			android:layout_weight="0.5"
+			android:text="Cursed" />
+	</LinearLayout>
+	<CheckBox android:id="@+id/shotgunCheckBox"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="10px" 
-		android:text="Blessed" />
-	<CheckBox android:id="@+id/curseCheckBox"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content" 
-		android:layout_marginTop="10px"
-		android:text="Cursed" />    		
+		android:layout_marginTop="5px"
+		android:text="Shotgun" />
 </LinearLayout>
