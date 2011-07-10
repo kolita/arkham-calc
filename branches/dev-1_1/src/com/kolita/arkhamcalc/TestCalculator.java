@@ -182,9 +182,33 @@ public class TestCalculator extends TestCase {
 		assertEquals(percentageWins, calculator.calculate(), EPS);
 	}
 	
+	public void testCalculateShotgunCursed() {
+		int requiredDice = 6;
+		int requiredSuccesses = 3;
+		
+		int totalWins = 0;
+		for (int i = 0; i < NUMBER_ITERATIONS; i++) {
+			int totalSuccesses = 0;
+			for (int j = 0; j < requiredDice; j++) {
+				int dieValue = getRandomDieValue();
+				if (dieValue == 6) {
+					totalSuccesses += 2;
+				}
+			}
+			if (totalSuccesses >= requiredSuccesses) {
+				totalWins++;
+			}
+		}
+		double percentageWins = (double)totalWins / NUMBER_ITERATIONS;
+		
+		Calculator calculator = new Calculator(requiredDice, requiredSuccesses, false, true);
+		calculator.setIsShotgun(true);
+		assertEquals(percentageWins, calculator.calculate(), EPS);
+	}
+	
 	public void testCalculateShotgunHuge() {
-		int requiredDice = 10;
-		int requiredSuccesses = 4;
+		int requiredDice = 12;
+		int requiredSuccesses = 5;
 		
 		int totalWins = 0;
 		for (int i = 0; i < NUMBER_ITERATIONS; i++) {
@@ -217,6 +241,32 @@ public class TestCalculator extends TestCase {
 	public void testCalculateShotgunImpossible() {
 		int requiredDice = 2;
 		int requiredSuccesses = 5;
+		
+		int totalWins = 0;
+		for (int i = 0; i < NUMBER_ITERATIONS; i++) {
+			int totalSuccesses = 0;
+			for (int j = 0; j < requiredDice; j++) {
+				int dieValue = getRandomDieValue();
+				if (dieValue == 6) {
+					totalSuccesses += 2;
+				} else if (dieValue == 5) {
+					totalSuccesses += 1;
+				}
+			}
+			if (totalSuccesses >= requiredSuccesses) {
+				totalWins++;
+			}
+		}
+		double percentageWins = (double)totalWins / NUMBER_ITERATIONS;
+		
+		Calculator calculator = new Calculator(requiredDice, requiredSuccesses, false, false);
+		calculator.setIsShotgun(true);
+		assertEquals(percentageWins, calculator.calculate(), EPS);
+	}
+	
+	public void testCalculateShotgunAlmostImpossible() {
+		int requiredDice = 3;
+		int requiredSuccesses = 6;
 		
 		int totalWins = 0;
 		for (int i = 0; i < NUMBER_ITERATIONS; i++) {
