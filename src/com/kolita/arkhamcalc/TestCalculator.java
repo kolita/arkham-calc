@@ -290,6 +290,68 @@ public class TestCalculator extends TestCase {
 		assertEquals(percentageWins, calculator.calculate(), EPS);
 	}
 	
+	public void testCalcMandy() {
+		int requiredDice = 6;
+		int requiredSuccesses = 3;
+		
+		int totalWins = 0;
+		for (int i = 0; i < NUMBER_ITERATIONS; i++) {
+			int totalSuccesses = 0;
+			for (int j = 0; j < requiredDice; j++) {
+				int dieValue = getRandomDieValue();
+				if (dieValue == 5 || dieValue == 6) {
+					totalSuccesses++;
+				}
+			}
+			int firstRollSuccesses = totalSuccesses;
+			for (int j = 0; j < requiredDice - firstRollSuccesses; j++) {
+				int rerollDieValue = getRandomDieValue();
+				if (rerollDieValue == 5 || rerollDieValue == 6) {
+					totalSuccesses++;
+				}
+			}
+			if (totalSuccesses >= requiredSuccesses) {
+				totalWins++;
+			}
+		}
+		double percentageWins = (double)totalWins / NUMBER_ITERATIONS;
+		
+		Calculator calculator = new Calculator(requiredDice, requiredSuccesses, false, false);
+		calculator.setIsMandy(true);
+		assertEquals(percentageWins, calculator.calculate(), EPS);		
+	}
+	
+	public void testCalcMandyCursed() {
+		int requiredDice = 7;
+		int requiredSuccesses = 4;
+		
+		int totalWins = 0;
+		for (int i = 0; i < NUMBER_ITERATIONS; i++) {
+			int totalSuccesses = 0;
+			for (int j = 0; j < requiredDice; j++) {
+				int dieValue = getRandomDieValue();
+				if (dieValue == 6) {
+					totalSuccesses++;
+				}
+			}
+			int firstRollSuccesses = totalSuccesses;
+			for (int j = 0; j < requiredDice - firstRollSuccesses; j++) {
+				int rerollDieValue = getRandomDieValue();
+				if (rerollDieValue == 6) {
+					totalSuccesses++;
+				}
+			}
+			if (totalSuccesses >= requiredSuccesses) {
+				totalWins++;
+			}
+		}
+		double percentageWins = (double)totalWins / NUMBER_ITERATIONS;
+		
+		Calculator calculator = new Calculator(requiredDice, requiredSuccesses, false, true);
+		calculator.setIsMandy(true);
+		assertEquals(percentageWins, calculator.calculate(), EPS);		
+	}
+	
 	private int getRandomDieValue() {
 		return random.nextInt(6) + 1;
 	}
