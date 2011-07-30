@@ -24,6 +24,7 @@ public class Calculator
 	private boolean mIsBlessed;
 	private boolean mIsCursed;
 	private boolean mIsShotgun;
+	private boolean mIsMandy;
 	
 	public boolean getIsShotgun()
 	{
@@ -33,6 +34,16 @@ public class Calculator
 	public void setIsShotgun(boolean value)
 	{
 		mIsShotgun = value;
+	}
+	
+	public boolean getIsMandy()
+	{
+		return mIsMandy;
+	}
+	
+	public void setIsMandy(boolean value)
+	{
+		mIsMandy = value;
 	}
 	
 	public Calculator(int dice, int tough, boolean isBlessed, boolean isCursed)
@@ -50,21 +61,40 @@ public class Calculator
 	
 	public double calculate(int numberOfChances)
 	{
-		double probOneSuccess = getProbOneSuccess();
 		double probSuccess = 0;
 		for (int i = mTough; i <= mDice; i++) {
-			probSuccess += getProbExactSuccess(i, probOneSuccess);
+			probSuccess += getProbExactSuccess(mDice, i);
+		}
+		
+		if (mIsMandy) {
+			probSuccess += getProbMandyReroll();
 		}
 		
 		if (mIsShotgun) {
-			probSuccess = handleIsShotgun(probSuccess);
+			probSuccess += handleIsShotgun();
 		}
 		
 		return probSuccessWithChances(probSuccess, numberOfChances);
 	}
 	
-	private double handleIsShotgun(double currentProbSuccess)
+	private double getProbMandyReroll() {
+		double probSuccessMandy = 0.0;
+		//start by figuring prob of exact successes on first roll - don't count 
+		//a first roll that we won, because we've already counted that in base calc
+		for (int i = 0; i < mTough; i++) {
+			double probFirstRoll = getProbExactSuccess(mDice, i);
+			//now figure out the prob of all of the second roll successes. Similiar to the
+			//base calc except we multiply by the probFirstRoll in all cases
+			for (int j = mTough - i; j <= mDice - i; j++) {
+				probSuccessMandy += probFirstRoll * getProbExactSuccess(mDice - i, j);
+			}
+		}
+		return probSuccessMandy;
+	}
+
+	private double handleIsShotgun()
 	{
+		double probSuccessShotgun = 0.0;
 		final double probSix = (double)1 / 6;
 		//go from one six to either all sixes or to the toughness, whichever comes first.
 		//once we get to the toughness (i.e. on a 5 to do 3, once we get to three sixes), 
@@ -78,31 +108,31 @@ public class Calculator
 				if (j >= remainingSuccessesRequired) {
 					//i.e. the non-six successes (j) are enough to win. Count all the ways to roll exactly that many
 					//sixes and with the remaining dice roll that many non-six successes.
-					currentProbSuccess += exactSixes * nCr(mDice - i, j) * Math.pow((getProbOneSuccess() - probSix) * 6 / 5, j) * Math.pow(1 - ((getProbOneSuccess() - probSix) * 6 / 5), mDice - i - j);
+					probSuccessShotgun += exactSixes * nCr(mDice - i, j) * Math.pow((getProbOneSuccess() - probSix) * 6 / 5, j) * Math.pow(1 - ((getProbOneSuccess() - probSix) * 6 / 5), mDice - i - j);
 				}
 			}
 		}
-		return currentProbSuccess;
+		return probSuccessShotgun;
 	}
 	
-	private double probSuccessWithChances(double probSuccessOneChance, int numberOfChances)
+	private static double probSuccessWithChances(double probSuccessOneChance, int numberOfChances)
 	{
 		double probFailureOneChance = 1 - probSuccessOneChance;
 		double probFailureAllChances = Math.pow(probFailureOneChance, numberOfChances) ;
 		return 1 - probFailureAllChances;
 	}
 	
-	private double getProbExactSuccess(int exactNumberDice, double probOneSuccess)
+	private double getProbExactSuccess(int totalDice, int exactSuccesses)
 	{
-		return nCr(mDice, exactNumberDice) * Math.pow(probOneSuccess, exactNumberDice) * Math.pow(1 - probOneSuccess, mDice - exactNumberDice);
+		return nCr(totalDice, exactSuccesses) * Math.pow(getProbOneSuccess(), exactSuccesses) * Math.pow(1 - getProbOneSuccess(), totalDice - exactSuccesses);
 	}
 
-	private long nCr(int n, int r)
+	private static long nCr(int n, int r)
 	{
 		return factorial(n) / (factorial(n - r) * factorial(r));
 	}
 	
-	private long factorial(int n)
+	private static long factorial(int n)
 	{
 		if (n <= 1) return 1;
 		return n * factorial(n - 1);
