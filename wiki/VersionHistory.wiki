@@ -1,0 +1,18 @@
+#summary Version History for ArkhamCalc
+
+= Version History =
+
+
+
+
+  * *v1.2*, released 7/31/11
+    * Added Mandy calc
+    * Increasing toughness slider to max 6
+
+  * *v1.1*, released 7/10/11
+    * Added Shotgun calc
+    * Added Number of Chances slider
+
+  * *v1.0*, released 7/4/11
+    * Initial release
+    * Number of Dice, Toughness; Blessed, Cursed
