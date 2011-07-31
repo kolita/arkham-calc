@@ -59,7 +59,7 @@
 		android:layout_height="wrap_content"
 		android:layout_marginTop="16px"
 		android:layout_marginLeft="8px"
-		android:text="Chances:" />	
+		android:text="Chances:" />
 	<LinearLayout android:orientation="horizontal"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
@@ -78,27 +78,34 @@
 			android:text="Test"
 			android:layout_gravity="center_vertical" />
 	</LinearLayout>
-	<LinearLayout android:orientation="horizontal"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="5px"
-		android:weightSum="1.0">
-		<CheckBox android:id="@+id/blessCheckBox"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_marginTop="10px"
-			android:layout_weight="0.5"
-			android:text="Blessed" />
-		<CheckBox android:id="@+id/curseCheckBox"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content" 
-			android:layout_marginTop="10px"
-			android:layout_weight="0.5"
-			android:text="Cursed" />
-	</LinearLayout>
-	<CheckBox android:id="@+id/shotgunCheckBox"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="5px"
-		android:text="Shotgun" />
+	<TableLayout android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:stretchColumns="*">
+		<TableRow>
+			<CheckBox android:id="@+id/blessCheckBox"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10px"
+				android:layout_weight="0.5"
+				android:text="Blessed" />
+			<CheckBox android:id="@+id/curseCheckBox"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" 
+				android:layout_marginTop="10px"
+				android:layout_weight="0.5"
+				android:text="Cursed" />			
+		</TableRow>
+		<TableRow>
+			<CheckBox android:id="@+id/shotgunCheckBox"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5px"
+				android:text="Shotgun" />
+			<CheckBox android:id="@+id/mandyCheckBox"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5px"
+				android:text="Mandy" />					
+		</TableRow>
+	</TableLayout>	
 </LinearLayout>
