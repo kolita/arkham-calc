@@ -27,6 +27,7 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ArkhamCalc extends Activity
 {
@@ -97,6 +98,7 @@ public class ArkhamCalc extends Activity
 					boolean fromUser) {
 				setSeekBarValues();
 				recalculate();
+				handleMandyNumberOfChances(getPreviousProgress());
 			}
 		});
     	mBlessCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -131,6 +133,7 @@ public class ArkhamCalc extends Activity
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 				recalculate();
+				handleMandyNumberOfChances(-1);
 			}
 		});    	
     	
@@ -149,8 +152,8 @@ public class ArkhamCalc extends Activity
     	setSeekBarValues();
 		recalculate();
     }
-    
-    @Override
+
+	@Override
     protected void onSaveInstanceState(Bundle outState)
     {
     	super.onSaveInstanceState(outState);
@@ -210,15 +213,34 @@ public class ArkhamCalc extends Activity
 		mChanceValue.setText(Integer.toString(mChanceSeekBar.getProgress() + 1));
 	}
 	
+	/**
+	 * Show a message to the user regarding Mandy and the Number of Chances bar
+	 * @param previousProgress - the index of previous progress, or -1 if we don't know
+	 */
+    private void handleMandyNumberOfChances(int previousNumberOfChancesProgress)
+    {
+    	//if we don't know the previousProgress (i.e. we didn't operate on NumberOfChances
+    	//or if the previous progress was at index zero, potentially show the message.
+		if (mMandyCheckBox.isChecked() && previousNumberOfChancesProgress <= 0 && mChanceSeekBar.getProgress() > 0) {
+			Toast.makeText(getBaseContext(), getResources().getString(R.string.mandy_chances_toast), Toast.LENGTH_SHORT).show();
+		}
+		
+	}
+	
 	private abstract class OnSeekBarProgressChangeListener implements OnSeekBarChangeListener
 	{
+		private int mPreviousProgress;
+		public int getPreviousProgress(){
+			return mPreviousProgress;
+		}
+		
 		@Override
 		public abstract void onProgressChanged(SeekBar seekBar, int progress,
 				boolean fromUser);
 
 		@Override
 		public void onStartTrackingTouch(SeekBar seekBar) {
-			
+			mPreviousProgress = seekBar.getProgress();
 		}
 
 		@Override

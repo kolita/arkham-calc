@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, ArkhamCalc!</string>
     <string name="app_name">ArkhamCalc</string>
+    <string name="mandy_chances_toast">Mandy\'s ability can only be used once per turn. Additional chances do not take her ability into account.</string>
 </resources>
