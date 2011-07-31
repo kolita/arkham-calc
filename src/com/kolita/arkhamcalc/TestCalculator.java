@@ -352,6 +352,64 @@ public class TestCalculator extends TestCase {
 		assertEquals(percentageWins, calculator.calculate(), EPS);		
 	}
 	
+	public void testCalcMandyShotgun() {
+		int requiredDice = 5;
+		int requiredSuccesses = 4;
+		
+		int totalWins = 0;
+		for (int i = 0; i < NUMBER_ITERATIONS; i++) {
+			int totalSuccesses = 0;
+			int secondRollDice = requiredDice;
+			for (int j = 0; j < requiredDice; j++) {
+				int dieValue = getRandomDieValue();
+				if (dieValue == 6) {
+					totalSuccesses += 2;
+					secondRollDice--;
+				} else if (dieValue == 5) {
+					totalSuccesses++;
+					secondRollDice--;
+				}
+			}
+			for (int j = 0; j < secondRollDice; j++) {
+				int rerollDieValue = getRandomDieValue();
+				if (rerollDieValue == 6) {
+					totalSuccesses += 2;
+				} else if (rerollDieValue == 5) {
+					totalSuccesses++;
+				}
+			}
+			if (totalSuccesses >= requiredSuccesses) {
+				totalWins++;
+			}
+		}
+		double percentageWins = (double)totalWins / NUMBER_ITERATIONS;
+		
+		Calculator calculator = new Calculator(requiredDice, requiredSuccesses, false, false);
+		calculator.setIsMandy(true);
+		calculator.setIsShotgun(true);
+		assertEquals(percentageWins, calculator.calculate(), EPS);		
+	}
+	
+	public void testMandyImpossible() {
+		int requiredDice = 2;
+		int requiredSuccesses = 3;
+		
+		Calculator calculator = new Calculator(requiredDice, requiredSuccesses, false, false);
+		calculator.setIsMandy(true);
+		
+		assertEquals(0.0, calculator.calculate(), 0.0);
+	}
+	
+	public void testMandySameAsChances() {
+		int requiredDice = 3;
+		int requiredSuccesses = 1;
+		
+		Calculator twoChancesCalc = new Calculator(requiredDice, requiredSuccesses, false, false);
+		Calculator mandyCalc = new Calculator(requiredDice, requiredSuccesses, false, false);
+		mandyCalc.setIsMandy(true);
+		assertEquals(twoChancesCalc.calculate(2), mandyCalc.calculate(), EPS);
+	}
+	
 	private int getRandomDieValue() {
 		return random.nextInt(6) + 1;
 	}
