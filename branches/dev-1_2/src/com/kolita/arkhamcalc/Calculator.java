@@ -65,11 +65,12 @@ public class Calculator
 		
 		probSuccess += baseCalc(mDice, mTough);
 		
+		double probMandySuccess = 0.0;
 		if (mIsMandy) {
-			probSuccess += getProbMandyReroll();
+			probMandySuccess = getProbMandyReroll();
 		}
 		
-		return probSuccessWithChances(probSuccess, numberOfChances);
+		return probSuccessWithChances(probSuccess, probMandySuccess, numberOfChances);
 	}
 	
 	private double baseCalc(int totalDice, int totalTougnness)
@@ -143,10 +144,14 @@ public class Calculator
 		return (double)1 / 3;
 	}
 	
-	private static double probSuccessWithChances(double probSuccessOneChance, int numberOfChances)
+	private static double probSuccessWithChances(double probSuccessOneChance, double probMandySuccess, int numberOfChances)
 	{
-		double probFailureOneChance = 1 - probSuccessOneChance;
-		double probFailureAllChances = Math.pow(probFailureOneChance, numberOfChances) ;
+		//mandy can only be used once - if you have any other chances, they won't include Mandy
+		double probFailureFirstChance = 1 - probSuccessOneChance - probMandySuccess;
+		double probFailureOtherChances = 1 - probSuccessOneChance;
+		
+		//note, numberOfChances always > 0, the exponent will never be < 0
+		double probFailureAllChances = probFailureFirstChance * Math.pow(probFailureOtherChances, numberOfChances - 1);
 		return 1 - probFailureAllChances;
 	}
 	
