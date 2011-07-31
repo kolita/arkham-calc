@@ -24,6 +24,7 @@ public class Calculator
 	private boolean mIsBlessed;
 	private boolean mIsCursed;
 	private boolean mIsShotgun;
+	private boolean mIsMandy;
 	
 	public boolean getIsShotgun()
 	{
@@ -33,6 +34,16 @@ public class Calculator
 	public void setIsShotgun(boolean value)
 	{
 		mIsShotgun = value;
+	}
+	
+	public boolean getIsMandy()
+	{
+		return mIsMandy;
+	}
+	
+	public void setIsMandy(boolean value)
+	{
+		mIsMandy = value;
 	}
 	
 	public Calculator(int dice, int tough, boolean isBlessed, boolean isCursed)
@@ -50,64 +61,78 @@ public class Calculator
 	
 	public double calculate(int numberOfChances)
 	{
-		double probOneSuccess = getProbOneSuccess();
-		double probSuccess = 0;
-		for (int i = mTough; i <= mDice; i++) {
-			probSuccess += getProbExactSuccess(i, probOneSuccess);
+		double probSuccess = 0.0;
+		
+		probSuccess += baseCalc(mDice, mTough);
+		
+		double probMandySuccess = 0.0;
+		if (mIsMandy) {
+			probMandySuccess = getProbMandyReroll();
 		}
 		
-		if (mIsShotgun) {
-			probSuccess = handleIsShotgun(probSuccess);
-		}
-		
-		return probSuccessWithChances(probSuccess, numberOfChances);
+		return probSuccessWithChances(probSuccess, probMandySuccess, numberOfChances);
 	}
 	
-	private double handleIsShotgun(double currentProbSuccess)
+	private double baseCalc(int totalDice, int totalTougnness)
 	{
-		final double probSix = (double)1 / 6;
+		double probSuccess = 0.0;
+		
+		for (int i = totalTougnness; i <= totalDice; i++) {
+			probSuccess += getProbExactSuccess(totalDice, i, getProbOneSuccess());
+		}
+		if (mIsShotgun) {
+			probSuccess += handleIsShotgun(totalDice, totalTougnness);
+		}
+		
+		return probSuccess;
+	}
+	
+	private double getProbMandyReroll() {
+		double probSuccessMandy = 0.0;
+		for (int sixSuccesses = 0; sixSuccesses < mTough; sixSuccesses++) {
+			double probExactSixes = getProbExactSuccess(mDice, sixSuccesses, getProbSix());
+			int sixSuccessValue = mIsShotgun ? 2 * sixSuccesses : sixSuccesses;
+			
+			for (int nonSixSuccesses = 0; nonSixSuccesses + sixSuccessValue < mTough; nonSixSuccesses++) {
+				double probFirstRoll = probExactSixes * getProbExactSuccess(mDice - sixSuccesses, nonSixSuccesses, getProbSuccessWithoutSix());
+				probSuccessMandy += probFirstRoll * baseCalc(mDice - sixSuccesses - nonSixSuccesses, mTough - sixSuccessValue - nonSixSuccesses);
+			}
+		}
+		return probSuccessMandy;
+	}
+
+	private double handleIsShotgun(int totalDice, int totalToughness)
+	{
+		double probSuccessShotgun = 0.0;
 		//go from one six to either all sixes or to the toughness, whichever comes first.
 		//once we get to the toughness (i.e. on a 5 to do 3, once we get to three sixes), 
 		//we've already counted in the base calculation.
-		for (int i = 1; i < mTough && i <= mDice; i++) {
-			double exactSixes = nCr(mDice, i) * Math.pow(probSix, i) * Math.pow(1 - probSix, mDice - i);
-			int remainingSuccessesRequired = mTough - 2 * i;
-			for (int j = 0; i + j < mTough && i + j <= mDice; j++) {
+		for (int i = 1; i < totalToughness && i <= totalDice; i++) {
+			double exactSixes = getProbExactSuccess(totalDice, i, getProbSix());
+			int remainingSuccessesRequired = totalToughness - 2 * i;
+			for (int j = 0; i + j < totalToughness && i + j <= totalDice; j++) {
 				//j represents the number of non-sixes that are successes. Don't count sixes + successes
 				//that are >= toughness - those have already been counted in base calc
 				if (j >= remainingSuccessesRequired) {
 					//i.e. the non-six successes (j) are enough to win. Count all the ways to roll exactly that many
 					//sixes and with the remaining dice roll that many non-six successes.
-					currentProbSuccess += exactSixes * nCr(mDice - i, j) * Math.pow((getProbOneSuccess() - probSix) * 6 / 5, j) * Math.pow(1 - ((getProbOneSuccess() - probSix) * 6 / 5), mDice - i - j);
+					probSuccessShotgun += exactSixes * getProbExactSuccess(totalDice - i, j, getProbSuccessWithoutSix());
 				}
 			}
 		}
-		return currentProbSuccess;
+		return probSuccessShotgun;
 	}
 	
-	private double probSuccessWithChances(double probSuccessOneChance, int numberOfChances)
+	private double getProbSix()
 	{
-		double probFailureOneChance = 1 - probSuccessOneChance;
-		double probFailureAllChances = Math.pow(probFailureOneChance, numberOfChances) ;
-		return 1 - probFailureAllChances;
+		return (double)1 / 6;
 	}
 	
-	private double getProbExactSuccess(int exactNumberDice, double probOneSuccess)
+	private double getProbSuccessWithoutSix()
 	{
-		return nCr(mDice, exactNumberDice) * Math.pow(probOneSuccess, exactNumberDice) * Math.pow(1 - probOneSuccess, mDice - exactNumberDice);
-	}
-
-	private long nCr(int n, int r)
-	{
-		return factorial(n) / (factorial(n - r) * factorial(r));
+		return (getProbOneSuccess() - getProbSix()) * 6 / 5;
 	}
 	
-	private long factorial(int n)
-	{
-		if (n <= 1) return 1;
-		return n * factorial(n - 1);
-	}
-
 	private double getProbOneSuccess()
 	{
 		if (mIsBlessed){
@@ -117,5 +142,32 @@ public class Calculator
 			return (double)1 / 6;
 		}
 		return (double)1 / 3;
+	}
+	
+	private static double probSuccessWithChances(double probSuccessOneChance, double probMandySuccess, int numberOfChances)
+	{
+		//mandy can only be used once - if you have any other chances, they won't include Mandy
+		double probFailureFirstChance = 1 - probSuccessOneChance - probMandySuccess;
+		double probFailureOtherChances = 1 - probSuccessOneChance;
+		
+		//note, numberOfChances always > 0, the exponent will never be < 0
+		double probFailureAllChances = probFailureFirstChance * Math.pow(probFailureOtherChances, numberOfChances - 1);
+		return 1 - probFailureAllChances;
+	}
+	
+	private static double getProbExactSuccess(int totalDice, int exactSuccesses, double probOneSuccess)
+	{
+		return nCr(totalDice, exactSuccesses) * Math.pow(probOneSuccess, exactSuccesses) * Math.pow(1 - probOneSuccess, totalDice - exactSuccesses);
+	}
+
+	private static long nCr(int n, int r)
+	{
+		return factorial(n) / (factorial(n - r) * factorial(r));
+	}
+	
+	private static long factorial(int n)
+	{
+		if (n <= 1) return 1;
+		return n * factorial(n - 1);
 	}
 }
