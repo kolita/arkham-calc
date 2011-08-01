@@ -222,7 +222,7 @@ public class ArkhamCalc extends Activity
     	//if we don't know the previousProgress (i.e. we didn't operate on NumberOfChances
     	//or if the previous progress was at index zero, potentially show the message.
 		if (mMandyCheckBox.isChecked() && previousNumberOfChancesProgress <= 0 && mChanceSeekBar.getProgress() > 0) {
-			Toast.makeText(getBaseContext(), getResources().getString(R.string.mandy_chances_toast), Toast.LENGTH_SHORT).show();
+			Toast.makeText(getBaseContext(), getResources().getString(R.string.mandy_chances_toast), Toast.LENGTH_LONG).show();
 		}
 		
 	}
