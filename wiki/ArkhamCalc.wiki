@@ -9,3 +9,5 @@ ArkhamCalc is written in Java and uses the Android SDK.  It is distributed for f
 Project logo adapted from [http://www.fantasyflightgames.com/edge_news.asp?eidn=964 Arkahm Horror Dice Set].
 
 = Details =
+  * [VersionHistory Version History]
+  * [Faqs FAQs]
