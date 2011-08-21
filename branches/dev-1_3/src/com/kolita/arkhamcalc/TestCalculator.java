@@ -452,6 +452,105 @@ public class TestCalculator extends TestCase {
 		assertEquals(percentageWins, calculator.calculate(2), EPS); //two chances
 	}
 	
+	public void testRerollOnes() {
+		int requiredDice = 8;
+		int requiredSuccesses = 3;
+		
+		int totalWins = 0;
+		for (int i = 0; i < NUMBER_ITERATIONS; i++) {
+			int totalSuccesses = 0;
+			int numberOfOnes = 0;
+			for (int j = 0; j < requiredDice; j++) {
+				int dieValue = getRandomDieValue();
+				if (dieValue >= 5) {
+					totalSuccesses++;
+				} else if (dieValue == 1) {
+					numberOfOnes++;
+				}
+			}
+			for (int j = 0; j < numberOfOnes; j++) {
+				int dieValue = getRandomDieValue();
+				if (dieValue >= 5) {
+					totalSuccesses++;
+				}				
+			}
+			if (totalSuccesses >= requiredSuccesses) {
+				totalWins++;
+			}
+		}
+		
+		double percentageWins = (double)totalWins / NUMBER_ITERATIONS;
+		Calculator calculator = new Calculator(requiredDice, requiredSuccesses, false, false);
+		calculator.setIsRerollOnes(true);
+		assertEquals(percentageWins, calculator.calculate(), EPS);
+	}
+	
+	public void testRerollOnesCursed() {
+		int requiredDice = 6;
+		int requiredSuccesses = 2;
+		
+		int totalWins = 0;
+		for (int i = 0; i < NUMBER_ITERATIONS; i++) {
+			int totalSuccesses = 0;
+			int numberOfOnes = 0;
+			for (int j = 0; j < requiredDice; j++) {
+				int dieValue = getRandomDieValue();
+				if (dieValue >= 6) {
+					totalSuccesses++;
+				} else if (dieValue == 1) {
+					numberOfOnes++;
+				}
+			}
+			for (int j = 0; j < numberOfOnes; j++) {
+				int dieValue = getRandomDieValue();
+				if (dieValue >= 6) {
+					totalSuccesses++;
+				}				
+			}
+			if (totalSuccesses >= requiredSuccesses) {
+				totalWins++;
+			}
+		}
+		
+		double percentageWins = (double)totalWins / NUMBER_ITERATIONS;
+		Calculator calculator = new Calculator(requiredDice, requiredSuccesses, false, true);
+		calculator.setIsRerollOnes(true);
+		assertEquals(percentageWins, calculator.calculate(), EPS);
+	}
+	
+	public void testRerollOnesBlessed() {
+		int requiredDice = 3;
+		int requiredSuccesses = 3;
+		
+		int totalWins = 0;
+		for (int i = 0; i < NUMBER_ITERATIONS; i++) {
+			int totalSuccesses = 0;
+			int numberOfOnes = 0;
+			for (int j = 0; j < requiredDice; j++) {
+				int dieValue = getRandomDieValue();
+				if (dieValue >= 4) {
+					totalSuccesses++;
+				} else if (dieValue == 1) {
+					numberOfOnes++;
+				}
+			}
+			for (int j = 0; j < numberOfOnes; j++) {
+				int dieValue = getRandomDieValue();
+				if (dieValue >= 4) {
+					totalSuccesses++;
+				}				
+			}
+			if (totalSuccesses >= requiredSuccesses) {
+				totalWins++;
+			}
+		}
+		
+		double percentageWins = (double)totalWins / NUMBER_ITERATIONS;
+		Calculator calculator = new Calculator(requiredDice, requiredSuccesses, true, false);
+		calculator.setIsRerollOnes(true);
+		assertEquals(percentageWins, calculator.calculate(), EPS);
+	}		
+	
 	private int getRandomDieValue() {
 		return random.nextInt(6) + 1;
 	}
