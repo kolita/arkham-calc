@@ -49,6 +49,7 @@ public class ArkhamCalc extends Activity
 	private CheckBox mCurseCheckBox;
 	private CheckBox mShotgunCheckBox;
 	private CheckBox mMandyCheckBox;
+	private CheckBox mRerollOnesCheckBox;
 	private TextView mResultTextView;
 	
     @Override
@@ -68,6 +69,7 @@ public class ArkhamCalc extends Activity
     	mCurseCheckBox = (CheckBox) findViewById(R.id.curseCheckBox);
     	mShotgunCheckBox = (CheckBox) findViewById(R.id.shotgunCheckBox);
     	mMandyCheckBox = (CheckBox) findViewById(R.id.mandyCheckBox);
+    	mRerollOnesCheckBox = (CheckBox) findViewById(R.id.rerollOnesCheckBox);
     	mResultTextView = (TextView) findViewById(R.id.resultTextView);
         
     	//setup controls
@@ -135,6 +137,12 @@ public class ArkhamCalc extends Activity
 				recalculate();
 				handleMandyNumberOfChances(-1);
 			}
+		});
+    	mRerollOnesCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				recalculate();
+			}
 		});    	
     	
     	//restore state (if saved)
@@ -146,6 +154,7 @@ public class ArkhamCalc extends Activity
     		mCurseCheckBox.setChecked(savedInstanceState.getBoolean("isCursed"));
     		mShotgunCheckBox.setChecked(savedInstanceState.getBoolean("isShotgun"));
     		mMandyCheckBox.setChecked(savedInstanceState.getBoolean("isMandy"));
+    		mRerollOnesCheckBox.setChecked(savedInstanceState.getBoolean("isRerollOnes"));
     	}
     	
     	//first calculation
@@ -166,6 +175,7 @@ public class ArkhamCalc extends Activity
     	outState.putBoolean("isCursed", mCurseCheckBox.isChecked());
     	outState.putBoolean("isShotgun", mShotgunCheckBox.isChecked());
     	outState.putBoolean("isMandy", mMandyCheckBox.isChecked());
+    	outState.putBoolean("isRerollOnes", mRerollOnesCheckBox.isChecked());
     }
 
 	private void recalculate()
@@ -178,11 +188,13 @@ public class ArkhamCalc extends Activity
 		boolean isCursed = mCurseCheckBox.isChecked();
 		boolean isShotgun = mShotgunCheckBox.isChecked();
 		boolean isMandy = mMandyCheckBox.isChecked();
+		boolean isRerollOnes = mRerollOnesCheckBox.isChecked();
 		
 		//calculate
 		Calculator calculator = new Calculator(dice, tough, isBlessed, isCursed);
 		calculator.setIsShotgun(isShotgun);
 		calculator.setIsMandy(isMandy);
+		calculator.setIsRerollOnes(isRerollOnes);
 		double result = calculator.calculate(chance);
 		
 		//set output
