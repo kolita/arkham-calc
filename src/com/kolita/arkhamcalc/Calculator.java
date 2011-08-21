@@ -25,6 +25,7 @@ public class Calculator
 	private boolean mIsCursed;
 	private boolean mIsShotgun;
 	private boolean mIsMandy;
+	private boolean mIsRerollOnes;
 	
 	public boolean getIsShotgun()
 	{
@@ -44,6 +45,16 @@ public class Calculator
 	public void setIsMandy(boolean value)
 	{
 		mIsMandy = value;
+	}
+	
+	public boolean getIsRerollOnes()
+	{
+		return mIsRerollOnes;
+	}
+	
+	public void setIsRerollOnes(boolean value)
+	{
+		mIsRerollOnes = value;
 	}
 	
 	public Calculator(int dice, int tough, boolean isBlessed, boolean isCursed)
@@ -66,28 +77,32 @@ public class Calculator
 		probSuccess += baseCalc(mDice, mTough);
 		
 		double probMandySuccess = 0.0;
+		double probRerollOnesSuccess = 0.0;
 		if (mIsMandy) {
 			probMandySuccess = getProbMandyReroll();
+		} else if (mIsRerollOnes) { //TODO: combine IsMandy and IsRerollones
+			probRerollOnesSuccess = getProbRerollOnes();
 		}
 		
-		return probSuccessWithChances(probSuccess, probMandySuccess, numberOfChances);
+		return probSuccessWithChances(probSuccess, probMandySuccess, probRerollOnesSuccess, numberOfChances);
 	}
 	
-	private double baseCalc(int totalDice, int totalTougnness)
+	private double baseCalc(int totalDice, int totalToughness)
 	{
 		double probSuccess = 0.0;
 		
-		for (int i = totalTougnness; i <= totalDice; i++) {
+		for (int i = totalToughness; i <= totalDice; i++) {
 			probSuccess += getProbExactSuccess(totalDice, i, getProbOneSuccess());
 		}
 		if (mIsShotgun) {
-			probSuccess += handleIsShotgun(totalDice, totalTougnness);
+			probSuccess += handleIsShotgun(totalDice, totalToughness);
 		}
 		
 		return probSuccess;
 	}
-	
-	private double getProbMandyReroll() {
+
+	private double getProbMandyReroll()
+	{
 		double probSuccessMandy = 0.0;
 		for (int sixSuccesses = 0; sixSuccesses < mTough; sixSuccesses++) {
 			double probExactSixes = getProbExactSuccess(mDice, sixSuccesses, getProbSix());
@@ -99,6 +114,26 @@ public class Calculator
 			}
 		}
 		return probSuccessMandy;
+	}
+	
+	private double getProbRerollOnes()
+	{
+		double probSuccessRerollOnes = 0.0;
+		for (int sixSuccesses = 0; sixSuccesses < mTough; sixSuccesses++) {
+			double probExactSixes = getProbExactSuccess(mDice, sixSuccesses, getProbSix());
+			int sixSuccessValue = mIsShotgun ? 2 * sixSuccesses : sixSuccesses;
+			
+			for (int nonSixSuccesses = 0; nonSixSuccesses + sixSuccessValue < mTough; nonSixSuccesses++) {
+				double probFirstRollSuccesses = probExactSixes * getProbExactSuccess(mDice - sixSuccesses, nonSixSuccesses, getProbSuccessWithoutSix());
+				for (int ones = mTough - sixSuccessValue - nonSixSuccesses; ones <= mDice - nonSixSuccesses - sixSuccesses; ones++) {
+					double probExactOnes = getProbExactSuccess(mDice - nonSixSuccesses - sixSuccesses, ones, getProbOneWithoutSuccesses());
+					double probFirstRoll = probFirstRollSuccesses * probExactOnes;
+					probSuccessRerollOnes += probFirstRoll * baseCalc(ones, mTough - sixSuccessValue - nonSixSuccesses);
+				}
+			}
+		}
+		
+		return probSuccessRerollOnes;
 	}
 
 	private double handleIsShotgun(int totalDice, int totalToughness)
@@ -123,14 +158,20 @@ public class Calculator
 		return probSuccessShotgun;
 	}
 	
-	private double getProbSix()
-	{
-		return (double)1 / 6;
-	}
-	
 	private double getProbSuccessWithoutSix()
 	{
 		return (getProbOneSuccess() - getProbSix()) * 6 / 5;
+	}
+	
+	private double getProbOneWithoutSuccesses()
+	{
+		if (mIsBlessed){
+			return (double)1 / 3;
+		}
+		if (mIsCursed){
+			return (double)1 / 5;
+		}
+		return (double)1 / 4;
 	}
 	
 	private double getProbOneSuccess()
@@ -144,10 +185,15 @@ public class Calculator
 		return (double)1 / 3;
 	}
 	
-	private static double probSuccessWithChances(double probSuccessOneChance, double probMandySuccess, int numberOfChances)
+	private static double getProbSix()
+	{
+		return (double)1 / 6;
+	}
+	
+	private static double probSuccessWithChances(double probSuccessOneChance, double probMandySuccess, double probRerollOnesSuccess, int numberOfChances)
 	{
 		//mandy can only be used once - if you have any other chances, they won't include Mandy
-		double probFailureFirstChance = 1 - probSuccessOneChance - probMandySuccess;
+		double probFailureFirstChance = 1 - probSuccessOneChance - probMandySuccess - probRerollOnesSuccess;
 		double probFailureOtherChances = 1 - probSuccessOneChance;
 		
 		//note, numberOfChances always > 0, the exponent will never be < 0
