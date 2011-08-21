@@ -549,7 +549,52 @@ public class TestCalculator extends TestCase {
 		Calculator calculator = new Calculator(requiredDice, requiredSuccesses, true, false);
 		calculator.setIsRerollOnes(true);
 		assertEquals(percentageWins, calculator.calculate(), EPS);
-	}		
+	}
+	
+	public void testRerollOnesMultipleChances() {
+		int requiredDice = 7;
+		int requiredSuccesses = 5;
+		
+		int totalWins = 0;
+		for (int i = 0; i < NUMBER_ITERATIONS; i++) {
+			int totalSuccesses = 0;
+			int numberOfOnes = 0;
+			for (int j = 0; j < requiredDice; j++) {
+				int dieValue = getRandomDieValue();
+				if (dieValue == 5 || dieValue == 6) {
+					totalSuccesses++;
+				} else if (dieValue == 1) {
+					numberOfOnes++;
+				}
+			}
+			for (int j = 0; j < numberOfOnes; j++) {
+				int dieValue = getRandomDieValue();
+				if (dieValue == 5 || dieValue == 6) {
+					totalSuccesses++;
+				}				
+			}
+			
+			if (totalSuccesses >= requiredSuccesses) {
+				totalWins++;
+			} else { //try again w/o reroll ability
+				totalSuccesses = 0;
+				for (int j = 0; j < requiredDice; j++) {
+					int dieValue = getRandomDieValue();
+					if (dieValue >= 5) {
+						totalSuccesses++;
+					}
+				}
+				if (totalSuccesses >= requiredSuccesses) {
+					totalWins++;
+				}
+			}
+		}
+		double percentageWins = (double)totalWins / NUMBER_ITERATIONS;
+		
+		Calculator calculator = new Calculator(requiredDice, requiredSuccesses, false, false);
+		calculator.setIsRerollOnes(true);
+		assertEquals(percentageWins, calculator.calculate(2), EPS); //two chances
+	}	
 	
 	private int getRandomDieValue() {
 		return random.nextInt(6) + 1;
