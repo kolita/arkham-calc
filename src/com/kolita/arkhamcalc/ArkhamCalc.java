@@ -52,6 +52,8 @@ public class ArkhamCalc extends Activity
 	private CheckBox mRerollOnesCheckBox;
 	private TextView mResultTextView;
 	
+	private int mPreviousChanceValue;
+	
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -80,27 +82,27 @@ public class ArkhamCalc extends Activity
     	//attach callbacks
     	mDiceSeekBar.setOnSeekBarChangeListener(new OnSeekBarProgressChangeListener() {
 			@Override
-			public void onProgressChanged(SeekBar seekBar, int progress,
-					boolean fromUser) {
+			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 				setSeekBarValues();
 				recalculate();
 			}
 		});
     	mToughSeekBar.setOnSeekBarChangeListener(new OnSeekBarProgressChangeListener() {
 			@Override
-			public void onProgressChanged(SeekBar seekBar, int progress,
-					boolean fromUser) {
+			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 				setSeekBarValues();
 				recalculate();
 			}
 		});
     	mChanceSeekBar.setOnSeekBarChangeListener(new OnSeekBarProgressChangeListener() {
 			@Override
-			public void onProgressChanged(SeekBar seekBar, int progress,
-					boolean fromUser) {
+			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 				setSeekBarValues();
 				recalculate();
-				handleMandyNumberOfChances(getPreviousProgress());
+				
+				mPreviousChanceValue = getPreviousProgress();
+				handleOneTimeAbilityChancesChanged(mMandyCheckBox.isChecked(), R.string.mandy_chances_toast);
+				handleOneTimeAbilityChancesChanged(mRerollOnesCheckBox.isChecked(), R.string.reroll_ones_chances_toast);
 			}
 		});
     	mBlessCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -135,13 +137,14 @@ public class ArkhamCalc extends Activity
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 				recalculate();
-				handleMandyNumberOfChances(-1);
+				handleOneTimeAbilityOptionChanged(mMandyCheckBox.isChecked(), R.string.mandy_chances_toast);
 			}
 		});
     	mRerollOnesCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 				recalculate();
+				handleOneTimeAbilityOptionChanged(mRerollOnesCheckBox.isChecked(), R.string.reroll_ones_chances_toast);
 			}
 		});    	
     	
@@ -224,20 +227,34 @@ public class ArkhamCalc extends Activity
 		mToughValue.setText(Integer.toString(mToughSeekBar.getProgress() + 1));
 		mChanceValue.setText(Integer.toString(mChanceSeekBar.getProgress() + 1));
 	}
-	
-	/**
-	 * Show a message to the user regarding Mandy and the Number of Chances bar
-	 * @param previousProgress - the index of previous progress, or -1 if we don't know
-	 */
-    private void handleMandyNumberOfChances(int previousNumberOfChancesProgress)
+    
+    /**
+     * Show a message to the user regarding this one-time ability if user has more than one chance.
+     * Case where ability has been changed; check number of chances.
+     */
+    private void handleOneTimeAbilityOptionChanged(boolean isAbilityChecked, int resourceStringId)
     {
-    	//if we don't know the previousProgress (i.e. we didn't operate on NumberOfChances
-    	//or if the previous progress was at index zero, potentially show the message.
-		if (mMandyCheckBox.isChecked() && previousNumberOfChancesProgress <= 0 && mChanceSeekBar.getProgress() > 0) {
-			Toast.makeText(getBaseContext(), getResources().getString(R.string.mandy_chances_toast), Toast.LENGTH_LONG).show();
+    	if (isAbilityChecked && mChanceSeekBar.getProgress() > 0) {
+    		showToast(resourceStringId);
+    	}
+    }
+    
+    /**
+     * Show a message to the user regarding this one-time ability if user has more than one chance.
+	 * Case where number of chances have changed; check if ability is selected and chances have changed
+	 * from one to > 1.
+     */
+    private void handleOneTimeAbilityChancesChanged(boolean isAbilityChecked, int resourceStringId)
+    {
+		if (isAbilityChecked && mPreviousChanceValue <= 0 && mChanceSeekBar.getProgress() > 0) {
+			showToast(resourceStringId);
 		}
-		
-	}
+    }
+    
+    private void showToast(int resourceStringId)
+    {
+    	Toast.makeText(getBaseContext(), getResources().getString(resourceStringId), Toast.LENGTH_LONG).show();
+    }
 	
 	private abstract class OnSeekBarProgressChangeListener implements OnSeekBarChangeListener
 	{

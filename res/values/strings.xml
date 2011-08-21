@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">ArkhamCalc</string>
     <string name="mandy_chances_toast">Mandy\'s ability can only be used once per turn. Additional chances do not take her ability into account.</string>
+    <string name="reroll_ones_chances_toast">The reroll ones ability can only be used once per turn. Additional chances do not take this ability into account.</string>
 </resources>
