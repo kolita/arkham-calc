@@ -136,6 +136,10 @@ public class ArkhamCalc extends Activity
     	mMandyCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				if (isChecked) {
+					//both Mandy and Reroll ones on at same time not supported
+					mRerollOnesCheckBox.setChecked(false);
+				}
 				recalculate();
 				handleOneTimeAbilityOptionChanged(mMandyCheckBox.isChecked(), R.string.mandy_chances_toast);
 			}
@@ -143,6 +147,10 @@ public class ArkhamCalc extends Activity
     	mRerollOnesCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				if (isChecked) {
+					//both Mandy and Reroll ones on at same time not supported
+					mMandyCheckBox.setChecked(false);
+				}
 				recalculate();
 				handleOneTimeAbilityOptionChanged(mRerollOnesCheckBox.isChecked(), R.string.reroll_ones_chances_toast);
 			}
@@ -207,7 +215,6 @@ public class ArkhamCalc extends Activity
 		mResultTextView.setText(resultString);
 		
 		//Color logic
-		//TODO: refactor
 		int color;
 		if(result > .66){
 			color = COLOR_GREEN;
