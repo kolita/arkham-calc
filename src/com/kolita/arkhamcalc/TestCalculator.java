@@ -594,7 +594,51 @@ public class TestCalculator extends TestCase {
 		Calculator calculator = new Calculator(requiredDice, requiredSuccesses, false, false);
 		calculator.setIsRerollOnes(true);
 		assertEquals(percentageWins, calculator.calculate(2), EPS); //two chances
-	}	
+	}
+	
+//	Note - this functionality is not currently supported (reroll ones skill + mandy ability)
+//	public void testRerollOnesMandy() {
+//		int requiredDice = 5;
+//		int requiredSuccesses = 4;
+//		
+//		int totalWins = 0;
+//		for (int i = 0; i < NUMBER_ITERATIONS; i++) {
+//			int totalSuccesses = 0;
+//			int numberOfOnes = 0;
+//			for (int j = 0; j < requiredDice; j++) {
+//				int dieValue = getRandomDieValue();
+//				if (dieValue >= 4) {
+//					totalSuccesses++;
+//				} else if (dieValue == 1) {
+//					numberOfOnes++;
+//				}
+//			}
+//			//reroll ones part
+//			for (int j = 0; j < numberOfOnes; j++) {
+//				int dieValue = getRandomDieValue();
+//				if (dieValue >= 4) {
+//					totalSuccesses++;
+//				}				
+//			}
+//			//mandy part
+//			int firstRollSuccesses = totalSuccesses;
+//			for (int j = 0; j < requiredDice - firstRollSuccesses; j++) {
+//				int dieValue = getRandomDieValue();
+//				if (dieValue >= 4) {
+//					totalSuccesses++;
+//				}					
+//			}
+//			if (totalSuccesses >= requiredSuccesses) {
+//				totalWins++;
+//			}
+//		}
+//		
+//		double percentageWins = (double)totalWins / NUMBER_ITERATIONS;
+//		Calculator calculator = new Calculator(requiredDice, requiredSuccesses, true, false);
+//		calculator.setIsRerollOnes(true);
+//		calculator.setIsMandy(true);
+//		assertEquals(percentageWins, calculator.calculate(), EPS);
+//	}	
 	
 	private int getRandomDieValue() {
 		return random.nextInt(6) + 1;
