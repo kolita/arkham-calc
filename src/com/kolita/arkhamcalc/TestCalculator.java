@@ -596,6 +596,44 @@ public class TestCalculator extends TestCase {
 		assertEquals(percentageWins, calculator.calculate(2), EPS); //two chances
 	}
 	
+	public void testRerollOnesShotgun() {
+		int requiredDice = 10;
+		int requiredSuccesses = 3;
+		
+		int totalWins = 0;
+		for (int i = 0; i < NUMBER_ITERATIONS; i++) {
+			int totalSuccesses = 0;
+			int numberOfOnes = 0;
+			for (int j = 0; j < requiredDice; j++) {
+				int dieValue = getRandomDieValue();
+				if (dieValue == 5) {
+					totalSuccesses++;
+				} else if (dieValue == 6) {
+					totalSuccesses += 2;
+				} else if (dieValue == 1) {
+					numberOfOnes++;
+				}
+			}
+			for (int j = 0; j < numberOfOnes; j++) {
+				int dieValue = getRandomDieValue();
+				if (dieValue == 5) {
+					totalSuccesses++;
+				} else if (dieValue == 6) {
+					totalSuccesses += 2;
+				}
+			}
+			if (totalSuccesses >= requiredSuccesses) {
+				totalWins++;
+			}
+		}
+		
+		double percentageWins = (double)totalWins / NUMBER_ITERATIONS;
+		Calculator calculator = new Calculator(requiredDice, requiredSuccesses, false, false);
+		calculator.setIsRerollOnes(true);
+		calculator.setIsShotgun(true);
+		assertEquals(percentageWins, calculator.calculate(), EPS);
+	}	
+	
 //	Note - this functionality is not currently supported (reroll ones skill + mandy ability)
 //	public void testRerollOnesMandy() {
 //		int requiredDice = 5;
