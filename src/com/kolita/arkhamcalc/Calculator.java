@@ -202,17 +202,6 @@ public class Calculator
 	
 	private static double getProbExactSuccess(int totalDice, int exactSuccesses, double probOneSuccess)
 	{
-		return nCr(totalDice, exactSuccesses) * Math.pow(probOneSuccess, exactSuccesses) * Math.pow(1 - probOneSuccess, totalDice - exactSuccesses);
-	}
-
-	private static long nCr(int n, int r)
-	{
-		return factorial(n) / (factorial(n - r) * factorial(r));
-	}
-	
-	private static long factorial(int n)
-	{
-		if (n <= 1) return 1;
-		return n * factorial(n - 1);
+		return MathHelper.nCr(totalDice, exactSuccesses) * Math.pow(probOneSuccess, exactSuccesses) * Math.pow(1 - probOneSuccess, totalDice - exactSuccesses);
 	}
 }
