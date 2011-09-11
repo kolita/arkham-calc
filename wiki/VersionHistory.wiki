@@ -3,7 +3,8 @@
 = Version History =
 
 
-
+  * *v1.3*, released TBD
+    * Added Reroll Ones calc 
 
   * *v1.2*, released 7/31/11
     * Added Mandy calc
