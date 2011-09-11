@@ -20,7 +20,11 @@ package com.kolita.arkhamcalc;
 import java.text.NumberFormat;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
@@ -38,6 +42,8 @@ public class ArkhamCalc extends Activity
 	private static final int COLOR_GREEN = 0xFF008000;
 	private static final int COLOR_YELLOW = 0xFFC4C100;
 	private static final int COLOR_RED = 0xFF800000;
+	
+	private static final int MENU_ITEM_FEEDBACK = 0;
 	
 	private SeekBar mDiceSeekBar;
 	private TextView mDiceValue;
@@ -58,6 +64,7 @@ public class ArkhamCalc extends Activity
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        
         setContentView(R.layout.main);
         
         //find controls
@@ -188,6 +195,43 @@ public class ArkhamCalc extends Activity
     	outState.putBoolean("isMandy", mMandyCheckBox.isChecked());
     	outState.putBoolean("isRerollOnes", mRerollOnesCheckBox.isChecked());
     }
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu)
+	{
+		super.onCreateOptionsMenu(menu);
+		
+		MenuItem menuItemFeedback = menu.add(0, MENU_ITEM_FEEDBACK, MENU_ITEM_FEEDBACK, getResourceString(R.string.menu_item_string_feedback));
+		menuItemFeedback.setIcon(android.R.drawable.ic_dialog_email);
+		
+		return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item)
+	{
+		super.onOptionsItemSelected(item);
+		
+		switch(item.getItemId()) {
+		case MENU_ITEM_FEEDBACK:
+			sendFeedbackEmail();
+			return true;
+		}
+		return false;
+	}
+
+	private void sendFeedbackEmail()
+	{
+		Intent emailIntent = new Intent(Intent.ACTION_SEND);
+		emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] { getResourceString(R.string.email_to) });
+		emailIntent.putExtra(Intent.EXTRA_SUBJECT, getResourceString(R.string.email_subject));
+		emailIntent.setType("plain/text");
+		try {
+			startActivity(emailIntent);
+		} catch (ActivityNotFoundException e) {
+			showToast(getResourceString(R.string.toast_exception_email));
+		}
+	}
 
 	private void recalculate()
 	{
@@ -242,7 +286,7 @@ public class ArkhamCalc extends Activity
     private void handleOneTimeAbilityOptionChanged(boolean isAbilityChecked, int resourceStringId)
     {
     	if (isAbilityChecked && mChanceSeekBar.getProgress() > 0) {
-    		showToast(resourceStringId);
+    		showToast(getResourceString(resourceStringId));
     	}
     }
     
@@ -254,13 +298,18 @@ public class ArkhamCalc extends Activity
     private void handleOneTimeAbilityChancesChanged(boolean isAbilityChecked, int resourceStringId)
     {
 		if (isAbilityChecked && mPreviousChanceValue <= 0 && mChanceSeekBar.getProgress() > 0) {
-			showToast(resourceStringId);
+			showToast(getResourceString(resourceStringId));
 		}
     }
     
-    private void showToast(int resourceStringId)
+    private void showToast(String toastText)
     {
-    	Toast.makeText(getBaseContext(), getResources().getString(resourceStringId), Toast.LENGTH_LONG).show();
+    	Toast.makeText(getBaseContext(), toastText, Toast.LENGTH_LONG).show();
+    }
+    
+    private String getResourceString(int resourceStringId)
+    {
+    	return getResources().getString(resourceStringId);
     }
 	
 	private abstract class OnSeekBarProgressChangeListener implements OnSeekBarChangeListener
