@@ -97,7 +97,6 @@ public class Calculator
 		if (mIsShotgun) {
 			probSuccess += handleIsShotgun(totalDice, totalToughness);
 		}
-		
 		return probSuccess;
 	}
 
@@ -125,7 +124,7 @@ public class Calculator
 			
 			for (int nonSixSuccesses = 0; nonSixSuccesses + sixSuccessValue < mTough; nonSixSuccesses++) {
 				double probFirstRollSuccesses = probExactSixes * getProbExactSuccess(mDice - sixSuccesses, nonSixSuccesses, getProbSuccessWithoutSix());
-				for (int ones = mTough - sixSuccessValue - nonSixSuccesses; ones <= mDice - nonSixSuccesses - sixSuccesses; ones++) {
+				for (int ones = 1; ones <= mDice - nonSixSuccesses - sixSuccesses; ones++) {
 					double probExactOnes = getProbExactSuccess(mDice - nonSixSuccesses - sixSuccesses, ones, getProbOneWithoutSuccesses());
 					double probFirstRoll = probFirstRollSuccesses * probExactOnes;
 					probSuccessRerollOnes += probFirstRoll * baseCalc(ones, mTough - sixSuccessValue - nonSixSuccesses);
