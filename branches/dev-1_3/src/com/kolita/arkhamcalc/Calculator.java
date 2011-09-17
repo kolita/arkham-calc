@@ -26,6 +26,7 @@ public class Calculator
 	private boolean mIsShotgun;
 	private boolean mIsMandy;
 	private boolean mIsRerollOnes;
+	private boolean mIsAddOne;
 	
 	public boolean getIsShotgun()
 	{
@@ -56,6 +57,16 @@ public class Calculator
 	{
 		mIsRerollOnes = value;
 	}
+	
+	public boolean getIsAddOne()
+	{
+		return mIsAddOne;
+	}
+	
+	public void setIsAddOne(boolean value)
+	{
+		mIsAddOne = value;
+	}	
 	
 	public Calculator(int dice, int tough, boolean isBlessed, boolean isCursed)
 	{
@@ -164,24 +175,35 @@ public class Calculator
 	
 	private double getProbOneWithoutSuccesses()
 	{
+		final double numerator = 1;
+		double denominator = 4; //without any perks, prob of one without success is 1/4 (1, 2, 3, 4)
 		if (mIsBlessed){
-			return (double)1 / 3;
+			denominator--;
 		}
 		if (mIsCursed){
-			return (double)1 / 5;
+			denominator++;
 		}
-		return (double)1 / 4;
+		if (mIsAddOne) {
+			denominator--;
+		}
+		return (double)numerator / denominator;
 	}
 	
 	private double getProbOneSuccess()
 	{
-		if (mIsBlessed){
-			return (double)1 / 2;
+		final double denominator = 6;
+		double numerator = 2; //without any perks, prob of success is 2/6 (rolling a 5 or rolling a 6)
+		
+		if (mIsBlessed) {
+			numerator++;
 		}
-		if (mIsCursed){
-			return (double)1 / 6;
+		if (mIsCursed) {
+			numerator--;
 		}
-		return (double)1 / 3;
+		if (mIsAddOne) {
+			numerator++;
+		}
+		return (double)numerator / denominator;
 	}
 	
 	private static double getProbSix()
