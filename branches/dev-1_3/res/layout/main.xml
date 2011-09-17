@@ -112,12 +112,17 @@
 						android:layout_marginTop="5px"
 						android:text="Mandy" />					
 				</TableRow>
+				<TableRow>
 					<CheckBox android:id="@+id/rerollOnesCheckBox"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:layout_marginTop="5px"
-						android:text="Reroll Ones" />				
-				<TableRow>
+						android:text="Reroll Ones" />
+					<CheckBox android:id="@+id/addOneCheckBox"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="5px"
+						android:text="Add One" />
 				</TableRow>
 			</TableLayout>
 		</LinearLayout>
