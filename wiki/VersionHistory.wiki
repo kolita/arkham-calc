@@ -3,8 +3,11 @@
 = Version History =
 
 
-  * *v1.3*, released TBD
-    * Added Reroll Ones calc 
+  * *v1.3*, released 9/18/11
+    * Added Reroll Ones calc
+    * Added Add One calc
+    * Feedback menu option
+    * Scrollview added to UI
 
   * *v1.2*, released 7/31/11
     * Added Mandy calc
