@@ -44,6 +44,7 @@ public class ArkhamCalc extends Activity
 	private static final int COLOR_RED = 0xFF800000;
 	
 	private static final int MENU_ITEM_FEEDBACK = 0;
+	private static final int MENU_ITEM_HELP = 1;
 	
 	private SeekBar mDiceSeekBar;
 	private TextView mDiceValue;
@@ -214,6 +215,9 @@ public class ArkhamCalc extends Activity
 		MenuItem menuItemFeedback = menu.add(0, MENU_ITEM_FEEDBACK, MENU_ITEM_FEEDBACK, getResourceString(R.string.menu_item_string_feedback));
 		menuItemFeedback.setIcon(android.R.drawable.ic_dialog_email);
 		
+		MenuItem menuItemHelp = menu.add(0, MENU_ITEM_HELP, MENU_ITEM_HELP, getResourceString(R.string.menu_item_string_help));
+		menuItemHelp.setIcon(android.R.drawable.ic_menu_help);
+		
 		return true;
 	}
 	
@@ -226,6 +230,9 @@ public class ArkhamCalc extends Activity
 		case MENU_ITEM_FEEDBACK:
 			sendFeedbackEmail();
 			return true;
+		case MENU_ITEM_HELP:
+			//TODO
+			return true;			
 		}
 		return false;
 	}
