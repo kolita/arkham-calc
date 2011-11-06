@@ -186,7 +186,7 @@ public class Calculator
 		if (mIsAddOne) {
 			denominator--;
 		}
-		return (double)numerator / denominator;
+		return numerator / denominator;
 	}
 	
 	private double getProbOneSuccess()
@@ -203,7 +203,7 @@ public class Calculator
 		if (mIsAddOne) {
 			numerator++;
 		}
-		return (double)numerator / denominator;
+		return numerator / denominator;
 	}
 	
 	private static double getProbSix()
