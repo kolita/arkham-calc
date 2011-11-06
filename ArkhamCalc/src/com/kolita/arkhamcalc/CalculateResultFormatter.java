@@ -19,6 +19,10 @@ package com.kolita.arkhamcalc;
 
 import java.text.NumberFormat;
 
+/**
+ * Given the result of a Calculator, determines appropriate formatting to be 
+ * displayed on UI.
+ */
 public class CalculateResultFormatter
 {
 	private static final int COLOR_GREEN = 0xFF008000;

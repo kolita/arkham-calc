@@ -31,6 +31,9 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * The main activity. Routes user input to Calculator and prints its results.
+ */
 public class ArkhamCalc extends Activity
 {
 	private static final int DICE_MAX = 16;

@@ -17,6 +17,10 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.*
 
 package com.kolita.arkhamcalc;
 
+/**
+ * The probability engine. Using a combination of constructor and property
+ * inputs, calculates the probability of a successful encounter.
+ */
 public class Calculator
 {
 	private int mDice;
@@ -76,11 +80,17 @@ public class Calculator
 		mIsCursed = isCursed;
 	}
 	
+	/**
+	 * Probability of success with one chance.
+	 */
 	public double calculate()
 	{
 		return calculate(1);
 	}
 	
+	/**
+	 * Probability of success in at least one of the 'numberOfChances'.
+	 */
 	public double calculate(int numberOfChances)
 	{
 		double probSuccess = 0.0;
