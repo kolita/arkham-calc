@@ -3,6 +3,10 @@
 = Version History =
 
 
+  * *v1.4*, released TBA
+    * Showing >99.9% instead of 100%
+    * Showing <0.1% instead of 0% in cases where it's not impossible to succeed
+
   * *v1.3*, released 9/18/11
     * Added Reroll Ones calc
     * Added Add One calc
