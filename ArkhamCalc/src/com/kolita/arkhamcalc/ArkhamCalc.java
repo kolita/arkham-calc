@@ -17,8 +17,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.*
 
 package com.kolita.arkhamcalc;
 
-import java.text.NumberFormat;
-
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -38,10 +36,6 @@ public class ArkhamCalc extends Activity
 	private static final int DICE_MAX = 16;
 	private static final int TOUGH_MAX = 6;
 	private static final int CHANCE_MAX = 5;
-	
-	private static final int COLOR_GREEN = 0xFF008000;
-	private static final int COLOR_YELLOW = 0xFFC4C100;
-	private static final int COLOR_RED = 0xFF800000;
 	
 	private static final int MENU_ITEM_FEEDBACK = 0;
 	private static final int MENU_ITEM_HELP = 1;
@@ -271,23 +265,13 @@ public class ArkhamCalc extends Activity
 		calculator.setIsAddOne(isAddOne);
 		double result = calculator.calculate(chance);
 		
-		//set output
-		NumberFormat numberFormat= NumberFormat.getPercentInstance();
-		numberFormat.setMaximumFractionDigits(1);
-		String resultString =  numberFormat.format(result);
+		//format and set ui
+		CalculateResultFormatter formatter = new CalculateResultFormatter(result);
+		
+		String resultString = formatter.getResultString();
 		mResultTextView.setText(resultString);
 		
-		//Color logic
-		int color;
-		if(result > .66){
-			color = COLOR_GREEN;
-		}
-		else if(result > .33){
-			color = COLOR_YELLOW;
-		}
-		else{
-			color = COLOR_RED;
-		}
+		int color = formatter.getColor();
 		mResultTextView.setTextColor(color);
 	}
 
