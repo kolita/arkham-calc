@@ -17,8 +17,16 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.*
 
 package com.kolita.arkhamcalc;
 
-public class MathHelper
+/**
+ * Static class that contains math functions not specific to Arkham Horror.
+ */
+public final class MathHelper
 {
+	private MathHelper()
+	{
+		//static helper class
+	}
+	
 	/**
 	 * From n, choose r.  See http://en.wikipedia.org/wiki/Combination
 	 */
