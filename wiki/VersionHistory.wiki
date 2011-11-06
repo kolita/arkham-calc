@@ -4,6 +4,7 @@
 
 
   * *v1.4*, released TBA
+    * Moving unit tests out of distributed .apk
     * Showing >99.9% instead of 100%
     * Showing <0.1% instead of 0% in cases where it's not impossible to succeed
 
