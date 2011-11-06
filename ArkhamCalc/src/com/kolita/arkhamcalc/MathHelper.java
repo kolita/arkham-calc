@@ -22,22 +22,22 @@ package com.kolita.arkhamcalc;
  */
 public final class MathHelper
 {
-	private MathHelper()
-	{
-		//static helper class
-	}
-	
-	/**
-	 * From n, choose r.  See http://en.wikipedia.org/wiki/Combination
-	 */
-	public static long nCr(int n, int r)
-	{
-		return factorial(n) / (factorial(n - r) * factorial(r));
-	}
-	
-	private static long factorial(int n)
-	{
-		if (n <= 1) return 1;
-		return n * factorial(n - 1);
-	}
+    private MathHelper()
+    {
+        //static helper class
+    }
+
+    /**
+     * From n, choose r.  See http://en.wikipedia.org/wiki/Combination
+     */
+    public static long nCr(int n, int r)
+    {
+        return factorial(n) / (factorial(n - r) * factorial(r));
+    }
+
+    private static long factorial(int n)
+    {
+        if (n <= 1) return 1;
+        return n * factorial(n - 1);
+    }
 }
