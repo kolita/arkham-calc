@@ -32,13 +32,6 @@ public class CalculateResultFormatter
 		mResult = result;
 	}
 	
-	public String getResultString()
-	{
-		NumberFormat numberFormat= NumberFormat.getPercentInstance();
-		numberFormat.setMaximumFractionDigits(1);
-		return numberFormat.format(mResult);
-	}
-	
 	public int getColor()
 	{
 		if (mResult > .66) {
@@ -48,5 +41,35 @@ public class CalculateResultFormatter
 			return COLOR_YELLOW;
 		}
 		return COLOR_RED;
+	}
+	
+	public String getResultString()
+	{
+		if (mResult >= .9995) {
+			//show ">99.9%" instead of 100%
+			return getAlmostOneResultString();
+		}
+		if (mResult > 0 && mResult < 0.0005) {
+			//show "<0.1% instead of 0%
+			return getAlmostZeroResultString();
+		}
+		return getNumberFormat().format(mResult);
+	}
+	
+	private static String getAlmostZeroResultString()
+	{
+		return "<" + getNumberFormat().format(.001);
+	}
+
+	private static String getAlmostOneResultString()
+	{
+		return ">" + getNumberFormat().format(.999);
+	}
+	
+	private static NumberFormat getNumberFormat()
+	{
+		NumberFormat numberFormat= NumberFormat.getPercentInstance();
+		numberFormat.setMaximumFractionDigits(1);
+		return numberFormat;
 	}
 }
