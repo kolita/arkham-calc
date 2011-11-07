@@ -228,7 +228,7 @@ public class ArkhamCalc extends Activity
             sendFeedbackEmail();
             return true;
         case MENU_ITEM_HELP:
-            //TODO
+            startActivity(new Intent(this, ArkhamCalcHelp.class));
             return true;			
         }
         return false;
