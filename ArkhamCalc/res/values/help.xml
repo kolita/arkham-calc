@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="topics">
+        <item>Dice / Difficulty</item>
+        <item>Chances</item>
+        <item>Blessed / Cursed</item>
+        <item>Add One</item>
+        <item>Shotgun</item>
+        <item>Mandy</item>
+        <item>Reroll Ones</item>
+    </string-array>
+    <string-array name="contents">
+        <item>Arkham Horror uses dice rolls to determine the outcome of a number of events in the game, including combat and skill checks. Each such event will have a stated difficulty, which is defined as the number of successed required to pass the event.</item>
+        <item>For some events in Arkham Horror, it is possible to attempt the check more than one time. An example is combat - if a monster deals a one point of damage per round of combat, and your character currently has three stamina, you can attempt the combat check three times before your characters is knocked unconscious.</item>
+        <item>foo</item>
+        <item>foo</item>
+        <item>foo</item>
+        <item>foo</item>
+        <item>foo</item>
+    </string-array>    
+</resources>

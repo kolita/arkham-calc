@@ -18,67 +18,72 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.*
 package com.kolita.arkhamcalc;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import android.app.ExpandableListActivity;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.widget.ExpandableListAdapter;
 import android.widget.SimpleExpandableListAdapter;
 
+/**
+ * An activity that displays help topics and content. Strings are stored in the
+ * res folder. The nth entry in the 'topic' String array is associated with
+ * the nth entry in the 'content' String array.
+ */
 public class ArkhamCalcHelp extends ExpandableListActivity
 {
-    private static final String HELP_TOPIC_1 = "Dice / Difficulty";
-    private static final String HELP_TOPIC_2 = "Chances";
-    private static final String HELP_CONTENT_1 = "Arkham Horror uses dice rolls to determine the outcome of a number of events in the game, including combat and skill checks. Each such event will have a stated difficulty, which is defined as the number of successed required to pass the event.";
-    private static final String HELP_CONTENT_2 = "For some events in Arkham Horror, it is possible to attempt the check more than one time. An example is combat - if a monster deals a one point of damage per round of combat, and your character currently has three stamina, you can attempt the combat check three times before your characters is knocked unconscious.";
-    
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         
+        List<String> topics = getHelp(R.array.topics);
+        List<String> contents = getHelp(R.array.contents);
+        
         ExpandableListAdapter adapter = new SimpleExpandableListAdapter
-            (this, getGroupData(), R.layout.help_group_row, 
+            (this, getGroupData(topics), R.layout.help_group_row, 
              new String[] { "helpTopic" }, new int[] { R.id.helpTopicTextView }, 
-             getChildData(), R.layout.help_child_row,
+             getChildData(contents), R.layout.help_child_row,
              new String[] { "helpContent" }, new int[] {R.id.helpContentTextView});
         setListAdapter(adapter);
     }
     
-    private List<Map<String, String>> getGroupData()
+    private List<String> getHelp(int helpId)
+    {
+        Resources res = getResources();
+        String[] helpStringArray = res.getStringArray(helpId);
+        return Arrays.asList(helpStringArray);
+    }
+    
+    private static List<Map<String, String>> getGroupData(List<String> topics)
     {
         List<Map<String, String>> groupList = new ArrayList<Map<String, String>>();
         
-        Map<String, String> groupMap1 = new HashMap<String, String>();
-        groupMap1.put("helpTopic", HELP_TOPIC_1);
-        groupList.add(groupMap1);
-        
-        Map<String, String> groupMap2 = new HashMap<String, String>();
-        groupMap2.put("helpTopic", HELP_TOPIC_2);
-        groupList.add(groupMap2);
+        for (String topic : topics) {
+            Map<String, String> groupMap = new HashMap<String, String>();
+            groupMap.put("helpTopic", topic);
+            groupList.add(groupMap);            
+        }
         
         return groupList;
     }
     
-    private List<List<Map<String, String>>> getChildData()
+    private static List<List<Map<String, String>>> getChildData(List<String> contents)
     {
-        List<List<Map<String, String>>> childList = new ArrayList<List<Map<String, String>>>();
+        List<List<Map<String, String>>> childrenList = new ArrayList<List<Map<String, String>>>();
         
-        List<Map<String, String>> childList1 = new ArrayList<Map<String, String>>();
-        Map<String, String> childMap1 = new HashMap<String, String>();
-        childMap1.put("helpContent", HELP_CONTENT_1);
-        childList1.add(childMap1);
-        childList.add(childList1);
+        for (String content : contents) {
+            List<Map<String, String>> childList = new ArrayList<Map<String, String>>();
+            Map<String, String> childMap = new HashMap<String, String>();
+            childMap.put("helpContent", content);
+            childList.add(childMap);
+            childrenList.add(childList);            
+        }
         
-        List<Map<String, String>> childList2 = new ArrayList<Map<String, String>>();
-        Map<String, String> childMap2 = new HashMap<String, String>();
-        childMap2.put("helpContent", HELP_CONTENT_2);
-        childList2.add(childMap2);
-        childList.add(childList2);
-        
-        return childList;
-        
+        return childrenList;
     }
 }
