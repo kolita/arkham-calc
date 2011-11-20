@@ -11,5 +11,6 @@ Project logo adapted from [http://www.fantasyflightgames.com/edge_news.asp?eidn=
 *Feedback?* arkhamcalc at gmail dot com
 
 = Details =
+  * [Help Help]
   * [VersionHistory Version History]
   * [Faqs FAQs]
