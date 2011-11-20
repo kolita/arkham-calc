@@ -29,6 +29,11 @@ import android.widget.SimpleExpandableListAdapter;
 
 public class ArkhamCalcHelp extends ExpandableListActivity
 {
+    private static final String HELP_TOPIC_1 = "Dice / Difficulty";
+    private static final String HELP_TOPIC_2 = "Chances";
+    private static final String HELP_CONTENT_1 = "Arkham Horror uses dice rolls to determine the outcome of a number of events in the game, including combat and skill checks. Each such event will have a stated difficulty, which is defined as the number of successed required to pass the event.";
+    private static final String HELP_CONTENT_2 = "For some events in Arkham Horror, it is possible to attempt the check more than one time. An example is combat - if a monster deals a one point of damage per round of combat, and your character currently has three stamina, you can attempt the combat check three times before your characters is knocked unconscious.";
+    
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -47,11 +52,11 @@ public class ArkhamCalcHelp extends ExpandableListActivity
         List<Map<String, String>> groupList = new ArrayList<Map<String, String>>();
         
         Map<String, String> groupMap1 = new HashMap<String, String>();
-        groupMap1.put("helpTopic", "Test 1");
+        groupMap1.put("helpTopic", HELP_TOPIC_1);
         groupList.add(groupMap1);
         
         Map<String, String> groupMap2 = new HashMap<String, String>();
-        groupMap2.put("helpTopic", "Test 2");
+        groupMap2.put("helpTopic", HELP_TOPIC_2);
         groupList.add(groupMap2);
         
         return groupList;
@@ -63,13 +68,13 @@ public class ArkhamCalcHelp extends ExpandableListActivity
         
         List<Map<String, String>> childList1 = new ArrayList<Map<String, String>>();
         Map<String, String> childMap1 = new HashMap<String, String>();
-        childMap1.put("helpContent", "Test Content 1");
+        childMap1.put("helpContent", HELP_CONTENT_1);
         childList1.add(childMap1);
         childList.add(childList1);
         
         List<Map<String, String>> childList2 = new ArrayList<Map<String, String>>();
         Map<String, String> childMap2 = new HashMap<String, String>();
-        childMap2.put("helpContent", "Test Content 2");
+        childMap2.put("helpContent", HELP_CONTENT_2);
         childList2.add(childMap2);
         childList.add(childList2);
         
