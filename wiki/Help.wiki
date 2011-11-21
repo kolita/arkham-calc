@@ -1,3 +1,4 @@
+#summary Documentation for ArkhamCalc
 = Help =
 
 == Dice / Difficulty ==
