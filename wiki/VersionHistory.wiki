@@ -4,9 +4,10 @@
 
 
   * *v1.4*, released TBA
-    * Moving unit tests out of distributed .apk
-    * Showing >99.9% instead of 100%
-    * Showing <0.1% instead of 0% in cases where it's not impossible to succeed
+    * Added help screen
+    * Moved unit tests out of distributed .apk
+    * Showed >99.9% instead of 100%
+    * Showed <0.1% instead of 0% in cases where it's not impossible to succeed
 
   * *v1.3*, released 9/18/11
     * Added Reroll Ones calc
@@ -16,7 +17,7 @@
 
   * *v1.2*, released 7/31/11
     * Added Mandy calc
-    * Increasing toughness slider to max 6
+    * Increased toughness slider to max 6
 
   * *v1.1*, released 7/10/11
     * Added Shotgun calc
