@@ -17,19 +17,27 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.*
 
 package com.kolita.arkhamcalc;
 
-public class MathHelper
+/**
+ * Static class that contains math functions not specific to Arkham Horror.
+ */
+public final class MathHelper
 {
-	/**
-	 * From n, choose r.  See http://en.wikipedia.org/wiki/Combination
-	 */
-	public static long nCr(int n, int r)
-	{
-		return factorial(n) / (factorial(n - r) * factorial(r));
-	}
-	
-	private static long factorial(int n)
-	{
-		if (n <= 1) return 1;
-		return n * factorial(n - 1);
-	}
+    private MathHelper()
+    {
+        //static helper class
+    }
+
+    /**
+     * From n, choose r.  See http://en.wikipedia.org/wiki/Combination
+     */
+    public static long nCr(int n, int r)
+    {
+        return factorial(n) / (factorial(n - r) * factorial(r));
+    }
+
+    private static long factorial(int n)
+    {
+        if (n <= 1) return 1;
+        return n * factorial(n - 1);
+    }
 }
