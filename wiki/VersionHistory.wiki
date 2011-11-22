@@ -3,7 +3,7 @@
 = Version History =
 
 
-  * *v1.4*, released TBA
+  * *v1.4*, released 11/21/11
     * Added help screen
     * Moved unit tests out of distributed .apk
     * Showed >99.9% instead of 100%
