@@ -21,3 +21,6 @@ Mandy Thompson is an investigator that has a unique ability not replicated by an
 
 == Reroll Ones ==
 Certain skills allow your character to, once per skill check, reroll all dice showing a result of 1.  These skills are Camouflage, Linguistics, Listen, Persuade, Run, and Wrestle, introduced in the Kingsport expansion; and Clairvoyant, introduced in the Miskatonic expansion.  Note that if the Chances slider is used, after the first Chance, all subsequent Chance calculations ignore the Reroll Ones skill, since these skills can only be used once per check.
+
+----
+Return to [ArkhamCalc Wiki Home]
