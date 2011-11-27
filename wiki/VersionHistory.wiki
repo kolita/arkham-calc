@@ -26,3 +26,6 @@
   * *v1.0*, released 7/4/11
     * Initial release
     * Number of Dice, Toughness; Blessed, Cursed
+
+----
+Return to [ArkhamCalc Wiki Home]
