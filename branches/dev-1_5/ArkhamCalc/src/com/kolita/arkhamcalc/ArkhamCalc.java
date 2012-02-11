@@ -1,5 +1,5 @@
 /*ArkhamCalc
-Copyright (C) 2011  Matthew Cole
+Copyright (C) 2012  Matthew Cole
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -230,7 +230,7 @@ public class ArkhamCalc extends Activity
     	if (mMenuItemShowAsAction != null) {
             MenuItem mi = menu.findItem(R.id.menu_item_help);
             try {
-                mMenuItemShowAsAction.invoke(mi, 1);
+                mMenuItemShowAsAction.invoke(mi, 1); //ifRoom
             } catch (IllegalArgumentException e) {
                 throw new RuntimeException(e);
             } catch (IllegalAccessException e) {
