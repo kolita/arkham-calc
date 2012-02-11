@@ -22,6 +22,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -39,9 +40,6 @@ public class ArkhamCalc extends Activity
     private static final int DICE_MAX = 16;
     private static final int TOUGH_MAX = 6;
     private static final int CHANCE_MAX = 5;
-
-    private static final int MENU_ITEM_FEEDBACK = 0;
-    private static final int MENU_ITEM_HELP = 1;
 
     private SeekBar mDiceSeekBar;
     private TextView mDiceValue;
@@ -207,29 +205,22 @@ public class ArkhamCalc extends Activity
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
-        super.onCreateOptionsMenu(menu);
-
-        MenuItem menuItemFeedback = menu.add(0, MENU_ITEM_FEEDBACK, MENU_ITEM_FEEDBACK, getResourceString(R.string.menu_item_string_feedback));
-        menuItemFeedback.setIcon(android.R.drawable.ic_dialog_email);
-
-        MenuItem menuItemHelp = menu.add(0, MENU_ITEM_HELP, MENU_ITEM_HELP, getResourceString(R.string.menu_item_string_help));
-        menuItemHelp.setIcon(android.R.drawable.ic_menu_help);
-
+    	MenuInflater inflater = getMenuInflater();
+    	inflater.inflate(R.menu.main_menu, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
+    public boolean onOptionsItemSelected(MenuItem item) {
         super.onOptionsItemSelected(item);
 
-        switch(item.getItemId()) {
-        case MENU_ITEM_FEEDBACK:
-            sendFeedbackEmail();
-            return true;
-        case MENU_ITEM_HELP:
-            startActivity(new Intent(this, ArkhamCalcHelp.class));
-            return true;			
+        switch (item.getItemId()) {
+            case R.id.menu_item_feedback:
+                sendFeedbackEmail();
+                return true;
+            case R.id.menu_item_help:
+                startActivity(new Intent(this, ArkhamCalcHelp.class));
+                return true;
         }
         return false;
     }
