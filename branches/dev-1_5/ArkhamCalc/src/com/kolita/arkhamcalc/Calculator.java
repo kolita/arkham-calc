@@ -30,6 +30,7 @@ public class Calculator
     private boolean mIsShotgun;
     private boolean mIsMandy;
     private boolean mIsRerollOnes;
+    private boolean mIsSkids;
     private boolean mIsAddOne;
 
     public boolean getIsShotgun()
@@ -60,6 +61,16 @@ public class Calculator
     public void setIsRerollOnes(boolean value)
     {
         mIsRerollOnes = value;
+    }
+    
+    public boolean getIsSkids()
+    {
+        return mIsSkids;
+    }
+    
+    public void setIsSkids(boolean value)
+    {
+        mIsSkids = value;
     }
 
     public boolean getIsAddOne()
@@ -101,8 +112,10 @@ public class Calculator
         double probRerollOnesSuccess = 0.0;
         if (mIsMandy) {
             probMandySuccess = getProbMandyReroll();
-        } else if (mIsRerollOnes) { //TODO: combine IsMandy and IsRerollones
-            probRerollOnesSuccess = getProbRerollOnes();
+        } else if (mIsRerollOnes) {
+            probRerollOnesSuccess = getProbRerollOnes(1);
+        } else if (mIsSkids) {
+            probRerollOnesSuccess = getProbRerollOnes(2);            
         }
 
         return probSuccessWithChances(probSuccess, probMandySuccess, probRerollOnesSuccess, numberOfChances);
@@ -136,7 +149,7 @@ public class Calculator
         return probSuccessMandy;
     }
 
-    private double getProbRerollOnes()
+    private double getProbRerollOnes(int numberOfOnesRerolls)
     {
         double probSuccessRerollOnes = 0.0;
         for (int sixSuccesses = 0; sixSuccesses < mTough; sixSuccesses++) {
@@ -148,7 +161,7 @@ public class Calculator
                 for (int ones = 1; ones <= mDice - nonSixSuccesses - sixSuccesses; ones++) {
                     double probExactOnes = getProbExactSuccess(mDice - nonSixSuccesses - sixSuccesses, ones, getProbOneWithoutSuccesses());
                     double probFirstRoll = probFirstRollSuccesses * probExactOnes;
-                    probSuccessRerollOnes += probFirstRoll * baseCalc(ones, mTough - sixSuccessValue - nonSixSuccesses);
+                    probSuccessRerollOnes += probFirstRoll * baseCalc(ones * numberOfOnesRerolls, mTough - sixSuccessValue - nonSixSuccesses);
                 }
             }
         }
