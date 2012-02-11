@@ -17,6 +17,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.*
 
 package com.kolita.arkhamcalc;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -56,6 +59,22 @@ public class ArkhamCalc extends Activity
     private TextView mResultTextView;
 
     private int mPreviousChanceValue;
+    private static Method mMenuItemShowAsAction;
+    
+    static
+    {
+        initCompatibility();
+    }
+    
+    private static void initCompatibility() throws SecurityException
+    {
+        try {
+            mMenuItemShowAsAction = MenuItem.class.getMethod("setShowAsAction", new Class[] { int.class });
+        } catch (NoSuchMethodException e) {
+            //occurs if android 1.x or 2.x
+            mMenuItemShowAsAction = null;
+        }
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -207,6 +226,20 @@ public class ArkhamCalc extends Activity
     {
     	MenuInflater inflater = getMenuInflater();
     	inflater.inflate(R.menu.main_menu, menu);
+    	
+    	if (mMenuItemShowAsAction != null) {
+            MenuItem mi = menu.findItem(R.id.menu_item_help);
+            try {
+                mMenuItemShowAsAction.invoke(mi, 1);
+            } catch (IllegalArgumentException e) {
+                throw new RuntimeException(e);
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException(e);
+            } catch (InvocationTargetException e) {
+                throw new RuntimeException(e);
+            }
+    	}
+    	
         return true;
     }
 
