@@ -42,7 +42,7 @@ public class ArkhamCalc extends Activity
 {
     private static final int DICE_MAX = 16;
     private static final int TOUGH_MAX = 6;
-    private static final int CHANCE_MAX = 5;
+    private static final int CHANCE_MAX = 6;
 
     private SeekBar mDiceSeekBar;
     private TextView mDiceValue;
