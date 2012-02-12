@@ -124,6 +124,13 @@
 						android:layout_marginTop="5px"
 						android:text="Add One" />
 				</TableRow>
+                <TableRow>
+                    <CheckBox android:id="@+id/skidsOnesCheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5px"
+                        android:text="Skids" />
+                </TableRow>				
 			</TableLayout>
 		</LinearLayout>
 	</ScrollView>

@@ -55,6 +55,7 @@ public class ArkhamCalc extends Activity
     private CheckBox mShotgunCheckBox;
     private CheckBox mMandyCheckBox;
     private CheckBox mRerollOnesCheckBox;
+    private CheckBox mSkidsOnesCheckBox;
     private CheckBox mAddOneCheckBox;
     private TextView mResultTextView;
 
@@ -95,6 +96,7 @@ public class ArkhamCalc extends Activity
         mShotgunCheckBox = (CheckBox) findViewById(R.id.shotgunCheckBox);
         mMandyCheckBox = (CheckBox) findViewById(R.id.mandyCheckBox);
         mRerollOnesCheckBox = (CheckBox) findViewById(R.id.rerollOnesCheckBox);
+        mSkidsOnesCheckBox = (CheckBox) findViewById(R.id.skidsOnesCheckBox);
         mAddOneCheckBox = (CheckBox) findViewById(R.id.addOneCheckBox);
         mResultTextView = (TextView) findViewById(R.id.resultTextView);
 
@@ -127,6 +129,7 @@ public class ArkhamCalc extends Activity
                 mPreviousChanceValue = getPreviousProgress();
                 handleOneTimeAbilityChancesChanged(mMandyCheckBox.isChecked(), R.string.mandy_chances_toast);
                 handleOneTimeAbilityChancesChanged(mRerollOnesCheckBox.isChecked(), R.string.reroll_ones_chances_toast);
+                handleOneTimeAbilityChancesChanged(mSkidsOnesCheckBox.isChecked(), R.string.reroll_ones_chances_toast); //TODO - custom toast
             }
         });
         mBlessCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -163,6 +166,7 @@ public class ArkhamCalc extends Activity
                 if (isChecked) {
                     //both Mandy and Reroll ones on at same time not supported
                     mRerollOnesCheckBox.setChecked(false);
+                    mSkidsOnesCheckBox.setChecked(false);
                 }
                 recalculate();
                 handleOneTimeAbilityOptionChanged(mMandyCheckBox.isChecked(), R.string.mandy_chances_toast);
@@ -174,11 +178,24 @@ public class ArkhamCalc extends Activity
                 if (isChecked) {
                     //both Mandy and Reroll ones on at same time not supported
                     mMandyCheckBox.setChecked(false);
+                    mSkidsOnesCheckBox.setChecked(false);
                 }
                 recalculate();
                 handleOneTimeAbilityOptionChanged(mRerollOnesCheckBox.isChecked(), R.string.reroll_ones_chances_toast);
             }
         });
+        mSkidsOnesCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    //both Mandy and Reroll ones on at same time not supported
+                    mMandyCheckBox.setChecked(false);
+                    mRerollOnesCheckBox.setChecked(false);
+                }
+                recalculate();
+                handleOneTimeAbilityOptionChanged(mSkidsOnesCheckBox.isChecked(), R.string.reroll_ones_chances_toast); //TODO - custom toast
+            }
+        });        
         mAddOneCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -196,6 +213,7 @@ public class ArkhamCalc extends Activity
             mShotgunCheckBox.setChecked(savedInstanceState.getBoolean("isShotgun"));
             mMandyCheckBox.setChecked(savedInstanceState.getBoolean("isMandy"));
             mRerollOnesCheckBox.setChecked(savedInstanceState.getBoolean("isRerollOnes"));
+            mSkidsOnesCheckBox.setChecked(savedInstanceState.getBoolean("isSkidsOnes"));
             mAddOneCheckBox.setChecked(savedInstanceState.getBoolean("isAddOne"));
         }
 
@@ -218,6 +236,7 @@ public class ArkhamCalc extends Activity
         outState.putBoolean("isShotgun", mShotgunCheckBox.isChecked());
         outState.putBoolean("isMandy", mMandyCheckBox.isChecked());
         outState.putBoolean("isRerollOnes", mRerollOnesCheckBox.isChecked());
+        outState.putBoolean("isSkidsOnes", mSkidsOnesCheckBox.isChecked());
         outState.putBoolean("isAddOne", mAddOneCheckBox.isChecked());
     }
 
@@ -282,6 +301,7 @@ public class ArkhamCalc extends Activity
         boolean isShotgun = mShotgunCheckBox.isChecked();
         boolean isMandy = mMandyCheckBox.isChecked();
         boolean isRerollOnes = mRerollOnesCheckBox.isChecked();
+        boolean isSkidsOnes = mSkidsOnesCheckBox.isChecked();
         boolean isAddOne = mAddOneCheckBox.isChecked();
 
         //calculate
@@ -289,6 +309,7 @@ public class ArkhamCalc extends Activity
         calculator.setIsShotgun(isShotgun);
         calculator.setIsMandy(isMandy);
         calculator.setIsRerollOnes(isRerollOnes);
+        calculator.setIsSkids(isSkidsOnes);
         calculator.setIsAddOne(isAddOne);
         double result = calculator.calculate(chance);
 
