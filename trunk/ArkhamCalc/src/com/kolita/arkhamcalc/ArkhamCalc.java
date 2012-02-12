@@ -1,5 +1,5 @@
 /*ArkhamCalc
-Copyright (C) 2011  Matthew Cole
+Copyright (C) 2012  Matthew Cole
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -17,11 +17,15 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.*
 
 package com.kolita.arkhamcalc;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -38,10 +42,7 @@ public class ArkhamCalc extends Activity
 {
     private static final int DICE_MAX = 16;
     private static final int TOUGH_MAX = 6;
-    private static final int CHANCE_MAX = 5;
-
-    private static final int MENU_ITEM_FEEDBACK = 0;
-    private static final int MENU_ITEM_HELP = 1;
+    private static final int CHANCE_MAX = 6;
 
     private SeekBar mDiceSeekBar;
     private TextView mDiceValue;
@@ -54,10 +55,27 @@ public class ArkhamCalc extends Activity
     private CheckBox mShotgunCheckBox;
     private CheckBox mMandyCheckBox;
     private CheckBox mRerollOnesCheckBox;
+    private CheckBox mSkidsOnesCheckBox;
     private CheckBox mAddOneCheckBox;
     private TextView mResultTextView;
 
     private int mPreviousChanceValue;
+    private static Method mMenuItemShowAsAction;
+    
+    static
+    {
+        initCompatibility();
+    }
+    
+    private static void initCompatibility() throws SecurityException
+    {
+        try {
+            mMenuItemShowAsAction = MenuItem.class.getMethod("setShowAsAction", new Class[] { int.class });
+        } catch (NoSuchMethodException e) {
+            //occurs if android 1.x or 2.x
+            mMenuItemShowAsAction = null;
+        }
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -78,6 +96,7 @@ public class ArkhamCalc extends Activity
         mShotgunCheckBox = (CheckBox) findViewById(R.id.shotgunCheckBox);
         mMandyCheckBox = (CheckBox) findViewById(R.id.mandyCheckBox);
         mRerollOnesCheckBox = (CheckBox) findViewById(R.id.rerollOnesCheckBox);
+        mSkidsOnesCheckBox = (CheckBox) findViewById(R.id.skidsOnesCheckBox);
         mAddOneCheckBox = (CheckBox) findViewById(R.id.addOneCheckBox);
         mResultTextView = (TextView) findViewById(R.id.resultTextView);
 
@@ -110,6 +129,7 @@ public class ArkhamCalc extends Activity
                 mPreviousChanceValue = getPreviousProgress();
                 handleOneTimeAbilityChancesChanged(mMandyCheckBox.isChecked(), R.string.mandy_chances_toast);
                 handleOneTimeAbilityChancesChanged(mRerollOnesCheckBox.isChecked(), R.string.reroll_ones_chances_toast);
+                handleOneTimeAbilityChancesChanged(mSkidsOnesCheckBox.isChecked(), R.string.skids_chances_toast);
             }
         });
         mBlessCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -146,6 +166,7 @@ public class ArkhamCalc extends Activity
                 if (isChecked) {
                     //both Mandy and Reroll ones on at same time not supported
                     mRerollOnesCheckBox.setChecked(false);
+                    mSkidsOnesCheckBox.setChecked(false);
                 }
                 recalculate();
                 handleOneTimeAbilityOptionChanged(mMandyCheckBox.isChecked(), R.string.mandy_chances_toast);
@@ -157,11 +178,24 @@ public class ArkhamCalc extends Activity
                 if (isChecked) {
                     //both Mandy and Reroll ones on at same time not supported
                     mMandyCheckBox.setChecked(false);
+                    mSkidsOnesCheckBox.setChecked(false);
                 }
                 recalculate();
                 handleOneTimeAbilityOptionChanged(mRerollOnesCheckBox.isChecked(), R.string.reroll_ones_chances_toast);
             }
         });
+        mSkidsOnesCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    //both Mandy and Reroll ones on at same time not supported
+                    mMandyCheckBox.setChecked(false);
+                    mRerollOnesCheckBox.setChecked(false);
+                }
+                recalculate();
+                handleOneTimeAbilityOptionChanged(mSkidsOnesCheckBox.isChecked(), R.string.skids_chances_toast);
+            }
+        });        
         mAddOneCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -179,6 +213,7 @@ public class ArkhamCalc extends Activity
             mShotgunCheckBox.setChecked(savedInstanceState.getBoolean("isShotgun"));
             mMandyCheckBox.setChecked(savedInstanceState.getBoolean("isMandy"));
             mRerollOnesCheckBox.setChecked(savedInstanceState.getBoolean("isRerollOnes"));
+            mSkidsOnesCheckBox.setChecked(savedInstanceState.getBoolean("isSkidsOnes"));
             mAddOneCheckBox.setChecked(savedInstanceState.getBoolean("isAddOne"));
         }
 
@@ -201,35 +236,43 @@ public class ArkhamCalc extends Activity
         outState.putBoolean("isShotgun", mShotgunCheckBox.isChecked());
         outState.putBoolean("isMandy", mMandyCheckBox.isChecked());
         outState.putBoolean("isRerollOnes", mRerollOnesCheckBox.isChecked());
+        outState.putBoolean("isSkidsOnes", mSkidsOnesCheckBox.isChecked());
         outState.putBoolean("isAddOne", mAddOneCheckBox.isChecked());
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
-        super.onCreateOptionsMenu(menu);
-
-        MenuItem menuItemFeedback = menu.add(0, MENU_ITEM_FEEDBACK, MENU_ITEM_FEEDBACK, getResourceString(R.string.menu_item_string_feedback));
-        menuItemFeedback.setIcon(android.R.drawable.ic_dialog_email);
-
-        MenuItem menuItemHelp = menu.add(0, MENU_ITEM_HELP, MENU_ITEM_HELP, getResourceString(R.string.menu_item_string_help));
-        menuItemHelp.setIcon(android.R.drawable.ic_menu_help);
-
+    	MenuInflater inflater = getMenuInflater();
+    	inflater.inflate(R.menu.main_menu, menu);
+    	
+    	if (mMenuItemShowAsAction != null) {
+            MenuItem mi = menu.findItem(R.id.menu_item_help);
+            try {
+                mMenuItemShowAsAction.invoke(mi, 1); //ifRoom
+            } catch (IllegalArgumentException e) {
+                throw new RuntimeException(e);
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException(e);
+            } catch (InvocationTargetException e) {
+                throw new RuntimeException(e);
+            }
+    	}
+    	
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
+    public boolean onOptionsItemSelected(MenuItem item) {
         super.onOptionsItemSelected(item);
 
-        switch(item.getItemId()) {
-        case MENU_ITEM_FEEDBACK:
-            sendFeedbackEmail();
-            return true;
-        case MENU_ITEM_HELP:
-            startActivity(new Intent(this, ArkhamCalcHelp.class));
-            return true;			
+        switch (item.getItemId()) {
+            case R.id.menu_item_feedback:
+                sendFeedbackEmail();
+                return true;
+            case R.id.menu_item_help:
+                startActivity(new Intent(this, ArkhamCalcHelp.class));
+                return true;
         }
         return false;
     }
@@ -258,6 +301,7 @@ public class ArkhamCalc extends Activity
         boolean isShotgun = mShotgunCheckBox.isChecked();
         boolean isMandy = mMandyCheckBox.isChecked();
         boolean isRerollOnes = mRerollOnesCheckBox.isChecked();
+        boolean isSkidsOnes = mSkidsOnesCheckBox.isChecked();
         boolean isAddOne = mAddOneCheckBox.isChecked();
 
         //calculate
@@ -265,6 +309,7 @@ public class ArkhamCalc extends Activity
         calculator.setIsShotgun(isShotgun);
         calculator.setIsMandy(isMandy);
         calculator.setIsRerollOnes(isRerollOnes);
+        calculator.setIsSkids(isSkidsOnes);
         calculator.setIsAddOne(isAddOne);
         double result = calculator.calculate(chance);
 
