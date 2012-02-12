@@ -129,7 +129,7 @@ public class ArkhamCalc extends Activity
                 mPreviousChanceValue = getPreviousProgress();
                 handleOneTimeAbilityChancesChanged(mMandyCheckBox.isChecked(), R.string.mandy_chances_toast);
                 handleOneTimeAbilityChancesChanged(mRerollOnesCheckBox.isChecked(), R.string.reroll_ones_chances_toast);
-                handleOneTimeAbilityChancesChanged(mSkidsOnesCheckBox.isChecked(), R.string.reroll_ones_chances_toast); //TODO - custom toast
+                handleOneTimeAbilityChancesChanged(mSkidsOnesCheckBox.isChecked(), R.string.skids_chances_toast);
             }
         });
         mBlessCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -193,7 +193,7 @@ public class ArkhamCalc extends Activity
                     mRerollOnesCheckBox.setChecked(false);
                 }
                 recalculate();
-                handleOneTimeAbilityOptionChanged(mSkidsOnesCheckBox.isChecked(), R.string.reroll_ones_chances_toast); //TODO - custom toast
+                handleOneTimeAbilityOptionChanged(mSkidsOnesCheckBox.isChecked(), R.string.skids_chances_toast);
             }
         });        
         mAddOneCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {

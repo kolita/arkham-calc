@@ -5,9 +5,10 @@
 	android:layout_height="fill_parent">
 	<TextView android:id="@+id/resultTextView"
 		style="@style/ResultFont"
-		android:layout_width="wrap_content"
+		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:layout_margin="8px"
+		android:gravity="center_horizontal"
 		android:text="100%" />
 	<ScrollView android:layout_width="fill_parent"
 		android:layout_height="fill_parent">
