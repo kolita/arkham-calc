@@ -100,26 +100,24 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:layout_marginTop="10px"
-						android:layout_weight="0.5"
 						android:text="Blessed" />
 					<CheckBox android:id="@+id/curseCheckBox"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content" 
 						android:layout_marginTop="10px"
-						android:layout_weight="0.5"
 						android:text="Cursed" />			
 				</TableRow>
 				<TableRow>
-					<CheckBox android:id="@+id/shotgunCheckBox"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_marginTop="5px"
-						android:text="Shotgun" />
 					<CheckBox android:id="@+id/mandyCheckBox"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:layout_marginTop="5px"
-						android:text="Mandy" />					
+						android:text="Mandy" />
+                    <CheckBox android:id="@+id/skidsOnesCheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5px"
+                        android:text="Skids" />
 				</TableRow>
 				<TableRow>
 					<CheckBox android:id="@+id/rerollOnesCheckBox"
@@ -134,11 +132,11 @@
 						android:text="Add One" />
 				</TableRow>
                 <TableRow>
-                    <CheckBox android:id="@+id/skidsOnesCheckBox"
+                    <CheckBox android:id="@+id/shotgunCheckBox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5px"
-                        android:text="Skids" />
+                        android:text="Shotgun" />
                 </TableRow>				
 			</TableLayout>
 		</LinearLayout>
