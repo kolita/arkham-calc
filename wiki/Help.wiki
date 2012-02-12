@@ -22,5 +22,8 @@ Mandy Thompson is an investigator that has a unique ability not replicated by an
 == Reroll Ones ==
 Certain skills allow your character to, once per skill check, reroll all dice showing a result of 1.  These skills are Camouflage, Linguistics, Listen, Persuade, Run, and Wrestle, introduced in the Kingsport expansion; and Clairvoyant, introduced in the Miskatonic expansion.  Note that if the Chances slider is used, after the first Chance, all subsequent Chance calculations ignore the Reroll Ones skill, since these skills can only be used once per check.
 
+== Skids ==
+Skids O'Toole is an investigator from the Innsmouth Horror expansion with the following ability: once per skill check, he is allowed to roll two additional dice for each 1 he originally rolls. For example, if Skids has a skill check with two Difficulty and he is only allowed to roll one Dice, if he rolls a 1, he is then able to use his ability and roll two additional Dice to attempt to get two successes. Note that if the Chances slider is used, after the first Chance, all subsequent Chance calculations ignore Skids' ability, since it can only be used once per check.
+
 ----
 Return to [ArkhamCalc Wiki Home]
