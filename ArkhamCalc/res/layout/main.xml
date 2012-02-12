@@ -2,12 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical" 
 	android:layout_width="fill_parent"
-	android:layout_height="fill_parent">
+	android:layout_height="fill_parent"
+	android:layout_marginLeft="8px"
+	android:layout_marginRight="8px">
 	<TextView android:id="@+id/resultTextView"
 		style="@style/ResultFont"
-		android:layout_width="wrap_content"
+		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:layout_margin="8px"
+		android:gravity="center_horizontal"
 		android:text="100%" />
 	<ScrollView android:layout_width="fill_parent"
 		android:layout_height="fill_parent">
@@ -32,8 +35,10 @@
 				<TextView android:id="@+id/diceValue"
 					android:layout_width="wrap_content" 
 					android:layout_height="wrap_content"
-					android:layout_marginLeft="4px"
+					android:layout_marginLeft="8px"
 					android:layout_marginRight="8px"
+					android:minWidth="25px"
+					android:gravity="right"
 					android:text="Test"
 					android:layout_gravity="center_vertical" />
 			</LinearLayout>
@@ -55,8 +60,10 @@
 				<TextView android:id="@+id/toughValue"
 					android:layout_width="wrap_content" 
 					android:layout_height="wrap_content"
-					android:layout_marginLeft="4px"
+					android:layout_marginLeft="8px"
 					android:layout_marginRight="8px"
+                    android:minWidth="25px"
+                    android:gravity="right"
 					android:text="Test"
 					android:layout_gravity="center_vertical" />
 			</LinearLayout>
@@ -78,8 +85,10 @@
 				<TextView android:id="@+id/chanceValue"
 					android:layout_width="wrap_content" 
 					android:layout_height="wrap_content"
-					android:layout_marginLeft="4px"
+					android:layout_marginLeft="8px"
 					android:layout_marginRight="8px"
+                    android:minWidth="25px"
+                    android:gravity="right"
 					android:text="Test"
 					android:layout_gravity="center_vertical" />
 			</LinearLayout>
@@ -91,26 +100,24 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:layout_marginTop="10px"
-						android:layout_weight="0.5"
 						android:text="Blessed" />
 					<CheckBox android:id="@+id/curseCheckBox"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content" 
 						android:layout_marginTop="10px"
-						android:layout_weight="0.5"
 						android:text="Cursed" />			
 				</TableRow>
 				<TableRow>
-					<CheckBox android:id="@+id/shotgunCheckBox"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_marginTop="5px"
-						android:text="Shotgun" />
 					<CheckBox android:id="@+id/mandyCheckBox"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:layout_marginTop="5px"
-						android:text="Mandy" />					
+						android:text="Mandy" />
+                    <CheckBox android:id="@+id/skidsOnesCheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5px"
+                        android:text="Skids" />
 				</TableRow>
 				<TableRow>
 					<CheckBox android:id="@+id/rerollOnesCheckBox"
@@ -124,6 +131,13 @@
 						android:layout_marginTop="5px"
 						android:text="Add One" />
 				</TableRow>
+                <TableRow>
+                    <CheckBox android:id="@+id/shotgunCheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5px"
+                        android:text="Shotgun" />
+                </TableRow>				
 			</TableLayout>
 		</LinearLayout>
 	</ScrollView>
