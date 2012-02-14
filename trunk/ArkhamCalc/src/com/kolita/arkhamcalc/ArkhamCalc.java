@@ -60,6 +60,7 @@ public class ArkhamCalc extends Activity
     private TextView mResultTextView;
 
     private int mPreviousChanceValue;
+    private boolean mRestoringState;
     private static Method mMenuItemShowAsAction;
     
     static
@@ -209,9 +210,14 @@ public class ArkhamCalc extends Activity
     }
 
     @Override
-    protected void onSaveInstanceState(Bundle outState)
+    protected void onRestoreInstanceState(Bundle inState)
     {
-        super.onSaveInstanceState(outState);
+        mRestoringState = true;
+        try {
+            super.onRestoreInstanceState(inState);
+        } finally {
+            mRestoringState = false;
+        }
     }
 
     @Override
@@ -307,10 +313,12 @@ public class ArkhamCalc extends Activity
     /**
      * Show a message to the user regarding this one-time ability if user has more than one chance.
      * Case where ability has been changed; check number of chances.
+     * Do not show a message if we are in the process of restoring state (because we already showed
+     * the message before state was saved).
      */
     private void handleOneTimeAbilityOptionChanged(boolean isAbilityChecked, int resourceStringId)
     {
-        if (isAbilityChecked && mChanceSeekBar.getProgress() > 0) {
+        if (isAbilityChecked && mChanceSeekBar.getProgress() > 0 && !mRestoringState) {
             showToast(getResourceString(resourceStringId));
         }
     }
@@ -319,10 +327,12 @@ public class ArkhamCalc extends Activity
      * Show a message to the user regarding this one-time ability if user has more than one chance.
      * Case where number of chances have changed; check if ability is selected and chances have changed
      * from one to > 1.
+     * Do not show a message if we are in the process of restoring state (because we already showed
+     * the message before state was saved).
      */
     private void handleOneTimeAbilityChancesChanged(boolean isAbilityChecked, int resourceStringId)
     {
-        if (isAbilityChecked && mPreviousChanceValue <= 0 && mChanceSeekBar.getProgress() > 0) {
+        if (isAbilityChecked && mPreviousChanceValue <= 0 && mChanceSeekBar.getProgress() > 0 && !mRestoringState) {
             showToast(getResourceString(resourceStringId));
         }
     }
