@@ -201,21 +201,7 @@ public class ArkhamCalc extends Activity
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 recalculate();
             }
-        });    	
-
-        //restore state (if saved)
-        if(savedInstanceState != null){
-            mDiceSeekBar.setProgress(savedInstanceState.getInt("dice"));
-            mToughSeekBar.setProgress(savedInstanceState.getInt("tough"));
-            mChanceSeekBar.setProgress(savedInstanceState.getInt("chance"));
-            mBlessCheckBox.setChecked(savedInstanceState.getBoolean("isBlessed"));
-            mCurseCheckBox.setChecked(savedInstanceState.getBoolean("isCursed"));
-            mShotgunCheckBox.setChecked(savedInstanceState.getBoolean("isShotgun"));
-            mMandyCheckBox.setChecked(savedInstanceState.getBoolean("isMandy"));
-            mRerollOnesCheckBox.setChecked(savedInstanceState.getBoolean("isRerollOnes"));
-            mSkidsOnesCheckBox.setChecked(savedInstanceState.getBoolean("isSkidsOnes"));
-            mAddOneCheckBox.setChecked(savedInstanceState.getBoolean("isAddOne"));
-        }
+        });
 
         //first calculation
         setSeekBarValues();
@@ -226,18 +212,6 @@ public class ArkhamCalc extends Activity
     protected void onSaveInstanceState(Bundle outState)
     {
         super.onSaveInstanceState(outState);
-
-        //save state
-        outState.putInt("dice", mDiceSeekBar.getProgress());
-        outState.putInt("tough", mToughSeekBar.getProgress());
-        outState.putInt("chance", mChanceSeekBar.getProgress());
-        outState.putBoolean("isBlessed", mBlessCheckBox.isChecked());
-        outState.putBoolean("isCursed", mCurseCheckBox.isChecked());
-        outState.putBoolean("isShotgun", mShotgunCheckBox.isChecked());
-        outState.putBoolean("isMandy", mMandyCheckBox.isChecked());
-        outState.putBoolean("isRerollOnes", mRerollOnesCheckBox.isChecked());
-        outState.putBoolean("isSkidsOnes", mSkidsOnesCheckBox.isChecked());
-        outState.putBoolean("isAddOne", mAddOneCheckBox.isChecked());
     }
 
     @Override
