@@ -8,6 +8,7 @@
     * Added Skids calc
     * Increased chances slider to max 6
     * Updating layout for improved usability
+    * Fixing orientation toast bug
 
   * *v1.4*, released 11/21/11
     * Added help screen
