@@ -3,7 +3,7 @@
 = Version History =
 
 
-  * *v1.5*, released TBD
+  * *v1.5*, released 2/15/12
     * Added support for Android 4 (Ice Cream Sandwich)
     * Added Skids calc
     * Increased chances slider to max 6
