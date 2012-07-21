@@ -1,0 +1,3811 @@
+_____________________________________________________________________
++ Program class: com/kolita/arkhamcalc/ArkhamCalc
+  Superclass:    android/app/Activity
+  Major version: 0x32
+  Minor version: 0x0
+  Access flags:  0x21
+    = public class com.kolita.arkhamcalc.ArkhamCalc extends android.app.Activity
+
+Interfaces (count = 0):
+
+Constant Pool (count = 339):
+  + Integer [2130903042]
+  + Integer [2131099655]
+  + Integer [2131099656]
+  + Integer [2131099657]
+  + Integer [2131165184]
+  + Integer [2131230722]
+  + Integer [2131230723]
+  + Integer [2131230724]
+  + Integer [2131230725]
+  + Integer [2131230726]
+  + Integer [2131230727]
+  + Integer [2131230728]
+  + Integer [2131230729]
+  + Integer [2131230730]
+  + Integer [2131230731]
+  + Integer [2131230732]
+  + Integer [2131230733]
+  + Integer [2131230734]
+  + Integer [2131230735]
+  + Integer [2131230737]
+  + String [android.intent.action.SEND]
+  + String [android.intent.extra.EMAIL]
+  + String [android.intent.extra.SUBJECT]
+  + String [plain/text]
+  + String [setShowAsAction]
+  + Class [android/app/Activity]
+  + Class [android/content/ActivityNotFoundException]
+  + Class [android/content/Intent]
+  + Class [android/content/res/Resources]
+  + Class [android/view/Menu]
+  + Class [android/view/MenuInflater]
+  + Class [android/view/MenuItem]
+  + Class [android/widget/CheckBox]
+  + Class [android/widget/SeekBar]
+  + Class [android/widget/TextView]
+  + Class [android/widget/Toast]
+  + Class [com/kolita/arkhamcalc/ArkhamCalc]
+  + Class [com/kolita/arkhamcalc/ArkhamCalcHelp]
+  + Class [com/kolita/arkhamcalc/a]
+  + Class [com/kolita/arkhamcalc/b]
+  + Class [com/kolita/arkhamcalc/c]
+  + Class [com/kolita/arkhamcalc/d]
+  + Class [com/kolita/arkhamcalc/e]
+  + Class [com/kolita/arkhamcalc/f]
+  + Class [com/kolita/arkhamcalc/g]
+  + Class [com/kolita/arkhamcalc/h]
+  + Class [com/kolita/arkhamcalc/i]
+  + Class [com/kolita/arkhamcalc/j]
+  + Class [com/kolita/arkhamcalc/l]
+  + Class [com/kolita/arkhamcalc/m]
+  + Class [java/lang/Class]
+  + Class [java/lang/IllegalAccessException]
+  + Class [java/lang/IllegalArgumentException]
+  + Class [java/lang/Integer]
+  + Class [java/lang/NoSuchMethodException]
+  + Class [java/lang/Object]
+  + Class [java/lang/RuntimeException]
+  + Class [java/lang/String]
+  + Class [java/lang/Throwable]
+  + Class [java/lang/reflect/InvocationTargetException]
+  + Class [java/lang/reflect/Method]
+  + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.a Landroid/widget/SeekBar;]
+  + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.b Landroid/widget/TextView;]
+  + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.c Landroid/widget/SeekBar;]
+  + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.d Landroid/widget/TextView;]
+  + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.e Landroid/widget/SeekBar;]
+  + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.f Landroid/widget/TextView;]
+  + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.g Landroid/widget/CheckBox;]
+  + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.h Landroid/widget/CheckBox;]
+  + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.i Landroid/widget/CheckBox;]
+  + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.j Landroid/widget/CheckBox;]
+  + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.k Landroid/widget/CheckBox;]
+  + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.l Landroid/widget/CheckBox;]
+  + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.m Landroid/widget/CheckBox;]
+  + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.n Landroid/widget/TextView;]
+  + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.o I]
+  + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.p Z]
+  + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.q Ljava/lang/reflect/Method;]
+  + Fieldref [java/lang/Integer.TYPE Ljava/lang/Class;]
+  + Methodref [android/app/Activity.<init> ()V]
+  + Methodref [android/app/Activity.onCreate (Landroid/os/Bundle;)V]
+  + Methodref [android/app/Activity.onOptionsItemSelected (Landroid/view/MenuItem;)Z]
+  + Methodref [android/app/Activity.onRestoreInstanceState (Landroid/os/Bundle;)V]
+  + Methodref [android/content/Intent.<init> (Landroid/content/Context;Ljava/lang/Class;)V]
+  + Methodref [android/content/Intent.<init> (Ljava/lang/String;)V]
+  + Methodref [android/content/Intent.putExtra (Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;]
+  + Methodref [android/content/Intent.putExtra (Ljava/lang/String;[Ljava/lang/String;)Landroid/content/Intent;]
+  + Methodref [android/content/Intent.setType (Ljava/lang/String;)Landroid/content/Intent;]
+  + Methodref [android/content/res/Resources.getString (I)Ljava/lang/String;]
+  + Methodref [android/view/MenuInflater.inflate (ILandroid/view/Menu;)V]
+  + Methodref [android/widget/CheckBox.isChecked ()Z]
+  + Methodref [android/widget/CheckBox.setOnCheckedChangeListener (Landroid/widget/CompoundButton$OnCheckedChangeListener;)V]
+  + Methodref [android/widget/SeekBar.getProgress ()I]
+  + Methodref [android/widget/SeekBar.setMax (I)V]
+  + Methodref [android/widget/SeekBar.setOnSeekBarChangeListener (Landroid/widget/SeekBar$OnSeekBarChangeListener;)V]
+  + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
+  + Methodref [android/widget/TextView.setTextColor (I)V]
+  + Methodref [android/widget/Toast.makeText (Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;]
+  + Methodref [android/widget/Toast.show ()V]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.a ()V]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.a (I)Ljava/lang/String;]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.a (Ljava/lang/String;)V]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.b ()V]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.findViewById (I)Landroid/view/View;]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.getBaseContext ()Landroid/content/Context;]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.getMenuInflater ()Landroid/view/MenuInflater;]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.getResources ()Landroid/content/res/Resources;]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.setContentView (I)V]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.startActivity (Landroid/content/Intent;)V]
+  + Methodref [com/kolita/arkhamcalc/a.<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Methodref [com/kolita/arkhamcalc/b.<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Methodref [com/kolita/arkhamcalc/c.<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Methodref [com/kolita/arkhamcalc/d.<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Methodref [com/kolita/arkhamcalc/e.<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Methodref [com/kolita/arkhamcalc/f.<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Methodref [com/kolita/arkhamcalc/g.<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Methodref [com/kolita/arkhamcalc/h.<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Methodref [com/kolita/arkhamcalc/i.<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Methodref [com/kolita/arkhamcalc/j.<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Methodref [com/kolita/arkhamcalc/l.<init> (D)V]
+  + Methodref [com/kolita/arkhamcalc/l.a ()I]
+  + Methodref [com/kolita/arkhamcalc/l.b ()Ljava/lang/String;]
+  + Methodref [com/kolita/arkhamcalc/m.<init> (IIZZ)V]
+  + Methodref [com/kolita/arkhamcalc/m.a (I)D]
+  + Methodref [com/kolita/arkhamcalc/m.a (Z)V]
+  + Methodref [com/kolita/arkhamcalc/m.b (Z)V]
+  + Methodref [com/kolita/arkhamcalc/m.c (Z)V]
+  + Methodref [com/kolita/arkhamcalc/m.d (Z)V]
+  + Methodref [com/kolita/arkhamcalc/m.e (Z)V]
+  + Methodref [java/lang/Class.getMethod (Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;]
+  + Methodref [java/lang/Integer.toString (I)Ljava/lang/String;]
+  + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
+  + Methodref [java/lang/RuntimeException.<init> (Ljava/lang/Throwable;)V]
+  + Methodref [java/lang/reflect/Method.invoke (Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;]
+  + InterfaceMethodref [android/view/Menu.findItem (I)Landroid/view/MenuItem;]
+  + InterfaceMethodref [android/view/MenuItem.getItemId ()I]
+  + NameAndType [<init> ()V]
+  + NameAndType [<init> (D)V]
+  + NameAndType [<init> (IIZZ)V]
+  + NameAndType [<init> (Landroid/content/Context;Ljava/lang/Class;)V]
+  + NameAndType [<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + NameAndType [<init> (Ljava/lang/String;)V]
+  + NameAndType [<init> (Ljava/lang/Throwable;)V]
+  + NameAndType [TYPE Ljava/lang/Class;]
+  + NameAndType [a ()I]
+  + NameAndType [a ()V]
+  + NameAndType [a (I)D]
+  + NameAndType [a (I)Ljava/lang/String;]
+  + NameAndType [a (Ljava/lang/String;)V]
+  + NameAndType [a (Z)V]
+  + NameAndType [a Landroid/widget/SeekBar;]
+  + NameAndType [b ()Ljava/lang/String;]
+  + NameAndType [b ()V]
+  + NameAndType [b (Z)V]
+  + NameAndType [b Landroid/widget/TextView;]
+  + NameAndType [c (Z)V]
+  + NameAndType [c Landroid/widget/SeekBar;]
+  + NameAndType [d (Z)V]
+  + NameAndType [d Landroid/widget/TextView;]
+  + NameAndType [e (Z)V]
+  + NameAndType [e Landroid/widget/SeekBar;]
+  + NameAndType [f Landroid/widget/TextView;]
+  + NameAndType [findItem (I)Landroid/view/MenuItem;]
+  + NameAndType [findViewById (I)Landroid/view/View;]
+  + NameAndType [g Landroid/widget/CheckBox;]
+  + NameAndType [getBaseContext ()Landroid/content/Context;]
+  + NameAndType [getItemId ()I]
+  + NameAndType [getMenuInflater ()Landroid/view/MenuInflater;]
+  + NameAndType [getMethod (Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;]
+  + NameAndType [getProgress ()I]
+  + NameAndType [getResources ()Landroid/content/res/Resources;]
+  + NameAndType [getString (I)Ljava/lang/String;]
+  + NameAndType [h Landroid/widget/CheckBox;]
+  + NameAndType [i Landroid/widget/CheckBox;]
+  + NameAndType [inflate (ILandroid/view/Menu;)V]
+  + NameAndType [invoke (Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;]
+  + NameAndType [isChecked ()Z]
+  + NameAndType [j Landroid/widget/CheckBox;]
+  + NameAndType [k Landroid/widget/CheckBox;]
+  + NameAndType [l Landroid/widget/CheckBox;]
+  + NameAndType [m Landroid/widget/CheckBox;]
+  + NameAndType [makeText (Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;]
+  + NameAndType [n Landroid/widget/TextView;]
+  + NameAndType [o I]
+  + NameAndType [onCreate (Landroid/os/Bundle;)V]
+  + NameAndType [onOptionsItemSelected (Landroid/view/MenuItem;)Z]
+  + NameAndType [onRestoreInstanceState (Landroid/os/Bundle;)V]
+  + NameAndType [p Z]
+  + NameAndType [putExtra (Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;]
+  + NameAndType [putExtra (Ljava/lang/String;[Ljava/lang/String;)Landroid/content/Intent;]
+  + NameAndType [q Ljava/lang/reflect/Method;]
+  + NameAndType [setContentView (I)V]
+  + NameAndType [setMax (I)V]
+  + NameAndType [setOnCheckedChangeListener (Landroid/widget/CompoundButton$OnCheckedChangeListener;)V]
+  + NameAndType [setOnSeekBarChangeListener (Landroid/widget/SeekBar$OnSeekBarChangeListener;)V]
+  + NameAndType [setText (Ljava/lang/CharSequence;)V]
+  + NameAndType [setTextColor (I)V]
+  + NameAndType [setType (Ljava/lang/String;)Landroid/content/Intent;]
+  + NameAndType [show ()V]
+  + NameAndType [startActivity (Landroid/content/Intent;)V]
+  + NameAndType [toString (I)Ljava/lang/String;]
+  + NameAndType [valueOf (I)Ljava/lang/Integer;]
+  + Utf8 [()I]
+  + Utf8 [()Landroid/content/Context;]
+  + Utf8 [()Landroid/content/res/Resources;]
+  + Utf8 [()Landroid/view/MenuInflater;]
+  + Utf8 [()Ljava/lang/String;]
+  + Utf8 [()V]
+  + Utf8 [()Z]
+  + Utf8 [(D)V]
+  + Utf8 [(I)D]
+  + Utf8 [(I)Landroid/view/MenuItem;]
+  + Utf8 [(I)Landroid/view/View;]
+  + Utf8 [(I)Ljava/lang/Integer;]
+  + Utf8 [(I)Ljava/lang/String;]
+  + Utf8 [(I)V]
+  + Utf8 [(IIZZ)V]
+  + Utf8 [(ILandroid/view/Menu;)V]
+  + Utf8 [(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;]
+  + Utf8 [(Landroid/content/Context;Ljava/lang/Class;)V]
+  + Utf8 [(Landroid/content/Intent;)V]
+  + Utf8 [(Landroid/os/Bundle;)V]
+  + Utf8 [(Landroid/view/Menu;)Z]
+  + Utf8 [(Landroid/view/MenuItem;)Z]
+  + Utf8 [(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V]
+  + Utf8 [(Landroid/widget/SeekBar$OnSeekBarChangeListener;)V]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;I)V]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;ZI)V]
+  + Utf8 [(Ljava/lang/CharSequence;)V]
+  + Utf8 [(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;]
+  + Utf8 [(Ljava/lang/String;)Landroid/content/Intent;]
+  + Utf8 [(Ljava/lang/String;)V]
+  + Utf8 [(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;]
+  + Utf8 [(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;]
+  + Utf8 [(Ljava/lang/String;[Ljava/lang/String;)Landroid/content/Intent;]
+  + Utf8 [(Ljava/lang/Throwable;)V]
+  + Utf8 [(Z)V]
+  + Utf8 [<clinit>]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [I]
+  + Utf8 [Landroid/widget/CheckBox;]
+  + Utf8 [Landroid/widget/SeekBar;]
+  + Utf8 [Landroid/widget/TextView;]
+  + Utf8 [Ljava/lang/Class;]
+  + Utf8 [Ljava/lang/reflect/Method;]
+  + Utf8 [StackMapTable]
+  + Utf8 [TYPE]
+  + Utf8 [Z]
+  + Utf8 [a]
+  + Utf8 [android.intent.action.SEND]
+  + Utf8 [android.intent.extra.EMAIL]
+  + Utf8 [android.intent.extra.SUBJECT]
+  + Utf8 [android/app/Activity]
+  + Utf8 [android/content/ActivityNotFoundException]
+  + Utf8 [android/content/Intent]
+  + Utf8 [android/content/res/Resources]
+  + Utf8 [android/view/Menu]
+  + Utf8 [android/view/MenuInflater]
+  + Utf8 [android/view/MenuItem]
+  + Utf8 [android/widget/CheckBox]
+  + Utf8 [android/widget/SeekBar]
+  + Utf8 [android/widget/TextView]
+  + Utf8 [android/widget/Toast]
+  + Utf8 [b]
+  + Utf8 [c]
+  + Utf8 [com/kolita/arkhamcalc/ArkhamCalc]
+  + Utf8 [com/kolita/arkhamcalc/ArkhamCalcHelp]
+  + Utf8 [com/kolita/arkhamcalc/a]
+  + Utf8 [com/kolita/arkhamcalc/b]
+  + Utf8 [com/kolita/arkhamcalc/c]
+  + Utf8 [com/kolita/arkhamcalc/d]
+  + Utf8 [com/kolita/arkhamcalc/e]
+  + Utf8 [com/kolita/arkhamcalc/f]
+  + Utf8 [com/kolita/arkhamcalc/g]
+  + Utf8 [com/kolita/arkhamcalc/h]
+  + Utf8 [com/kolita/arkhamcalc/i]
+  + Utf8 [com/kolita/arkhamcalc/j]
+  + Utf8 [com/kolita/arkhamcalc/l]
+  + Utf8 [com/kolita/arkhamcalc/m]
+  + Utf8 [d]
+  + Utf8 [e]
+  + Utf8 [f]
+  + Utf8 [findItem]
+  + Utf8 [findViewById]
+  + Utf8 [g]
+  + Utf8 [getBaseContext]
+  + Utf8 [getItemId]
+  + Utf8 [getMenuInflater]
+  + Utf8 [getMethod]
+  + Utf8 [getProgress]
+  + Utf8 [getResources]
+  + Utf8 [getString]
+  + Utf8 [h]
+  + Utf8 [i]
+  + Utf8 [inflate]
+  + Utf8 [invoke]
+  + Utf8 [isChecked]
+  + Utf8 [j]
+  + Utf8 [java/lang/Class]
+  + Utf8 [java/lang/IllegalAccessException]
+  + Utf8 [java/lang/IllegalArgumentException]
+  + Utf8 [java/lang/Integer]
+  + Utf8 [java/lang/NoSuchMethodException]
+  + Utf8 [java/lang/Object]
+  + Utf8 [java/lang/RuntimeException]
+  + Utf8 [java/lang/String]
+  + Utf8 [java/lang/Throwable]
+  + Utf8 [java/lang/reflect/InvocationTargetException]
+  + Utf8 [java/lang/reflect/Method]
+  + Utf8 [k]
+  + Utf8 [l]
+  + Utf8 [m]
+  + Utf8 [makeText]
+  + Utf8 [n]
+  + Utf8 [o]
+  + Utf8 [onCreate]
+  + Utf8 [onCreateOptionsMenu]
+  + Utf8 [onOptionsItemSelected]
+  + Utf8 [onRestoreInstanceState]
+  + Utf8 [p]
+  + Utf8 [plain/text]
+  + Utf8 [putExtra]
+  + Utf8 [q]
+  + Utf8 [setContentView]
+  + Utf8 [setMax]
+  + Utf8 [setOnCheckedChangeListener]
+  + Utf8 [setOnSeekBarChangeListener]
+  + Utf8 [setShowAsAction]
+  + Utf8 [setText]
+  + Utf8 [setTextColor]
+  + Utf8 [setType]
+  + Utf8 [show]
+  + Utf8 [startActivity]
+  + Utf8 [toString]
+  + Utf8 [valueOf]
+
+Fields (count = 17):
+  + Field:        a Landroid/widget/SeekBar;
+    Access flags: 0x2
+      = private android.widget.SeekBar a
+  + Field:        b Landroid/widget/TextView;
+    Access flags: 0x2
+      = private android.widget.TextView b
+  + Field:        c Landroid/widget/SeekBar;
+    Access flags: 0x2
+      = private android.widget.SeekBar c
+  + Field:        d Landroid/widget/TextView;
+    Access flags: 0x2
+      = private android.widget.TextView d
+  + Field:        e Landroid/widget/SeekBar;
+    Access flags: 0x2
+      = private android.widget.SeekBar e
+  + Field:        f Landroid/widget/TextView;
+    Access flags: 0x2
+      = private android.widget.TextView f
+  + Field:        g Landroid/widget/CheckBox;
+    Access flags: 0x2
+      = private android.widget.CheckBox g
+  + Field:        h Landroid/widget/CheckBox;
+    Access flags: 0x2
+      = private android.widget.CheckBox h
+  + Field:        i Landroid/widget/CheckBox;
+    Access flags: 0x2
+      = private android.widget.CheckBox i
+  + Field:        j Landroid/widget/CheckBox;
+    Access flags: 0x2
+      = private android.widget.CheckBox j
+  + Field:        k Landroid/widget/CheckBox;
+    Access flags: 0x2
+      = private android.widget.CheckBox k
+  + Field:        l Landroid/widget/CheckBox;
+    Access flags: 0x2
+      = private android.widget.CheckBox l
+  + Field:        m Landroid/widget/CheckBox;
+    Access flags: 0x2
+      = private android.widget.CheckBox m
+  + Field:        n Landroid/widget/TextView;
+    Access flags: 0x2
+      = private android.widget.TextView n
+  + Field:        o I
+    Access flags: 0x2
+      = private int o
+  + Field:        p Z
+    Access flags: 0x2
+      = private boolean p
+  + Field:        q Ljava/lang/reflect/Method;
+    Access flags: 0xa
+      = private static java.lang.reflect.Method q
+
+Methods (count = 20):
+  - Method:       <clinit>()V
+    Access flags: 0x8
+      = static void <clinit>()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 27, locals = 0, stack = 6):
+      [0] ldc #32
+        + Class [android/view/MenuItem]
+      [2] ldc #25
+        + String [setShowAsAction]
+      [4] iconst_1
+      [5] anewarray #51
+        + Class [java/lang/Class]
+      [8] dup
+      [9] iconst_0
+      [10] getstatic #79
+        + Fieldref [java/lang/Integer.TYPE Ljava/lang/Class;]
+      [13] aastore
+      [14] invokevirtual #130
+        + Methodref [java/lang/Class.getMethod (Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;]
+      [17] putstatic #78
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.q Ljava/lang/reflect/Method;]
+      [20] return
+      [21] pop
+      [22] aconst_null
+      [23] putstatic #78
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.q Ljava/lang/reflect/Method;]
+      [26] return
+      Code attribute exceptions (count = 1):
+      - ExceptionInfo (0 -> 20: 21):
+      + Class [java/lang/NoSuchMethodException]
+      Code attribute attributes (attribute count = 0):
+  - Method:       <init>()V
+    Access flags: 0x1
+      = public ArkhamCalc()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] invokespecial #80
+        + Methodref [android/app/Activity.<init> ()V]
+      [4] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onCreate(Landroid/os/Bundle;)V
+    Access flags: 0x1
+      = public void onCreate(android.os.Bundle)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 377, locals = 2, stack = 4):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] invokespecial #81
+        + Methodref [android/app/Activity.onCreate (Landroid/os/Bundle;)V]
+      [5] aload_0 v0
+      [6] ldc #1
+        + Integer [2130903042]
+      [8] invokevirtual #108
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.setContentView (I)V]
+      [11] aload_0 v0
+      [12] aload_0 v0
+      [13] ldc #7
+        + Integer [2131230723]
+      [15] invokevirtual #104
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.findViewById (I)Landroid/view/View;]
+      [18] checkcast #34
+        + Class [android/widget/SeekBar]
+      [21] putfield #62
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.a Landroid/widget/SeekBar;]
+      [24] aload_0 v0
+      [25] aload_0 v0
+      [26] ldc #8
+        + Integer [2131230724]
+      [28] invokevirtual #104
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.findViewById (I)Landroid/view/View;]
+      [31] checkcast #35
+        + Class [android/widget/TextView]
+      [34] putfield #63
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.b Landroid/widget/TextView;]
+      [37] aload_0 v0
+      [38] aload_0 v0
+      [39] ldc #9
+        + Integer [2131230725]
+      [41] invokevirtual #104
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.findViewById (I)Landroid/view/View;]
+      [44] checkcast #34
+        + Class [android/widget/SeekBar]
+      [47] putfield #64
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.c Landroid/widget/SeekBar;]
+      [50] aload_0 v0
+      [51] aload_0 v0
+      [52] ldc #10
+        + Integer [2131230726]
+      [54] invokevirtual #104
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.findViewById (I)Landroid/view/View;]
+      [57] checkcast #35
+        + Class [android/widget/TextView]
+      [60] putfield #65
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.d Landroid/widget/TextView;]
+      [63] aload_0 v0
+      [64] aload_0 v0
+      [65] ldc #11
+        + Integer [2131230727]
+      [67] invokevirtual #104
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.findViewById (I)Landroid/view/View;]
+      [70] checkcast #34
+        + Class [android/widget/SeekBar]
+      [73] putfield #66
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.e Landroid/widget/SeekBar;]
+      [76] aload_0 v0
+      [77] aload_0 v0
+      [78] ldc #12
+        + Integer [2131230728]
+      [80] invokevirtual #104
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.findViewById (I)Landroid/view/View;]
+      [83] checkcast #35
+        + Class [android/widget/TextView]
+      [86] putfield #67
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.f Landroid/widget/TextView;]
+      [89] aload_0 v0
+      [90] aload_0 v0
+      [91] ldc #13
+        + Integer [2131230729]
+      [93] invokevirtual #104
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.findViewById (I)Landroid/view/View;]
+      [96] checkcast #33
+        + Class [android/widget/CheckBox]
+      [99] putfield #68
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.g Landroid/widget/CheckBox;]
+      [102] aload_0 v0
+      [103] aload_0 v0
+      [104] ldc #14
+        + Integer [2131230730]
+      [106] invokevirtual #104
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.findViewById (I)Landroid/view/View;]
+      [109] checkcast #33
+        + Class [android/widget/CheckBox]
+      [112] putfield #69
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.h Landroid/widget/CheckBox;]
+      [115] aload_0 v0
+      [116] aload_0 v0
+      [117] ldc #19
+        + Integer [2131230735]
+      [119] invokevirtual #104
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.findViewById (I)Landroid/view/View;]
+      [122] checkcast #33
+        + Class [android/widget/CheckBox]
+      [125] putfield #70
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.i Landroid/widget/CheckBox;]
+      [128] aload_0 v0
+      [129] aload_0 v0
+      [130] ldc #15
+        + Integer [2131230731]
+      [132] invokevirtual #104
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.findViewById (I)Landroid/view/View;]
+      [135] checkcast #33
+        + Class [android/widget/CheckBox]
+      [138] putfield #71
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.j Landroid/widget/CheckBox;]
+      [141] aload_0 v0
+      [142] aload_0 v0
+      [143] ldc #17
+        + Integer [2131230733]
+      [145] invokevirtual #104
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.findViewById (I)Landroid/view/View;]
+      [148] checkcast #33
+        + Class [android/widget/CheckBox]
+      [151] putfield #72
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.k Landroid/widget/CheckBox;]
+      [154] aload_0 v0
+      [155] aload_0 v0
+      [156] ldc #16
+        + Integer [2131230732]
+      [158] invokevirtual #104
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.findViewById (I)Landroid/view/View;]
+      [161] checkcast #33
+        + Class [android/widget/CheckBox]
+      [164] putfield #73
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.l Landroid/widget/CheckBox;]
+      [167] aload_0 v0
+      [168] aload_0 v0
+      [169] ldc #18
+        + Integer [2131230734]
+      [171] invokevirtual #104
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.findViewById (I)Landroid/view/View;]
+      [174] checkcast #33
+        + Class [android/widget/CheckBox]
+      [177] putfield #74
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.m Landroid/widget/CheckBox;]
+      [180] aload_0 v0
+      [181] aload_0 v0
+      [182] ldc #6
+        + Integer [2131230722]
+      [184] invokevirtual #104
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.findViewById (I)Landroid/view/View;]
+      [187] checkcast #35
+        + Class [android/widget/TextView]
+      [190] putfield #75
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.n Landroid/widget/TextView;]
+      [193] aload_0 v0
+      [194] getfield #62
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.a Landroid/widget/SeekBar;]
+      [197] bipush 15
+      [199] invokevirtual #94
+        + Methodref [android/widget/SeekBar.setMax (I)V]
+      [202] aload_0 v0
+      [203] getfield #64
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.c Landroid/widget/SeekBar;]
+      [206] iconst_5
+      [207] invokevirtual #94
+        + Methodref [android/widget/SeekBar.setMax (I)V]
+      [210] aload_0 v0
+      [211] getfield #66
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.e Landroid/widget/SeekBar;]
+      [214] iconst_5
+      [215] invokevirtual #94
+        + Methodref [android/widget/SeekBar.setMax (I)V]
+      [218] aload_0 v0
+      [219] getfield #62
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.a Landroid/widget/SeekBar;]
+      [222] new #39
+        + Class [com/kolita/arkhamcalc/a]
+      [225] dup
+      [226] aload_0 v0
+      [227] invokespecial #110
+        + Methodref [com/kolita/arkhamcalc/a.<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+      [230] invokevirtual #95
+        + Methodref [android/widget/SeekBar.setOnSeekBarChangeListener (Landroid/widget/SeekBar$OnSeekBarChangeListener;)V]
+      [233] aload_0 v0
+      [234] getfield #64
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.c Landroid/widget/SeekBar;]
+      [237] new #41
+        + Class [com/kolita/arkhamcalc/c]
+      [240] dup
+      [241] aload_0 v0
+      [242] invokespecial #112
+        + Methodref [com/kolita/arkhamcalc/c.<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+      [245] invokevirtual #95
+        + Methodref [android/widget/SeekBar.setOnSeekBarChangeListener (Landroid/widget/SeekBar$OnSeekBarChangeListener;)V]
+      [248] aload_0 v0
+      [249] getfield #66
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.e Landroid/widget/SeekBar;]
+      [252] new #42
+        + Class [com/kolita/arkhamcalc/d]
+      [255] dup
+      [256] aload_0 v0
+      [257] invokespecial #113
+        + Methodref [com/kolita/arkhamcalc/d.<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+      [260] invokevirtual #95
+        + Methodref [android/widget/SeekBar.setOnSeekBarChangeListener (Landroid/widget/SeekBar$OnSeekBarChangeListener;)V]
+      [263] aload_0 v0
+      [264] getfield #68
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.g Landroid/widget/CheckBox;]
+      [267] new #43
+        + Class [com/kolita/arkhamcalc/e]
+      [270] dup
+      [271] aload_0 v0
+      [272] invokespecial #114
+        + Methodref [com/kolita/arkhamcalc/e.<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+      [275] invokevirtual #92
+        + Methodref [android/widget/CheckBox.setOnCheckedChangeListener (Landroid/widget/CompoundButton$OnCheckedChangeListener;)V]
+      [278] aload_0 v0
+      [279] getfield #69
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.h Landroid/widget/CheckBox;]
+      [282] new #44
+        + Class [com/kolita/arkhamcalc/f]
+      [285] dup
+      [286] aload_0 v0
+      [287] invokespecial #115
+        + Methodref [com/kolita/arkhamcalc/f.<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+      [290] invokevirtual #92
+        + Methodref [android/widget/CheckBox.setOnCheckedChangeListener (Landroid/widget/CompoundButton$OnCheckedChangeListener;)V]
+      [293] aload_0 v0
+      [294] getfield #70
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.i Landroid/widget/CheckBox;]
+      [297] new #45
+        + Class [com/kolita/arkhamcalc/g]
+      [300] dup
+      [301] aload_0 v0
+      [302] invokespecial #116
+        + Methodref [com/kolita/arkhamcalc/g.<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+      [305] invokevirtual #92
+        + Methodref [android/widget/CheckBox.setOnCheckedChangeListener (Landroid/widget/CompoundButton$OnCheckedChangeListener;)V]
+      [308] aload_0 v0
+      [309] getfield #71
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.j Landroid/widget/CheckBox;]
+      [312] new #46
+        + Class [com/kolita/arkhamcalc/h]
+      [315] dup
+      [316] aload_0 v0
+      [317] invokespecial #117
+        + Methodref [com/kolita/arkhamcalc/h.<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+      [320] invokevirtual #92
+        + Methodref [android/widget/CheckBox.setOnCheckedChangeListener (Landroid/widget/CompoundButton$OnCheckedChangeListener;)V]
+      [323] aload_0 v0
+      [324] getfield #72
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.k Landroid/widget/CheckBox;]
+      [327] new #47
+        + Class [com/kolita/arkhamcalc/i]
+      [330] dup
+      [331] aload_0 v0
+      [332] invokespecial #118
+        + Methodref [com/kolita/arkhamcalc/i.<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+      [335] invokevirtual #92
+        + Methodref [android/widget/CheckBox.setOnCheckedChangeListener (Landroid/widget/CompoundButton$OnCheckedChangeListener;)V]
+      [338] aload_0 v0
+      [339] getfield #73
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.l Landroid/widget/CheckBox;]
+      [342] new #48
+        + Class [com/kolita/arkhamcalc/j]
+      [345] dup
+      [346] aload_0 v0
+      [347] invokespecial #119
+        + Methodref [com/kolita/arkhamcalc/j.<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+      [350] invokevirtual #92
+        + Methodref [android/widget/CheckBox.setOnCheckedChangeListener (Landroid/widget/CompoundButton$OnCheckedChangeListener;)V]
+      [353] aload_0 v0
+      [354] getfield #74
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.m Landroid/widget/CheckBox;]
+      [357] new #40
+        + Class [com/kolita/arkhamcalc/b]
+      [360] dup
+      [361] aload_0 v0
+      [362] invokespecial #111
+        + Methodref [com/kolita/arkhamcalc/b.<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+      [365] invokevirtual #92
+        + Methodref [android/widget/CheckBox.setOnCheckedChangeListener (Landroid/widget/CompoundButton$OnCheckedChangeListener;)V]
+      [368] aload_0 v0
+      [369] invokespecial #103
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.b ()V]
+      [372] aload_0 v0
+      [373] invokespecial #100
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.a ()V]
+      [376] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onRestoreInstanceState(Landroid/os/Bundle;)V
+    Access flags: 0x4
+      = protected void onRestoreInstanceState(android.os.Bundle)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 27, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] iconst_1
+      [2] putfield #77
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.p Z]
+      [5] aload_0 v0
+      [6] aload_1 v1
+      [7] invokespecial #83
+        + Methodref [android/app/Activity.onRestoreInstanceState (Landroid/os/Bundle;)V]
+      [10] goto +11 (target=21)
+      [13] astore_1 v1
+      [14] aload_0 v0
+      [15] iconst_0
+      [16] putfield #77
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.p Z]
+      [19] aload_1 v1
+      [20] athrow
+      [21] aload_0 v0
+      [22] iconst_0
+      [23] putfield #77
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.p Z]
+      [26] return
+      Code attribute exceptions (count = 1):
+      - ExceptionInfo (5 -> 13: 13):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 2):
+        - [13] Var: ..., Stack: [a:java/lang/Throwable]
+        - [21] Var: ..., Stack: (empty)
+  + Method:       onCreateOptionsMenu(Landroid/view/Menu;)Z
+    Access flags: 0x1
+      = public boolean onCreateOptionsMenu(android.view.Menu)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 79, locals = 2, stack = 6):
+      [0] aload_0 v0
+      [1] invokevirtual #106
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.getMenuInflater ()Landroid/view/MenuInflater;]
+      [4] ldc #5
+        + Integer [2131165184]
+      [6] aload_1 v1
+      [7] invokevirtual #90
+        + Methodref [android/view/MenuInflater.inflate (ILandroid/view/Menu;)V]
+      [10] getstatic #78
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.q Ljava/lang/reflect/Method;]
+      [13] ifnull +64 (target=77)
+      [16] aload_1 v1
+      [17] ldc #20
+        + Integer [2131230737]
+      [19] invokeinterface #135
+        + InterfaceMethodref [android/view/Menu.findItem (I)Landroid/view/MenuItem;]
+      [24] astore_1 v1
+      [25] getstatic #78
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.q Ljava/lang/reflect/Method;]
+      [28] aload_1 v1
+      [29] iconst_1
+      [30] anewarray #56
+        + Class [java/lang/Object]
+      [33] dup
+      [34] iconst_0
+      [35] iconst_1
+      [36] invokestatic #132
+        + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
+      [39] aastore
+      [40] invokevirtual #134
+        + Methodref [java/lang/reflect/Method.invoke (Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;]
+      [43] pop
+      [44] goto +33 (target=77)
+      [47] astore_1 v1
+      [48] new #57
+        + Class [java/lang/RuntimeException]
+      [51] dup
+      [52] aload_1 v1
+      [53] invokespecial #133
+        + Methodref [java/lang/RuntimeException.<init> (Ljava/lang/Throwable;)V]
+      [56] athrow
+      [57] astore_1 v1
+      [58] new #57
+        + Class [java/lang/RuntimeException]
+      [61] dup
+      [62] aload_1 v1
+      [63] invokespecial #133
+        + Methodref [java/lang/RuntimeException.<init> (Ljava/lang/Throwable;)V]
+      [66] athrow
+      [67] astore_1 v1
+      [68] new #57
+        + Class [java/lang/RuntimeException]
+      [71] dup
+      [72] aload_1 v1
+      [73] invokespecial #133
+        + Methodref [java/lang/RuntimeException.<init> (Ljava/lang/Throwable;)V]
+      [76] athrow
+      [77] iconst_1
+      [78] ireturn
+      Code attribute exceptions (count = 3):
+      - ExceptionInfo (25 -> 44: 47):
+      + Class [java/lang/IllegalArgumentException]
+      - ExceptionInfo (25 -> 44: 57):
+      + Class [java/lang/IllegalAccessException]
+      - ExceptionInfo (25 -> 44: 67):
+      + Class [java/lang/reflect/InvocationTargetException]
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 4):
+        - [47] Var: [a:com/kolita/arkhamcalc/ArkhamCalc][a:android/view/Menu][a:android/view/MenuInflater][a:android/view/MenuItem], Stack: [a:java/lang/IllegalArgumentException]
+        - [57] Var: ..., Stack: [a:java/lang/IllegalAccessException]
+        - [67] Var: ..., Stack: [a:java/lang/reflect/InvocationTargetException]
+        - [77] Var: -1, Stack: (empty)
+  + Method:       onOptionsItemSelected(Landroid/view/MenuItem;)Z
+    Access flags: 0x1
+      = public boolean onOptionsItemSelected(android.view.MenuItem)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 127, locals = 3, stack = 7):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] invokespecial #82
+        + Methodref [android/app/Activity.onOptionsItemSelected (Landroid/view/MenuItem;)Z]
+      [5] pop
+      [6] aload_1 v1
+      [7] invokeinterface #136
+        + InterfaceMethodref [android/view/MenuItem.getItemId ()I]
+      [12] tableswitch (2 offsets, default=113) (target=125)
+        2131230736: offset = 24, target = 36
+        2131230737: offset = 97, target = 109
+        default: offset = 113, target = 125
+      [36] aload_0 v0
+      [37] astore_1 v1
+      [38] new #28
+        + Class [android/content/Intent]
+      [41] dup
+      [42] ldc #21
+        + String [android.intent.action.SEND]
+      [44] invokespecial #85
+        + Methodref [android/content/Intent.<init> (Ljava/lang/String;)V]
+      [47] dup
+      [48] astore_2 v2
+      [49] ldc #22
+        + String [android.intent.extra.EMAIL]
+      [51] iconst_1
+      [52] anewarray #58
+        + Class [java/lang/String]
+      [55] dup
+      [56] iconst_0
+      [57] aload_1 v1
+      [58] ldc #2
+        + Integer [2131099655]
+      [60] invokespecial #101
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.a (I)Ljava/lang/String;]
+      [63] aastore
+      [64] invokevirtual #87
+        + Methodref [android/content/Intent.putExtra (Ljava/lang/String;[Ljava/lang/String;)Landroid/content/Intent;]
+      [67] pop
+      [68] aload_2 v2
+      [69] ldc #23
+        + String [android.intent.extra.SUBJECT]
+      [71] aload_1 v1
+      [72] ldc #3
+        + Integer [2131099656]
+      [74] invokespecial #101
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.a (I)Ljava/lang/String;]
+      [77] invokevirtual #86
+        + Methodref [android/content/Intent.putExtra (Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;]
+      [80] pop
+      [81] aload_2 v2
+      [82] ldc #24
+        + String [plain/text]
+      [84] invokevirtual #88
+        + Methodref [android/content/Intent.setType (Ljava/lang/String;)Landroid/content/Intent;]
+      [87] pop
+      [88] aload_1 v1
+      [89] aload_2 v2
+      [90] invokevirtual #109
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.startActivity (Landroid/content/Intent;)V]
+      [93] goto +14 (target=107)
+      [96] pop
+      [97] aload_1 v1
+      [98] aload_1 v1
+      [99] ldc #4
+        + Integer [2131099657]
+      [101] invokespecial #101
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.a (I)Ljava/lang/String;]
+      [104] invokespecial #102
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.a (Ljava/lang/String;)V]
+      [107] iconst_1
+      [108] ireturn
+      [109] aload_0 v0
+      [110] new #28
+        + Class [android/content/Intent]
+      [113] dup
+      [114] aload_0 v0
+      [115] ldc #38
+        + Class [com/kolita/arkhamcalc/ArkhamCalcHelp]
+      [117] invokespecial #84
+        + Methodref [android/content/Intent.<init> (Landroid/content/Context;Ljava/lang/Class;)V]
+      [120] invokevirtual #109
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.startActivity (Landroid/content/Intent;)V]
+      [123] iconst_1
+      [124] ireturn
+      [125] iconst_0
+      [126] ireturn
+      Code attribute exceptions (count = 1):
+      - ExceptionInfo (88 -> 93: 96):
+      + Class [android/content/ActivityNotFoundException]
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 3):
+        - [36] Var: ..., Stack: (empty)
+        - [109] Var: ..., Stack: (empty)
+        - [125] Var: ..., Stack: (empty)
+  + Method:       a()V
+    Access flags: 0x2
+      = private void a()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 181, locals = 13, stack = 6):
+      [0] aload_0 v0
+      [1] getfield #62
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.a Landroid/widget/SeekBar;]
+      [4] invokevirtual #93
+        + Methodref [android/widget/SeekBar.getProgress ()I]
+      [7] iconst_1
+      [8] iadd
+      [9] istore_1 v1
+      [10] aload_0 v0
+      [11] getfield #64
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.c Landroid/widget/SeekBar;]
+      [14] invokevirtual #93
+        + Methodref [android/widget/SeekBar.getProgress ()I]
+      [17] iconst_1
+      [18] iadd
+      [19] istore_2 v2
+      [20] aload_0 v0
+      [21] getfield #66
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.e Landroid/widget/SeekBar;]
+      [24] invokevirtual #93
+        + Methodref [android/widget/SeekBar.getProgress ()I]
+      [27] iconst_1
+      [28] iadd
+      [29] istore_3 v3
+      [30] aload_0 v0
+      [31] getfield #68
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.g Landroid/widget/CheckBox;]
+      [34] invokevirtual #91
+        + Methodref [android/widget/CheckBox.isChecked ()Z]
+      [37] istore v4
+      [39] aload_0 v0
+      [40] getfield #69
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.h Landroid/widget/CheckBox;]
+      [43] invokevirtual #91
+        + Methodref [android/widget/CheckBox.isChecked ()Z]
+      [46] istore v5
+      [48] aload_0 v0
+      [49] getfield #70
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.i Landroid/widget/CheckBox;]
+      [52] invokevirtual #91
+        + Methodref [android/widget/CheckBox.isChecked ()Z]
+      [55] istore v6
+      [57] aload_0 v0
+      [58] getfield #71
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.j Landroid/widget/CheckBox;]
+      [61] invokevirtual #91
+        + Methodref [android/widget/CheckBox.isChecked ()Z]
+      [64] istore v7
+      [66] aload_0 v0
+      [67] getfield #72
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.k Landroid/widget/CheckBox;]
+      [70] invokevirtual #91
+        + Methodref [android/widget/CheckBox.isChecked ()Z]
+      [73] istore v8
+      [75] aload_0 v0
+      [76] getfield #73
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.l Landroid/widget/CheckBox;]
+      [79] invokevirtual #91
+        + Methodref [android/widget/CheckBox.isChecked ()Z]
+      [82] istore v9
+      [84] aload_0 v0
+      [85] getfield #74
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.m Landroid/widget/CheckBox;]
+      [88] invokevirtual #91
+        + Methodref [android/widget/CheckBox.isChecked ()Z]
+      [91] istore v10
+      [93] new #50
+        + Class [com/kolita/arkhamcalc/m]
+      [96] dup
+      [97] iload_1 v1
+      [98] iload_2 v2
+      [99] iload v4
+      [101] iload v5
+      [103] invokespecial #123
+        + Methodref [com/kolita/arkhamcalc/m.<init> (IIZZ)V]
+      [106] dup
+      [107] astore_1 v1
+      [108] iload v6
+      [110] invokevirtual #125
+        + Methodref [com/kolita/arkhamcalc/m.a (Z)V]
+      [113] aload_1 v1
+      [114] iload v7
+      [116] invokevirtual #126
+        + Methodref [com/kolita/arkhamcalc/m.b (Z)V]
+      [119] aload_1 v1
+      [120] iload v8
+      [122] invokevirtual #127
+        + Methodref [com/kolita/arkhamcalc/m.c (Z)V]
+      [125] aload_1 v1
+      [126] iload v9
+      [128] invokevirtual #128
+        + Methodref [com/kolita/arkhamcalc/m.d (Z)V]
+      [131] aload_1 v1
+      [132] iload v10
+      [134] invokevirtual #129
+        + Methodref [com/kolita/arkhamcalc/m.e (Z)V]
+      [137] aload_1 v1
+      [138] iload_3 v3
+      [139] invokevirtual #124
+        + Methodref [com/kolita/arkhamcalc/m.a (I)D]
+      [142] dstore v11
+      [144] new #49
+        + Class [com/kolita/arkhamcalc/l]
+      [147] dup
+      [148] dload v11
+      [150] invokespecial #120
+        + Methodref [com/kolita/arkhamcalc/l.<init> (D)V]
+      [153] dup
+      [154] astore_1 v1
+      [155] invokevirtual #122
+        + Methodref [com/kolita/arkhamcalc/l.b ()Ljava/lang/String;]
+      [158] astore_2 v2
+      [159] aload_0 v0
+      [160] getfield #75
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.n Landroid/widget/TextView;]
+      [163] aload_2 v2
+      [164] invokevirtual #96
+        + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
+      [167] aload_1 v1
+      [168] invokevirtual #121
+        + Methodref [com/kolita/arkhamcalc/l.a ()I]
+      [171] istore_1 v1
+      [172] aload_0 v0
+      [173] getfield #75
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.n Landroid/widget/TextView;]
+      [176] iload_1 v1
+      [177] invokevirtual #97
+        + Methodref [android/widget/TextView.setTextColor (I)V]
+      [180] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       b()V
+    Access flags: 0x2
+      = private void b()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 58, locals = 1, stack = 3):
+      [0] aload_0 v0
+      [1] getfield #63
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.b Landroid/widget/TextView;]
+      [4] aload_0 v0
+      [5] getfield #62
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.a Landroid/widget/SeekBar;]
+      [8] invokevirtual #93
+        + Methodref [android/widget/SeekBar.getProgress ()I]
+      [11] iconst_1
+      [12] iadd
+      [13] invokestatic #131
+        + Methodref [java/lang/Integer.toString (I)Ljava/lang/String;]
+      [16] invokevirtual #96
+        + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
+      [19] aload_0 v0
+      [20] getfield #65
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.d Landroid/widget/TextView;]
+      [23] aload_0 v0
+      [24] getfield #64
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.c Landroid/widget/SeekBar;]
+      [27] invokevirtual #93
+        + Methodref [android/widget/SeekBar.getProgress ()I]
+      [30] iconst_1
+      [31] iadd
+      [32] invokestatic #131
+        + Methodref [java/lang/Integer.toString (I)Ljava/lang/String;]
+      [35] invokevirtual #96
+        + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
+      [38] aload_0 v0
+      [39] getfield #67
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.f Landroid/widget/TextView;]
+      [42] aload_0 v0
+      [43] getfield #66
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.e Landroid/widget/SeekBar;]
+      [46] invokevirtual #93
+        + Methodref [android/widget/SeekBar.getProgress ()I]
+      [49] iconst_1
+      [50] iadd
+      [51] invokestatic #131
+        + Methodref [java/lang/Integer.toString (I)Ljava/lang/String;]
+      [54] invokevirtual #96
+        + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
+      [57] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Ljava/lang/String;)V
+    Access flags: 0x2
+      = private void a(java.lang.String)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 13, locals = 2, stack = 3):
+      [0] aload_0 v0
+      [1] invokevirtual #105
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.getBaseContext ()Landroid/content/Context;]
+      [4] aload_1 v1
+      [5] iconst_1
+      [6] invokestatic #98
+        + Methodref [android/widget/Toast.makeText (Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;]
+      [9] invokevirtual #99
+        + Methodref [android/widget/Toast.show ()V]
+      [12] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(I)Ljava/lang/String;
+    Access flags: 0x2
+      = private java.lang.String a(int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 9, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] invokevirtual #107
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.getResources ()Landroid/content/res/Resources;]
+      [4] iload_1 v1
+      [5] invokevirtual #89
+        + Methodref [android/content/res/Resources.getString (I)Ljava/lang/String;]
+      [8] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Lcom/kolita/arkhamcalc/ArkhamCalc;)V
+    Access flags: 0x1008
+      = static synthetic void a(com.kolita.arkhamcalc.ArkhamCalc)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] invokespecial #103
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.b ()V]
+      [4] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       b(Lcom/kolita/arkhamcalc/ArkhamCalc;)V
+    Access flags: 0x1008
+      = static synthetic void b(com.kolita.arkhamcalc.ArkhamCalc)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] invokespecial #100
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.a ()V]
+      [4] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Lcom/kolita/arkhamcalc/ArkhamCalc;I)V
+    Access flags: 0x1008
+      = static synthetic void a(com.kolita.arkhamcalc.ArkhamCalc,int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 6, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] iload_1 v1
+      [2] putfield #76
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.o I]
+      [5] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       c(Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;
+    Access flags: 0x1008
+      = static synthetic android.widget.CheckBox c(com.kolita.arkhamcalc.ArkhamCalc)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #71
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.j Landroid/widget/CheckBox;]
+      [4] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Lcom/kolita/arkhamcalc/ArkhamCalc;ZI)V
+    Access flags: 0x1008
+      = static synthetic void a(com.kolita.arkhamcalc.ArkhamCalc,boolean,int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 38, locals = 3, stack = 3):
+      [0] iload_1 v1
+      [1] ifeq +36 (target=37)
+      [4] aload_0 v0
+      [5] getfield #76
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.o I]
+      [8] ifgt +29 (target=37)
+      [11] aload_0 v0
+      [12] getfield #66
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.e Landroid/widget/SeekBar;]
+      [15] invokevirtual #93
+        + Methodref [android/widget/SeekBar.getProgress ()I]
+      [18] ifle +19 (target=37)
+      [21] aload_0 v0
+      [22] getfield #77
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.p Z]
+      [25] ifne +12 (target=37)
+      [28] aload_0 v0
+      [29] aload_0 v0
+      [30] iload_2 v2
+      [31] invokespecial #101
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.a (I)Ljava/lang/String;]
+      [34] invokespecial #102
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.a (Ljava/lang/String;)V]
+      [37] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       d(Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;
+    Access flags: 0x1008
+      = static synthetic android.widget.CheckBox d(com.kolita.arkhamcalc.ArkhamCalc)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #72
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.k Landroid/widget/CheckBox;]
+      [4] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       e(Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;
+    Access flags: 0x1008
+      = static synthetic android.widget.CheckBox e(com.kolita.arkhamcalc.ArkhamCalc)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #73
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.l Landroid/widget/CheckBox;]
+      [4] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       f(Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;
+    Access flags: 0x1008
+      = static synthetic android.widget.CheckBox f(com.kolita.arkhamcalc.ArkhamCalc)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #69
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.h Landroid/widget/CheckBox;]
+      [4] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       g(Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;
+    Access flags: 0x1008
+      = static synthetic android.widget.CheckBox g(com.kolita.arkhamcalc.ArkhamCalc)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #68
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.g Landroid/widget/CheckBox;]
+      [4] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       b(Lcom/kolita/arkhamcalc/ArkhamCalc;ZI)V
+    Access flags: 0x1008
+      = static synthetic void b(com.kolita.arkhamcalc.ArkhamCalc,boolean,int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 31, locals = 3, stack = 3):
+      [0] iload_1 v1
+      [1] ifeq +29 (target=30)
+      [4] aload_0 v0
+      [5] getfield #66
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.e Landroid/widget/SeekBar;]
+      [8] invokevirtual #93
+        + Methodref [android/widget/SeekBar.getProgress ()I]
+      [11] ifle +19 (target=30)
+      [14] aload_0 v0
+      [15] getfield #77
+        + Fieldref [com/kolita/arkhamcalc/ArkhamCalc.p Z]
+      [18] ifne +12 (target=30)
+      [21] aload_0 v0
+      [22] aload_0 v0
+      [23] iload_2 v2
+      [24] invokespecial #101
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.a (I)Ljava/lang/String;]
+      [27] invokespecial #102
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.a (Ljava/lang/String;)V]
+      [30] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: com/kolita/arkhamcalc/a
+  Superclass:    com/kolita/arkhamcalc/k
+  Major version: 0x32
+  Minor version: 0x0
+  Access flags:  0x30
+    = final class com.kolita.arkhamcalc.a extends com.kolita.arkhamcalc.k
+
+Interfaces (count = 0):
+
+Constant Pool (count = 24):
+  + Class [com/kolita/arkhamcalc/ArkhamCalc]
+  + Class [com/kolita/arkhamcalc/a]
+  + Class [com/kolita/arkhamcalc/k]
+  + Fieldref [com/kolita/arkhamcalc/a.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.a (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Methodref [com/kolita/arkhamcalc/k.<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;B)V]
+  + NameAndType [<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;B)V]
+  + NameAndType [a (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + NameAndType [a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + NameAndType [b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Utf8 [(Landroid/widget/SeekBar;IZ)V]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;B)V]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + Utf8 [a]
+  + Utf8 [b]
+  + Utf8 [com/kolita/arkhamcalc/ArkhamCalc]
+  + Utf8 [com/kolita/arkhamcalc/a]
+  + Utf8 [com/kolita/arkhamcalc/k]
+  + Utf8 [onProgressChanged]
+
+Fields (count = 1):
+  + Field:        a Lcom/kolita/arkhamcalc/ArkhamCalc;
+    Access flags: 0x1010
+      = final synthetic com.kolita.arkhamcalc.ArkhamCalc a
+
+Methods (count = 2):
+  - Method:       <init>(Lcom/kolita/arkhamcalc/ArkhamCalc;)V
+    Access flags: 0x0
+      = a(com.kolita.arkhamcalc.ArkhamCalc)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 12, locals = 2, stack = 3):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] putfield #4
+        + Fieldref [com/kolita/arkhamcalc/a.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [5] aload_0 v0
+      [6] aload_1 v1
+      [7] iconst_0
+      [8] invokespecial #7
+        + Methodref [com/kolita/arkhamcalc/k.<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;B)V]
+      [11] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onProgressChanged(Landroid/widget/SeekBar;IZ)V
+    Access flags: 0x11
+      = public final void onProgressChanged(android.widget.SeekBar,int,boolean)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 15, locals = 4, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #4
+        + Fieldref [com/kolita/arkhamcalc/a.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [4] invokestatic #5
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.a (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+      [7] aload_0 v0
+      [8] getfield #4
+        + Fieldref [com/kolita/arkhamcalc/a.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [11] invokestatic #6
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+      [14] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: com/kolita/arkhamcalc/b
+  Superclass:    java/lang/Object
+  Major version: 0x32
+  Minor version: 0x0
+  Access flags:  0x30
+    = final class com.kolita.arkhamcalc.b extends java.lang.Object
+
+Interfaces (count = 1):
+  + Class [android/widget/CompoundButton$OnCheckedChangeListener]
+
+Constant Pool (count = 24):
+  + Class [android/widget/CompoundButton$OnCheckedChangeListener]
+  + Class [com/kolita/arkhamcalc/ArkhamCalc]
+  + Class [com/kolita/arkhamcalc/b]
+  + Class [java/lang/Object]
+  + Fieldref [com/kolita/arkhamcalc/b.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Methodref [java/lang/Object.<init> ()V]
+  + NameAndType [<init> ()V]
+  + NameAndType [a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + NameAndType [b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Utf8 [()V]
+  + Utf8 [(Landroid/widget/CompoundButton;Z)V]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + Utf8 [a]
+  + Utf8 [android/widget/CompoundButton$OnCheckedChangeListener]
+  + Utf8 [b]
+  + Utf8 [com/kolita/arkhamcalc/ArkhamCalc]
+  + Utf8 [com/kolita/arkhamcalc/b]
+  + Utf8 [java/lang/Object]
+  + Utf8 [onCheckedChanged]
+
+Fields (count = 1):
+  + Field:        a Lcom/kolita/arkhamcalc/ArkhamCalc;
+    Access flags: 0x1010
+      = final synthetic com.kolita.arkhamcalc.ArkhamCalc a
+
+Methods (count = 2):
+  - Method:       <init>(Lcom/kolita/arkhamcalc/ArkhamCalc;)V
+    Access flags: 0x0
+      = b(com.kolita.arkhamcalc.ArkhamCalc)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 10, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] putfield #5
+        + Fieldref [com/kolita/arkhamcalc/b.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [5] aload_0 v0
+      [6] invokespecial #7
+        + Methodref [java/lang/Object.<init> ()V]
+      [9] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onCheckedChanged(Landroid/widget/CompoundButton;Z)V
+    Access flags: 0x11
+      = public final void onCheckedChanged(android.widget.CompoundButton,boolean)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 8, locals = 3, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #5
+        + Fieldref [com/kolita/arkhamcalc/b.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [4] invokestatic #6
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+      [7] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: com/kolita/arkhamcalc/c
+  Superclass:    com/kolita/arkhamcalc/k
+  Major version: 0x32
+  Minor version: 0x0
+  Access flags:  0x30
+    = final class com.kolita.arkhamcalc.c extends com.kolita.arkhamcalc.k
+
+Interfaces (count = 0):
+
+Constant Pool (count = 24):
+  + Class [com/kolita/arkhamcalc/ArkhamCalc]
+  + Class [com/kolita/arkhamcalc/c]
+  + Class [com/kolita/arkhamcalc/k]
+  + Fieldref [com/kolita/arkhamcalc/c.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.a (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Methodref [com/kolita/arkhamcalc/k.<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;B)V]
+  + NameAndType [<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;B)V]
+  + NameAndType [a (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + NameAndType [a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + NameAndType [b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Utf8 [(Landroid/widget/SeekBar;IZ)V]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;B)V]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + Utf8 [a]
+  + Utf8 [b]
+  + Utf8 [com/kolita/arkhamcalc/ArkhamCalc]
+  + Utf8 [com/kolita/arkhamcalc/c]
+  + Utf8 [com/kolita/arkhamcalc/k]
+  + Utf8 [onProgressChanged]
+
+Fields (count = 1):
+  + Field:        a Lcom/kolita/arkhamcalc/ArkhamCalc;
+    Access flags: 0x1010
+      = final synthetic com.kolita.arkhamcalc.ArkhamCalc a
+
+Methods (count = 2):
+  - Method:       <init>(Lcom/kolita/arkhamcalc/ArkhamCalc;)V
+    Access flags: 0x0
+      = c(com.kolita.arkhamcalc.ArkhamCalc)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 12, locals = 2, stack = 3):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] putfield #4
+        + Fieldref [com/kolita/arkhamcalc/c.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [5] aload_0 v0
+      [6] aload_1 v1
+      [7] iconst_0
+      [8] invokespecial #7
+        + Methodref [com/kolita/arkhamcalc/k.<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;B)V]
+      [11] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onProgressChanged(Landroid/widget/SeekBar;IZ)V
+    Access flags: 0x11
+      = public final void onProgressChanged(android.widget.SeekBar,int,boolean)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 15, locals = 4, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #4
+        + Fieldref [com/kolita/arkhamcalc/c.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [4] invokestatic #5
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.a (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+      [7] aload_0 v0
+      [8] getfield #4
+        + Fieldref [com/kolita/arkhamcalc/c.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [11] invokestatic #6
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+      [14] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: com/kolita/arkhamcalc/d
+  Superclass:    com/kolita/arkhamcalc/k
+  Major version: 0x32
+  Minor version: 0x0
+  Access flags:  0x30
+    = final class com.kolita.arkhamcalc.d extends com.kolita.arkhamcalc.k
+
+Interfaces (count = 0):
+
+Constant Pool (count = 52):
+  + Integer [2131099650]
+  + Integer [2131099651]
+  + Integer [2131099652]
+  + Class [android/widget/CheckBox]
+  + Class [com/kolita/arkhamcalc/ArkhamCalc]
+  + Class [com/kolita/arkhamcalc/d]
+  + Class [com/kolita/arkhamcalc/k]
+  + Fieldref [com/kolita/arkhamcalc/d.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + Methodref [android/widget/CheckBox.isChecked ()Z]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.a (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.a (Lcom/kolita/arkhamcalc/ArkhamCalc;I)V]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.a (Lcom/kolita/arkhamcalc/ArkhamCalc;ZI)V]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.c (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.d (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.e (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + Methodref [com/kolita/arkhamcalc/d.a ()I]
+  + Methodref [com/kolita/arkhamcalc/k.<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;B)V]
+  + NameAndType [<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;B)V]
+  + NameAndType [a ()I]
+  + NameAndType [a (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + NameAndType [a (Lcom/kolita/arkhamcalc/ArkhamCalc;I)V]
+  + NameAndType [a (Lcom/kolita/arkhamcalc/ArkhamCalc;ZI)V]
+  + NameAndType [a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + NameAndType [b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + NameAndType [c (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + NameAndType [d (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + NameAndType [e (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + NameAndType [isChecked ()Z]
+  + Utf8 [()I]
+  + Utf8 [()Z]
+  + Utf8 [(Landroid/widget/SeekBar;IZ)V]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;B)V]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;I)V]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;ZI)V]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + Utf8 [a]
+  + Utf8 [android/widget/CheckBox]
+  + Utf8 [b]
+  + Utf8 [c]
+  + Utf8 [com/kolita/arkhamcalc/ArkhamCalc]
+  + Utf8 [com/kolita/arkhamcalc/d]
+  + Utf8 [com/kolita/arkhamcalc/k]
+  + Utf8 [d]
+  + Utf8 [e]
+  + Utf8 [isChecked]
+  + Utf8 [onProgressChanged]
+
+Fields (count = 1):
+  + Field:        a Lcom/kolita/arkhamcalc/ArkhamCalc;
+    Access flags: 0x1010
+      = final synthetic com.kolita.arkhamcalc.ArkhamCalc a
+
+Methods (count = 2):
+  - Method:       <init>(Lcom/kolita/arkhamcalc/ArkhamCalc;)V
+    Access flags: 0x0
+      = d(com.kolita.arkhamcalc.ArkhamCalc)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 12, locals = 2, stack = 3):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] putfield #8
+        + Fieldref [com/kolita/arkhamcalc/d.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [5] aload_0 v0
+      [6] aload_1 v1
+      [7] iconst_0
+      [8] invokespecial #18
+        + Methodref [com/kolita/arkhamcalc/k.<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;B)V]
+      [11] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onProgressChanged(Landroid/widget/SeekBar;IZ)V
+    Access flags: 0x11
+      = public final void onProgressChanged(android.widget.SeekBar,int,boolean)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 83, locals = 4, stack = 3):
+      [0] aload_0 v0
+      [1] getfield #8
+        + Fieldref [com/kolita/arkhamcalc/d.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [4] invokestatic #10
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.a (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+      [7] aload_0 v0
+      [8] getfield #8
+        + Fieldref [com/kolita/arkhamcalc/d.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [11] invokestatic #13
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+      [14] aload_0 v0
+      [15] getfield #8
+        + Fieldref [com/kolita/arkhamcalc/d.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [18] aload_0 v0
+      [19] invokevirtual #17
+        + Methodref [com/kolita/arkhamcalc/d.a ()I]
+      [22] invokestatic #11
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.a (Lcom/kolita/arkhamcalc/ArkhamCalc;I)V]
+      [25] aload_0 v0
+      [26] getfield #8
+        + Fieldref [com/kolita/arkhamcalc/d.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [29] aload_0 v0
+      [30] getfield #8
+        + Fieldref [com/kolita/arkhamcalc/d.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [33] invokestatic #14
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.c (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+      [36] invokevirtual #9
+        + Methodref [android/widget/CheckBox.isChecked ()Z]
+      [39] ldc #1
+        + Integer [2131099650]
+      [41] invokestatic #12
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.a (Lcom/kolita/arkhamcalc/ArkhamCalc;ZI)V]
+      [44] aload_0 v0
+      [45] getfield #8
+        + Fieldref [com/kolita/arkhamcalc/d.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [48] aload_0 v0
+      [49] getfield #8
+        + Fieldref [com/kolita/arkhamcalc/d.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [52] invokestatic #15
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.d (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+      [55] invokevirtual #9
+        + Methodref [android/widget/CheckBox.isChecked ()Z]
+      [58] ldc #3
+        + Integer [2131099652]
+      [60] invokestatic #12
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.a (Lcom/kolita/arkhamcalc/ArkhamCalc;ZI)V]
+      [63] aload_0 v0
+      [64] getfield #8
+        + Fieldref [com/kolita/arkhamcalc/d.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [67] aload_0 v0
+      [68] getfield #8
+        + Fieldref [com/kolita/arkhamcalc/d.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [71] invokestatic #16
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.e (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+      [74] invokevirtual #9
+        + Methodref [android/widget/CheckBox.isChecked ()Z]
+      [77] ldc #2
+        + Integer [2131099651]
+      [79] invokestatic #12
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.a (Lcom/kolita/arkhamcalc/ArkhamCalc;ZI)V]
+      [82] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: com/kolita/arkhamcalc/e
+  Superclass:    java/lang/Object
+  Major version: 0x32
+  Minor version: 0x0
+  Access flags:  0x30
+    = final class com.kolita.arkhamcalc.e extends java.lang.Object
+
+Interfaces (count = 1):
+  + Class [android/widget/CompoundButton$OnCheckedChangeListener]
+
+Constant Pool (count = 35):
+  + Class [android/widget/CheckBox]
+  + Class [android/widget/CompoundButton$OnCheckedChangeListener]
+  + Class [com/kolita/arkhamcalc/ArkhamCalc]
+  + Class [com/kolita/arkhamcalc/e]
+  + Class [java/lang/Object]
+  + Fieldref [com/kolita/arkhamcalc/e.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + Methodref [android/widget/CheckBox.setChecked (Z)V]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.f (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + Methodref [java/lang/Object.<init> ()V]
+  + NameAndType [<init> ()V]
+  + NameAndType [a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + NameAndType [b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + NameAndType [f (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + NameAndType [setChecked (Z)V]
+  + Utf8 [()V]
+  + Utf8 [(Landroid/widget/CompoundButton;Z)V]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Utf8 [(Z)V]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + Utf8 [StackMapTable]
+  + Utf8 [a]
+  + Utf8 [android/widget/CheckBox]
+  + Utf8 [android/widget/CompoundButton$OnCheckedChangeListener]
+  + Utf8 [b]
+  + Utf8 [com/kolita/arkhamcalc/ArkhamCalc]
+  + Utf8 [com/kolita/arkhamcalc/e]
+  + Utf8 [f]
+  + Utf8 [java/lang/Object]
+  + Utf8 [onCheckedChanged]
+  + Utf8 [setChecked]
+
+Fields (count = 1):
+  + Field:        a Lcom/kolita/arkhamcalc/ArkhamCalc;
+    Access flags: 0x1010
+      = final synthetic com.kolita.arkhamcalc.ArkhamCalc a
+
+Methods (count = 2):
+  - Method:       <init>(Lcom/kolita/arkhamcalc/ArkhamCalc;)V
+    Access flags: 0x0
+      = e(com.kolita.arkhamcalc.ArkhamCalc)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 10, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] putfield #6
+        + Fieldref [com/kolita/arkhamcalc/e.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [5] aload_0 v0
+      [6] invokespecial #10
+        + Methodref [java/lang/Object.<init> ()V]
+      [9] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onCheckedChanged(Landroid/widget/CompoundButton;Z)V
+    Access flags: 0x11
+      = public final void onCheckedChanged(android.widget.CompoundButton,boolean)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 23, locals = 3, stack = 2):
+      [0] iload_2 v2
+      [1] ifeq +14 (target=15)
+      [4] aload_0 v0
+      [5] getfield #6
+        + Fieldref [com/kolita/arkhamcalc/e.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [8] invokestatic #9
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.f (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+      [11] iconst_0
+      [12] invokevirtual #7
+        + Methodref [android/widget/CheckBox.setChecked (Z)V]
+      [15] aload_0 v0
+      [16] getfield #6
+        + Fieldref [com/kolita/arkhamcalc/e.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [19] invokestatic #8
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+      [22] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 1):
+        - [15] Var: ..., Stack: (empty)
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: com/kolita/arkhamcalc/f
+  Superclass:    java/lang/Object
+  Major version: 0x32
+  Minor version: 0x0
+  Access flags:  0x30
+    = final class com.kolita.arkhamcalc.f extends java.lang.Object
+
+Interfaces (count = 1):
+  + Class [android/widget/CompoundButton$OnCheckedChangeListener]
+
+Constant Pool (count = 35):
+  + Class [android/widget/CheckBox]
+  + Class [android/widget/CompoundButton$OnCheckedChangeListener]
+  + Class [com/kolita/arkhamcalc/ArkhamCalc]
+  + Class [com/kolita/arkhamcalc/f]
+  + Class [java/lang/Object]
+  + Fieldref [com/kolita/arkhamcalc/f.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + Methodref [android/widget/CheckBox.setChecked (Z)V]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.g (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + Methodref [java/lang/Object.<init> ()V]
+  + NameAndType [<init> ()V]
+  + NameAndType [a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + NameAndType [b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + NameAndType [g (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + NameAndType [setChecked (Z)V]
+  + Utf8 [()V]
+  + Utf8 [(Landroid/widget/CompoundButton;Z)V]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Utf8 [(Z)V]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + Utf8 [StackMapTable]
+  + Utf8 [a]
+  + Utf8 [android/widget/CheckBox]
+  + Utf8 [android/widget/CompoundButton$OnCheckedChangeListener]
+  + Utf8 [b]
+  + Utf8 [com/kolita/arkhamcalc/ArkhamCalc]
+  + Utf8 [com/kolita/arkhamcalc/f]
+  + Utf8 [g]
+  + Utf8 [java/lang/Object]
+  + Utf8 [onCheckedChanged]
+  + Utf8 [setChecked]
+
+Fields (count = 1):
+  + Field:        a Lcom/kolita/arkhamcalc/ArkhamCalc;
+    Access flags: 0x1010
+      = final synthetic com.kolita.arkhamcalc.ArkhamCalc a
+
+Methods (count = 2):
+  - Method:       <init>(Lcom/kolita/arkhamcalc/ArkhamCalc;)V
+    Access flags: 0x0
+      = f(com.kolita.arkhamcalc.ArkhamCalc)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 10, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] putfield #6
+        + Fieldref [com/kolita/arkhamcalc/f.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [5] aload_0 v0
+      [6] invokespecial #10
+        + Methodref [java/lang/Object.<init> ()V]
+      [9] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onCheckedChanged(Landroid/widget/CompoundButton;Z)V
+    Access flags: 0x11
+      = public final void onCheckedChanged(android.widget.CompoundButton,boolean)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 23, locals = 3, stack = 2):
+      [0] iload_2 v2
+      [1] ifeq +14 (target=15)
+      [4] aload_0 v0
+      [5] getfield #6
+        + Fieldref [com/kolita/arkhamcalc/f.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [8] invokestatic #9
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.g (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+      [11] iconst_0
+      [12] invokevirtual #7
+        + Methodref [android/widget/CheckBox.setChecked (Z)V]
+      [15] aload_0 v0
+      [16] getfield #6
+        + Fieldref [com/kolita/arkhamcalc/f.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [19] invokestatic #8
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+      [22] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 1):
+        - [15] Var: ..., Stack: (empty)
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: com/kolita/arkhamcalc/g
+  Superclass:    java/lang/Object
+  Major version: 0x32
+  Minor version: 0x0
+  Access flags:  0x30
+    = final class com.kolita.arkhamcalc.g extends java.lang.Object
+
+Interfaces (count = 1):
+  + Class [android/widget/CompoundButton$OnCheckedChangeListener]
+
+Constant Pool (count = 24):
+  + Class [android/widget/CompoundButton$OnCheckedChangeListener]
+  + Class [com/kolita/arkhamcalc/ArkhamCalc]
+  + Class [com/kolita/arkhamcalc/g]
+  + Class [java/lang/Object]
+  + Fieldref [com/kolita/arkhamcalc/g.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Methodref [java/lang/Object.<init> ()V]
+  + NameAndType [<init> ()V]
+  + NameAndType [a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + NameAndType [b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Utf8 [()V]
+  + Utf8 [(Landroid/widget/CompoundButton;Z)V]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + Utf8 [a]
+  + Utf8 [android/widget/CompoundButton$OnCheckedChangeListener]
+  + Utf8 [b]
+  + Utf8 [com/kolita/arkhamcalc/ArkhamCalc]
+  + Utf8 [com/kolita/arkhamcalc/g]
+  + Utf8 [java/lang/Object]
+  + Utf8 [onCheckedChanged]
+
+Fields (count = 1):
+  + Field:        a Lcom/kolita/arkhamcalc/ArkhamCalc;
+    Access flags: 0x1010
+      = final synthetic com.kolita.arkhamcalc.ArkhamCalc a
+
+Methods (count = 2):
+  - Method:       <init>(Lcom/kolita/arkhamcalc/ArkhamCalc;)V
+    Access flags: 0x0
+      = g(com.kolita.arkhamcalc.ArkhamCalc)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 10, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] putfield #5
+        + Fieldref [com/kolita/arkhamcalc/g.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [5] aload_0 v0
+      [6] invokespecial #7
+        + Methodref [java/lang/Object.<init> ()V]
+      [9] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onCheckedChanged(Landroid/widget/CompoundButton;Z)V
+    Access flags: 0x11
+      = public final void onCheckedChanged(android.widget.CompoundButton,boolean)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 8, locals = 3, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #5
+        + Fieldref [com/kolita/arkhamcalc/g.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [4] invokestatic #6
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+      [7] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: com/kolita/arkhamcalc/h
+  Superclass:    java/lang/Object
+  Major version: 0x32
+  Minor version: 0x0
+  Access flags:  0x30
+    = final class com.kolita.arkhamcalc.h extends java.lang.Object
+
+Interfaces (count = 1):
+  + Class [android/widget/CompoundButton$OnCheckedChangeListener]
+
+Constant Pool (count = 49):
+  + Integer [2131099650]
+  + Class [android/widget/CheckBox]
+  + Class [android/widget/CompoundButton$OnCheckedChangeListener]
+  + Class [com/kolita/arkhamcalc/ArkhamCalc]
+  + Class [com/kolita/arkhamcalc/h]
+  + Class [java/lang/Object]
+  + Fieldref [com/kolita/arkhamcalc/h.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + Methodref [android/widget/CheckBox.isChecked ()Z]
+  + Methodref [android/widget/CheckBox.setChecked (Z)V]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.b (Lcom/kolita/arkhamcalc/ArkhamCalc;ZI)V]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.c (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.d (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.e (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + Methodref [java/lang/Object.<init> ()V]
+  + NameAndType [<init> ()V]
+  + NameAndType [a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + NameAndType [b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + NameAndType [b (Lcom/kolita/arkhamcalc/ArkhamCalc;ZI)V]
+  + NameAndType [c (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + NameAndType [d (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + NameAndType [e (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + NameAndType [isChecked ()Z]
+  + NameAndType [setChecked (Z)V]
+  + Utf8 [()V]
+  + Utf8 [()Z]
+  + Utf8 [(Landroid/widget/CompoundButton;Z)V]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;ZI)V]
+  + Utf8 [(Z)V]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + Utf8 [StackMapTable]
+  + Utf8 [a]
+  + Utf8 [android/widget/CheckBox]
+  + Utf8 [android/widget/CompoundButton$OnCheckedChangeListener]
+  + Utf8 [b]
+  + Utf8 [c]
+  + Utf8 [com/kolita/arkhamcalc/ArkhamCalc]
+  + Utf8 [com/kolita/arkhamcalc/h]
+  + Utf8 [d]
+  + Utf8 [e]
+  + Utf8 [isChecked]
+  + Utf8 [java/lang/Object]
+  + Utf8 [onCheckedChanged]
+  + Utf8 [setChecked]
+
+Fields (count = 1):
+  + Field:        a Lcom/kolita/arkhamcalc/ArkhamCalc;
+    Access flags: 0x1010
+      = final synthetic com.kolita.arkhamcalc.ArkhamCalc a
+
+Methods (count = 2):
+  - Method:       <init>(Lcom/kolita/arkhamcalc/ArkhamCalc;)V
+    Access flags: 0x0
+      = h(com.kolita.arkhamcalc.ArkhamCalc)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 10, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] putfield #7
+        + Fieldref [com/kolita/arkhamcalc/h.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [5] aload_0 v0
+      [6] invokespecial #15
+        + Methodref [java/lang/Object.<init> ()V]
+      [9] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onCheckedChanged(Landroid/widget/CompoundButton;Z)V
+    Access flags: 0x11
+      = public final void onCheckedChanged(android.widget.CompoundButton,boolean)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 53, locals = 3, stack = 3):
+      [0] iload_2 v2
+      [1] ifeq +25 (target=26)
+      [4] aload_0 v0
+      [5] getfield #7
+        + Fieldref [com/kolita/arkhamcalc/h.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [8] invokestatic #13
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.d (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+      [11] iconst_0
+      [12] invokevirtual #9
+        + Methodref [android/widget/CheckBox.setChecked (Z)V]
+      [15] aload_0 v0
+      [16] getfield #7
+        + Fieldref [com/kolita/arkhamcalc/h.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [19] invokestatic #14
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.e (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+      [22] iconst_0
+      [23] invokevirtual #9
+        + Methodref [android/widget/CheckBox.setChecked (Z)V]
+      [26] aload_0 v0
+      [27] getfield #7
+        + Fieldref [com/kolita/arkhamcalc/h.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [30] invokestatic #10
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+      [33] aload_0 v0
+      [34] getfield #7
+        + Fieldref [com/kolita/arkhamcalc/h.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [37] aload_0 v0
+      [38] getfield #7
+        + Fieldref [com/kolita/arkhamcalc/h.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [41] invokestatic #12
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.c (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+      [44] invokevirtual #8
+        + Methodref [android/widget/CheckBox.isChecked ()Z]
+      [47] ldc #1
+        + Integer [2131099650]
+      [49] invokestatic #11
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.b (Lcom/kolita/arkhamcalc/ArkhamCalc;ZI)V]
+      [52] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 1):
+        - [26] Var: ..., Stack: (empty)
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: com/kolita/arkhamcalc/i
+  Superclass:    java/lang/Object
+  Major version: 0x32
+  Minor version: 0x0
+  Access flags:  0x30
+    = final class com.kolita.arkhamcalc.i extends java.lang.Object
+
+Interfaces (count = 1):
+  + Class [android/widget/CompoundButton$OnCheckedChangeListener]
+
+Constant Pool (count = 49):
+  + Integer [2131099652]
+  + Class [android/widget/CheckBox]
+  + Class [android/widget/CompoundButton$OnCheckedChangeListener]
+  + Class [com/kolita/arkhamcalc/ArkhamCalc]
+  + Class [com/kolita/arkhamcalc/i]
+  + Class [java/lang/Object]
+  + Fieldref [com/kolita/arkhamcalc/i.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + Methodref [android/widget/CheckBox.isChecked ()Z]
+  + Methodref [android/widget/CheckBox.setChecked (Z)V]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.b (Lcom/kolita/arkhamcalc/ArkhamCalc;ZI)V]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.c (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.d (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.e (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + Methodref [java/lang/Object.<init> ()V]
+  + NameAndType [<init> ()V]
+  + NameAndType [a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + NameAndType [b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + NameAndType [b (Lcom/kolita/arkhamcalc/ArkhamCalc;ZI)V]
+  + NameAndType [c (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + NameAndType [d (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + NameAndType [e (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + NameAndType [isChecked ()Z]
+  + NameAndType [setChecked (Z)V]
+  + Utf8 [()V]
+  + Utf8 [()Z]
+  + Utf8 [(Landroid/widget/CompoundButton;Z)V]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;ZI)V]
+  + Utf8 [(Z)V]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + Utf8 [StackMapTable]
+  + Utf8 [a]
+  + Utf8 [android/widget/CheckBox]
+  + Utf8 [android/widget/CompoundButton$OnCheckedChangeListener]
+  + Utf8 [b]
+  + Utf8 [c]
+  + Utf8 [com/kolita/arkhamcalc/ArkhamCalc]
+  + Utf8 [com/kolita/arkhamcalc/i]
+  + Utf8 [d]
+  + Utf8 [e]
+  + Utf8 [isChecked]
+  + Utf8 [java/lang/Object]
+  + Utf8 [onCheckedChanged]
+  + Utf8 [setChecked]
+
+Fields (count = 1):
+  + Field:        a Lcom/kolita/arkhamcalc/ArkhamCalc;
+    Access flags: 0x1010
+      = final synthetic com.kolita.arkhamcalc.ArkhamCalc a
+
+Methods (count = 2):
+  - Method:       <init>(Lcom/kolita/arkhamcalc/ArkhamCalc;)V
+    Access flags: 0x0
+      = i(com.kolita.arkhamcalc.ArkhamCalc)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 10, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] putfield #7
+        + Fieldref [com/kolita/arkhamcalc/i.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [5] aload_0 v0
+      [6] invokespecial #15
+        + Methodref [java/lang/Object.<init> ()V]
+      [9] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onCheckedChanged(Landroid/widget/CompoundButton;Z)V
+    Access flags: 0x11
+      = public final void onCheckedChanged(android.widget.CompoundButton,boolean)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 53, locals = 3, stack = 3):
+      [0] iload_2 v2
+      [1] ifeq +25 (target=26)
+      [4] aload_0 v0
+      [5] getfield #7
+        + Fieldref [com/kolita/arkhamcalc/i.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [8] invokestatic #12
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.c (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+      [11] iconst_0
+      [12] invokevirtual #9
+        + Methodref [android/widget/CheckBox.setChecked (Z)V]
+      [15] aload_0 v0
+      [16] getfield #7
+        + Fieldref [com/kolita/arkhamcalc/i.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [19] invokestatic #14
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.e (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+      [22] iconst_0
+      [23] invokevirtual #9
+        + Methodref [android/widget/CheckBox.setChecked (Z)V]
+      [26] aload_0 v0
+      [27] getfield #7
+        + Fieldref [com/kolita/arkhamcalc/i.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [30] invokestatic #10
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+      [33] aload_0 v0
+      [34] getfield #7
+        + Fieldref [com/kolita/arkhamcalc/i.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [37] aload_0 v0
+      [38] getfield #7
+        + Fieldref [com/kolita/arkhamcalc/i.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [41] invokestatic #13
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.d (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+      [44] invokevirtual #8
+        + Methodref [android/widget/CheckBox.isChecked ()Z]
+      [47] ldc #1
+        + Integer [2131099652]
+      [49] invokestatic #11
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.b (Lcom/kolita/arkhamcalc/ArkhamCalc;ZI)V]
+      [52] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 1):
+        - [26] Var: ..., Stack: (empty)
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: com/kolita/arkhamcalc/j
+  Superclass:    java/lang/Object
+  Major version: 0x32
+  Minor version: 0x0
+  Access flags:  0x30
+    = final class com.kolita.arkhamcalc.j extends java.lang.Object
+
+Interfaces (count = 1):
+  + Class [android/widget/CompoundButton$OnCheckedChangeListener]
+
+Constant Pool (count = 49):
+  + Integer [2131099651]
+  + Class [android/widget/CheckBox]
+  + Class [android/widget/CompoundButton$OnCheckedChangeListener]
+  + Class [com/kolita/arkhamcalc/ArkhamCalc]
+  + Class [com/kolita/arkhamcalc/j]
+  + Class [java/lang/Object]
+  + Fieldref [com/kolita/arkhamcalc/j.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + Methodref [android/widget/CheckBox.isChecked ()Z]
+  + Methodref [android/widget/CheckBox.setChecked (Z)V]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.b (Lcom/kolita/arkhamcalc/ArkhamCalc;ZI)V]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.c (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.d (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalc.e (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + Methodref [java/lang/Object.<init> ()V]
+  + NameAndType [<init> ()V]
+  + NameAndType [a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + NameAndType [b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + NameAndType [b (Lcom/kolita/arkhamcalc/ArkhamCalc;ZI)V]
+  + NameAndType [c (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + NameAndType [d (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + NameAndType [e (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + NameAndType [isChecked ()Z]
+  + NameAndType [setChecked (Z)V]
+  + Utf8 [()V]
+  + Utf8 [()Z]
+  + Utf8 [(Landroid/widget/CompoundButton;Z)V]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;ZI)V]
+  + Utf8 [(Z)V]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + Utf8 [StackMapTable]
+  + Utf8 [a]
+  + Utf8 [android/widget/CheckBox]
+  + Utf8 [android/widget/CompoundButton$OnCheckedChangeListener]
+  + Utf8 [b]
+  + Utf8 [c]
+  + Utf8 [com/kolita/arkhamcalc/ArkhamCalc]
+  + Utf8 [com/kolita/arkhamcalc/j]
+  + Utf8 [d]
+  + Utf8 [e]
+  + Utf8 [isChecked]
+  + Utf8 [java/lang/Object]
+  + Utf8 [onCheckedChanged]
+  + Utf8 [setChecked]
+
+Fields (count = 1):
+  + Field:        a Lcom/kolita/arkhamcalc/ArkhamCalc;
+    Access flags: 0x1010
+      = final synthetic com.kolita.arkhamcalc.ArkhamCalc a
+
+Methods (count = 2):
+  - Method:       <init>(Lcom/kolita/arkhamcalc/ArkhamCalc;)V
+    Access flags: 0x0
+      = j(com.kolita.arkhamcalc.ArkhamCalc)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 10, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] putfield #7
+        + Fieldref [com/kolita/arkhamcalc/j.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [5] aload_0 v0
+      [6] invokespecial #15
+        + Methodref [java/lang/Object.<init> ()V]
+      [9] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onCheckedChanged(Landroid/widget/CompoundButton;Z)V
+    Access flags: 0x11
+      = public final void onCheckedChanged(android.widget.CompoundButton,boolean)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 53, locals = 3, stack = 3):
+      [0] iload_2 v2
+      [1] ifeq +25 (target=26)
+      [4] aload_0 v0
+      [5] getfield #7
+        + Fieldref [com/kolita/arkhamcalc/j.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [8] invokestatic #12
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.c (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+      [11] iconst_0
+      [12] invokevirtual #9
+        + Methodref [android/widget/CheckBox.setChecked (Z)V]
+      [15] aload_0 v0
+      [16] getfield #7
+        + Fieldref [com/kolita/arkhamcalc/j.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [19] invokestatic #13
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.d (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+      [22] iconst_0
+      [23] invokevirtual #9
+        + Methodref [android/widget/CheckBox.setChecked (Z)V]
+      [26] aload_0 v0
+      [27] getfield #7
+        + Fieldref [com/kolita/arkhamcalc/j.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [30] invokestatic #10
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.b (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+      [33] aload_0 v0
+      [34] getfield #7
+        + Fieldref [com/kolita/arkhamcalc/j.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [37] aload_0 v0
+      [38] getfield #7
+        + Fieldref [com/kolita/arkhamcalc/j.a Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [41] invokestatic #14
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.e (Lcom/kolita/arkhamcalc/ArkhamCalc;)Landroid/widget/CheckBox;]
+      [44] invokevirtual #8
+        + Methodref [android/widget/CheckBox.isChecked ()Z]
+      [47] ldc #1
+        + Integer [2131099651]
+      [49] invokestatic #11
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalc.b (Lcom/kolita/arkhamcalc/ArkhamCalc;ZI)V]
+      [52] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 1):
+        - [26] Var: ..., Stack: (empty)
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: com/kolita/arkhamcalc/k
+  Superclass:    java/lang/Object
+  Major version: 0x32
+  Minor version: 0x0
+  Access flags:  0x420
+    = abstract class com.kolita.arkhamcalc.k extends java.lang.Object
+
+Interfaces (count = 1):
+  + Class [android/widget/SeekBar$OnSeekBarChangeListener]
+
+Constant Pool (count = 33):
+  + Class [android/widget/SeekBar]
+  + Class [android/widget/SeekBar$OnSeekBarChangeListener]
+  + Class [com/kolita/arkhamcalc/k]
+  + Class [java/lang/Object]
+  + Fieldref [com/kolita/arkhamcalc/k.a I]
+  + Fieldref [com/kolita/arkhamcalc/k.b Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + Methodref [android/widget/SeekBar.getProgress ()I]
+  + Methodref [com/kolita/arkhamcalc/k.<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Methodref [java/lang/Object.<init> ()V]
+  + NameAndType [<init> ()V]
+  + NameAndType [<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + NameAndType [a I]
+  + NameAndType [b Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + NameAndType [getProgress ()I]
+  + Utf8 [()I]
+  + Utf8 [()V]
+  + Utf8 [(Landroid/widget/SeekBar;)V]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+  + Utf8 [(Lcom/kolita/arkhamcalc/ArkhamCalc;B)V]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [I]
+  + Utf8 [Lcom/kolita/arkhamcalc/ArkhamCalc;]
+  + Utf8 [a]
+  + Utf8 [android/widget/SeekBar]
+  + Utf8 [android/widget/SeekBar$OnSeekBarChangeListener]
+  + Utf8 [b]
+  + Utf8 [com/kolita/arkhamcalc/k]
+  + Utf8 [getProgress]
+  + Utf8 [java/lang/Object]
+  + Utf8 [onStartTrackingTouch]
+  + Utf8 [onStopTrackingTouch]
+
+Fields (count = 2):
+  + Field:        a I
+    Access flags: 0x2
+      = private int a
+  + Field:        b Lcom/kolita/arkhamcalc/ArkhamCalc;
+    Access flags: 0x1010
+      = final synthetic com.kolita.arkhamcalc.ArkhamCalc b
+
+Methods (count = 5):
+  - Method:       <init>(Lcom/kolita/arkhamcalc/ArkhamCalc;)V
+    Access flags: 0x2
+      = private k(com.kolita.arkhamcalc.ArkhamCalc)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 10, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] putfield #6
+        + Fieldref [com/kolita/arkhamcalc/k.b Lcom/kolita/arkhamcalc/ArkhamCalc;]
+      [5] aload_0 v0
+      [6] invokespecial #9
+        + Methodref [java/lang/Object.<init> ()V]
+      [9] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a()I
+    Access flags: 0x11
+      = public final int a()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #5
+        + Fieldref [com/kolita/arkhamcalc/k.a I]
+      [4] ireturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onStartTrackingTouch(Landroid/widget/SeekBar;)V
+    Access flags: 0x1
+      = public void onStartTrackingTouch(android.widget.SeekBar)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 9, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] invokevirtual #7
+        + Methodref [android/widget/SeekBar.getProgress ()I]
+      [5] putfield #5
+        + Fieldref [com/kolita/arkhamcalc/k.a I]
+      [8] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onStopTrackingTouch(Landroid/widget/SeekBar;)V
+    Access flags: 0x1
+      = public void onStopTrackingTouch(android.widget.SeekBar)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 1, locals = 2, stack = 0):
+      [0] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  - Method:       <init>(Lcom/kolita/arkhamcalc/ArkhamCalc;B)V
+    Access flags: 0x1000
+      = synthetic k(com.kolita.arkhamcalc.ArkhamCalc,byte)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 6, locals = 3, stack = 2):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] invokespecial #8
+        + Methodref [com/kolita/arkhamcalc/k.<init> (Lcom/kolita/arkhamcalc/ArkhamCalc;)V]
+      [5] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: com/kolita/arkhamcalc/ArkhamCalcHelp
+  Superclass:    android/app/ExpandableListActivity
+  Major version: 0x32
+  Minor version: 0x0
+  Access flags:  0x21
+    = public class com.kolita.arkhamcalc.ArkhamCalcHelp extends android.app.ExpandableListActivity
+
+Interfaces (count = 0):
+
+Constant Pool (count = 94):
+  + Integer [2130903040]
+  + Integer [2130903041]
+  + Integer [2130968576]
+  + Integer [2130968577]
+  + Integer [2131230720]
+  + Integer [2131230721]
+  + String [helpContent]
+  + String [helpTopic]
+  + Class [android/app/ExpandableListActivity]
+  + Class [android/content/res/Resources]
+  + Class [android/widget/SimpleExpandableListAdapter]
+  + Class [com/kolita/arkhamcalc/ArkhamCalcHelp]
+  + Class [java/lang/String]
+  + Class [java/util/ArrayList]
+  + Class [java/util/Arrays]
+  + Class [java/util/HashMap]
+  + Class [java/util/Iterator]
+  + Class [java/util/List]
+  + Class [java/util/Map]
+  + Methodref [android/app/ExpandableListActivity.<init> ()V]
+  + Methodref [android/app/ExpandableListActivity.onCreate (Landroid/os/Bundle;)V]
+  + Methodref [android/content/res/Resources.getStringArray (I)[Ljava/lang/String;]
+  + Methodref [android/widget/SimpleExpandableListAdapter.<init> (Landroid/content/Context;Ljava/util/List;I[Ljava/lang/String;[ILjava/util/List;I[Ljava/lang/String;[I)V]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalcHelp.a (I)Ljava/util/List;]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalcHelp.a (Ljava/util/List;)Ljava/util/List;]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalcHelp.b (Ljava/util/List;)Ljava/util/List;]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalcHelp.getResources ()Landroid/content/res/Resources;]
+  + Methodref [com/kolita/arkhamcalc/ArkhamCalcHelp.setListAdapter (Landroid/widget/ExpandableListAdapter;)V]
+  + Methodref [java/util/ArrayList.<init> ()V]
+  + Methodref [java/util/Arrays.asList ([Ljava/lang/Object;)Ljava/util/List;]
+  + Methodref [java/util/HashMap.<init> ()V]
+  + InterfaceMethodref [java/util/Iterator.hasNext ()Z]
+  + InterfaceMethodref [java/util/Iterator.next ()Ljava/lang/Object;]
+  + InterfaceMethodref [java/util/List.add (Ljava/lang/Object;)Z]
+  + InterfaceMethodref [java/util/List.iterator ()Ljava/util/Iterator;]
+  + InterfaceMethodref [java/util/Map.put (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;]
+  + NameAndType [<init> ()V]
+  + NameAndType [<init> (Landroid/content/Context;Ljava/util/List;I[Ljava/lang/String;[ILjava/util/List;I[Ljava/lang/String;[I)V]
+  + NameAndType [a (I)Ljava/util/List;]
+  + NameAndType [a (Ljava/util/List;)Ljava/util/List;]
+  + NameAndType [add (Ljava/lang/Object;)Z]
+  + NameAndType [asList ([Ljava/lang/Object;)Ljava/util/List;]
+  + NameAndType [b (Ljava/util/List;)Ljava/util/List;]
+  + NameAndType [getResources ()Landroid/content/res/Resources;]
+  + NameAndType [getStringArray (I)[Ljava/lang/String;]
+  + NameAndType [hasNext ()Z]
+  + NameAndType [iterator ()Ljava/util/Iterator;]
+  + NameAndType [next ()Ljava/lang/Object;]
+  + NameAndType [onCreate (Landroid/os/Bundle;)V]
+  + NameAndType [put (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;]
+  + NameAndType [setListAdapter (Landroid/widget/ExpandableListAdapter;)V]
+  + Utf8 [()Landroid/content/res/Resources;]
+  + Utf8 [()Ljava/lang/Object;]
+  + Utf8 [()Ljava/util/Iterator;]
+  + Utf8 [()V]
+  + Utf8 [()Z]
+  + Utf8 [(I)Ljava/util/List;]
+  + Utf8 [(I)[Ljava/lang/String;]
+  + Utf8 [(Landroid/content/Context;Ljava/util/List;I[Ljava/lang/String;[ILjava/util/List;I[Ljava/lang/String;[I)V]
+  + Utf8 [(Landroid/os/Bundle;)V]
+  + Utf8 [(Landroid/widget/ExpandableListAdapter;)V]
+  + Utf8 [(Ljava/lang/Object;)Z]
+  + Utf8 [(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;]
+  + Utf8 [(Ljava/util/List;)Ljava/util/List;]
+  + Utf8 [([Ljava/lang/Object;)Ljava/util/List;]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [StackMapTable]
+  + Utf8 [a]
+  + Utf8 [add]
+  + Utf8 [android/app/ExpandableListActivity]
+  + Utf8 [android/content/res/Resources]
+  + Utf8 [android/widget/SimpleExpandableListAdapter]
+  + Utf8 [asList]
+  + Utf8 [b]
+  + Utf8 [com/kolita/arkhamcalc/ArkhamCalcHelp]
+  + Utf8 [getResources]
+  + Utf8 [getStringArray]
+  + Utf8 [hasNext]
+  + Utf8 [helpContent]
+  + Utf8 [helpTopic]
+  + Utf8 [iterator]
+  + Utf8 [java/lang/String]
+  + Utf8 [java/util/ArrayList]
+  + Utf8 [java/util/Arrays]
+  + Utf8 [java/util/HashMap]
+  + Utf8 [java/util/Iterator]
+  + Utf8 [java/util/List]
+  + Utf8 [java/util/Map]
+  + Utf8 [next]
+  + Utf8 [onCreate]
+  + Utf8 [put]
+  + Utf8 [setListAdapter]
+
+Fields (count = 0):
+
+Methods (count = 5):
+  - Method:       <init>()V
+    Access flags: 0x1
+      = public ArkhamCalcHelp()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] invokespecial #20
+        + Methodref [android/app/ExpandableListActivity.<init> ()V]
+      [4] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onCreate(Landroid/os/Bundle;)V
+    Access flags: 0x1
+      = public void onCreate(android.os.Bundle)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 80, locals = 3, stack = 14):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] invokespecial #21
+        + Methodref [android/app/ExpandableListActivity.onCreate (Landroid/os/Bundle;)V]
+      [5] aload_0 v0
+      [6] ldc #3
+        + Integer [2130968576]
+      [8] invokespecial #24
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalcHelp.a (I)Ljava/util/List;]
+      [11] astore_1 v1
+      [12] aload_0 v0
+      [13] ldc #4
+        + Integer [2130968577]
+      [15] invokespecial #24
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalcHelp.a (I)Ljava/util/List;]
+      [18] astore_2 v2
+      [19] new #11
+        + Class [android/widget/SimpleExpandableListAdapter]
+      [22] dup
+      [23] aload_0 v0
+      [24] aload_1 v1
+      [25] invokestatic #25
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalcHelp.a (Ljava/util/List;)Ljava/util/List;]
+      [28] ldc #2
+        + Integer [2130903041]
+      [30] iconst_1
+      [31] anewarray #13
+        + Class [java/lang/String]
+      [34] dup
+      [35] iconst_0
+      [36] ldc #8
+        + String [helpTopic]
+      [38] aastore
+      [39] iconst_1
+      [40] newarray 10
+      [42] dup
+      [43] iconst_0
+      [44] ldc #6
+        + Integer [2131230721]
+      [46] iastore
+      [47] aload_2 v2
+      [48] invokestatic #26
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalcHelp.b (Ljava/util/List;)Ljava/util/List;]
+      [51] ldc #1
+        + Integer [2130903040]
+      [53] iconst_1
+      [54] anewarray #13
+        + Class [java/lang/String]
+      [57] dup
+      [58] iconst_0
+      [59] ldc #7
+        + String [helpContent]
+      [61] aastore
+      [62] iconst_1
+      [63] newarray 10
+      [65] dup
+      [66] iconst_0
+      [67] ldc #5
+        + Integer [2131230720]
+      [69] iastore
+      [70] invokespecial #23
+        + Methodref [android/widget/SimpleExpandableListAdapter.<init> (Landroid/content/Context;Ljava/util/List;I[Ljava/lang/String;[ILjava/util/List;I[Ljava/lang/String;[I)V]
+      [73] astore_1 v1
+      [74] aload_0 v0
+      [75] aload_1 v1
+      [76] invokevirtual #28
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalcHelp.setListAdapter (Landroid/widget/ExpandableListAdapter;)V]
+      [79] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(I)Ljava/util/List;
+    Access flags: 0x2
+      = private java.util.List a(int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 12, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] invokevirtual #27
+        + Methodref [com/kolita/arkhamcalc/ArkhamCalcHelp.getResources ()Landroid/content/res/Resources;]
+      [4] iload_1 v1
+      [5] invokevirtual #22
+        + Methodref [android/content/res/Resources.getStringArray (I)[Ljava/lang/String;]
+      [8] invokestatic #30
+        + Methodref [java/util/Arrays.asList ([Ljava/lang/Object;)Ljava/util/List;]
+      [11] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Ljava/util/List;)Ljava/util/List;
+    Access flags: 0xa
+      = private static java.util.List a(java.util.List)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 65, locals = 4, stack = 3):
+      [0] new #14
+        + Class [java/util/ArrayList]
+      [3] dup
+      [4] invokespecial #29
+        + Methodref [java/util/ArrayList.<init> ()V]
+      [7] astore_1 v1
+      [8] aload_0 v0
+      [9] invokeinterface #35
+        + InterfaceMethodref [java/util/List.iterator ()Ljava/util/Iterator;]
+      [14] astore_2 v2
+      [15] goto +39 (target=54)
+      [18] aload_2 v2
+      [19] invokeinterface #33
+        + InterfaceMethodref [java/util/Iterator.next ()Ljava/lang/Object;]
+      [24] checkcast #13
+        + Class [java/lang/String]
+      [27] astore_0 v0
+      [28] new #16
+        + Class [java/util/HashMap]
+      [31] dup
+      [32] invokespecial #31
+        + Methodref [java/util/HashMap.<init> ()V]
+      [35] dup
+      [36] astore_3 v3
+      [37] ldc #8
+        + String [helpTopic]
+      [39] aload_0 v0
+      [40] invokeinterface #36
+        + InterfaceMethodref [java/util/Map.put (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;]
+      [45] pop
+      [46] aload_1 v1
+      [47] aload_3 v3
+      [48] invokeinterface #34
+        + InterfaceMethodref [java/util/List.add (Ljava/lang/Object;)Z]
+      [53] pop
+      [54] aload_2 v2
+      [55] invokeinterface #32
+        + InterfaceMethodref [java/util/Iterator.hasNext ()Z]
+      [60] ifne -42 (target=18)
+      [63] aload_1 v1
+      [64] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 2):
+        - [18] Var: [a:java/util/List][a:java/util/List][T][a:java/util/Iterator], Stack: 
+        - [54] Var: ..., Stack: (empty)
+  + Method:       b(Ljava/util/List;)Ljava/util/List;
+    Access flags: 0xa
+      = private static java.util.List b(java.util.List)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 83, locals = 5, stack = 3):
+      [0] new #14
+        + Class [java/util/ArrayList]
+      [3] dup
+      [4] invokespecial #29
+        + Methodref [java/util/ArrayList.<init> ()V]
+      [7] astore_1 v1
+      [8] aload_0 v0
+      [9] invokeinterface #35
+        + InterfaceMethodref [java/util/List.iterator ()Ljava/util/Iterator;]
+      [14] astore_2 v2
+      [15] goto +57 (target=72)
+      [18] aload_2 v2
+      [19] invokeinterface #33
+        + InterfaceMethodref [java/util/Iterator.next ()Ljava/lang/Object;]
+      [24] checkcast #13
+        + Class [java/lang/String]
+      [27] astore_0 v0
+      [28] new #14
+        + Class [java/util/ArrayList]
+      [31] dup
+      [32] invokespecial #29
+        + Methodref [java/util/ArrayList.<init> ()V]
+      [35] astore_3 v3
+      [36] new #16
+        + Class [java/util/HashMap]
+      [39] dup
+      [40] invokespecial #31
+        + Methodref [java/util/HashMap.<init> ()V]
+      [43] dup
+      [44] astore v4
+      [46] ldc #7
+        + String [helpContent]
+      [48] aload_0 v0
+      [49] invokeinterface #36
+        + InterfaceMethodref [java/util/Map.put (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;]
+      [54] pop
+      [55] aload_3 v3
+      [56] aload v4
+      [58] invokeinterface #34
+        + InterfaceMethodref [java/util/List.add (Ljava/lang/Object;)Z]
+      [63] pop
+      [64] aload_1 v1
+      [65] aload_3 v3
+      [66] invokeinterface #34
+        + InterfaceMethodref [java/util/List.add (Ljava/lang/Object;)Z]
+      [71] pop
+      [72] aload_2 v2
+      [73] invokeinterface #32
+        + InterfaceMethodref [java/util/Iterator.hasNext ()Z]
+      [78] ifne -60 (target=18)
+      [81] aload_1 v1
+      [82] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 2):
+        - [18] Var: [a:java/util/List][a:java/util/List][T][a:java/util/Iterator], Stack: 
+        - [72] Var: ..., Stack: (empty)
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: com/kolita/arkhamcalc/l
+  Superclass:    java/lang/Object
+  Major version: 0x32
+  Minor version: 0x0
+  Access flags:  0x31
+    = public final class com.kolita.arkhamcalc.l extends java.lang.Object
+
+Interfaces (count = 0):
+
+Constant Pool (count = 69):
+  + Integer [-16724992]
+  + Integer [-65536]
+  + String [<]
+  + String [>]
+  + Class [com/kolita/arkhamcalc/l]
+  + Class [java/lang/Object]
+  + Class [java/lang/StringBuilder]
+  + Class [java/text/NumberFormat]
+  + Double [5.0E-4]
+  + Double [0.0010]
+  + Double [0.33]
+  + Double [0.66]
+  + Double [0.999]
+  + Double [0.9995]
+  + Fieldref [com/kolita/arkhamcalc/l.a D]
+  + Methodref [com/kolita/arkhamcalc/l.c ()Ljava/text/NumberFormat;]
+  + Methodref [java/lang/Object.<init> ()V]
+  + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
+  + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+  + Methodref [java/text/NumberFormat.format (D)Ljava/lang/String;]
+  + Methodref [java/text/NumberFormat.getPercentInstance ()Ljava/text/NumberFormat;]
+  + Methodref [java/text/NumberFormat.setMaximumFractionDigits (I)V]
+  + Methodref [java/text/NumberFormat.setMinimumFractionDigits (I)V]
+  + NameAndType [<init> ()V]
+  + NameAndType [<init> (Ljava/lang/String;)V]
+  + NameAndType [a D]
+  + NameAndType [append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + NameAndType [c ()Ljava/text/NumberFormat;]
+  + NameAndType [format (D)Ljava/lang/String;]
+  + NameAndType [getPercentInstance ()Ljava/text/NumberFormat;]
+  + NameAndType [setMaximumFractionDigits (I)V]
+  + NameAndType [setMinimumFractionDigits (I)V]
+  + NameAndType [toString ()Ljava/lang/String;]
+  + Utf8 [()I]
+  + Utf8 [()Ljava/lang/String;]
+  + Utf8 [()Ljava/text/NumberFormat;]
+  + Utf8 [()V]
+  + Utf8 [(D)Ljava/lang/String;]
+  + Utf8 [(D)V]
+  + Utf8 [(I)V]
+  + Utf8 [(Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + Utf8 [(Ljava/lang/String;)V]
+  + Utf8 [<]
+  + Utf8 [<init>]
+  + Utf8 [>]
+  + Utf8 [Code]
+  + Utf8 [D]
+  + Utf8 [StackMapTable]
+  + Utf8 [a]
+  + Utf8 [append]
+  + Utf8 [b]
+  + Utf8 [c]
+  + Utf8 [com/kolita/arkhamcalc/l]
+  + Utf8 [format]
+  + Utf8 [getPercentInstance]
+  + Utf8 [java/lang/Object]
+  + Utf8 [java/lang/StringBuilder]
+  + Utf8 [java/text/NumberFormat]
+  + Utf8 [setMaximumFractionDigits]
+  + Utf8 [setMinimumFractionDigits]
+  + Utf8 [toString]
+
+Fields (count = 1):
+  + Field:        a D
+    Access flags: 0x2
+      = private double a
+
+Methods (count = 4):
+  - Method:       <init>(D)V
+    Access flags: 0x1
+      = public l(double)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 10, locals = 3, stack = 3):
+      [0] aload_0 v0
+      [1] invokespecial #23
+        + Methodref [java/lang/Object.<init> ()V]
+      [4] aload_0 v0
+      [5] dload_1 v1
+      [6] putfield #21
+        + Fieldref [com/kolita/arkhamcalc/l.a D]
+      [9] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a()I
+    Access flags: 0x11
+      = public final int a()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 32, locals = 1, stack = 4):
+      [0] aload_0 v0
+      [1] getfield #21
+        + Fieldref [com/kolita/arkhamcalc/l.a D]
+      [4] ldc2_w #15
+        + Double [0.66]
+      [7] dcmpl
+      [8] ifle +6 (target=14)
+      [11] ldc #1
+        + Integer [-16724992]
+      [13] ireturn
+      [14] aload_0 v0
+      [15] getfield #21
+        + Fieldref [com/kolita/arkhamcalc/l.a D]
+      [18] ldc2_w #13
+        + Double [0.33]
+      [21] dcmpl
+      [22] ifle +7 (target=29)
+      [25] sipush -256
+      [28] ireturn
+      [29] ldc #2
+        + Integer [-65536]
+      [31] ireturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 2):
+        - [14] Var: ..., Stack: (empty)
+        - [29] Var: ..., Stack: (empty)
+  + Method:       b()Ljava/lang/String;
+    Access flags: 0x11
+      = public final java.lang.String b()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 92, locals = 1, stack = 4):
+      [0] aload_0 v0
+      [1] getfield #21
+        + Fieldref [com/kolita/arkhamcalc/l.a D]
+      [4] ldc2_w #19
+        + Double [0.9995]
+      [7] dcmpl
+      [8] iflt +28 (target=36)
+      [11] new #7
+        + Class [java/lang/StringBuilder]
+      [14] dup
+      [15] ldc #4
+        + String [>]
+      [17] invokespecial #24
+        + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
+      [20] invokestatic #22
+        + Methodref [com/kolita/arkhamcalc/l.c ()Ljava/text/NumberFormat;]
+      [23] ldc2_w #17
+        + Double [0.999]
+      [26] invokevirtual #27
+        + Methodref [java/text/NumberFormat.format (D)Ljava/lang/String;]
+      [29] invokevirtual #25
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [32] invokevirtual #26
+        + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+      [35] areturn
+      [36] aload_0 v0
+      [37] getfield #21
+        + Fieldref [com/kolita/arkhamcalc/l.a D]
+      [40] dconst_0
+      [41] dcmpl
+      [42] ifle +39 (target=81)
+      [45] aload_0 v0
+      [46] getfield #21
+        + Fieldref [com/kolita/arkhamcalc/l.a D]
+      [49] ldc2_w #9
+        + Double [5.0E-4]
+      [52] dcmpg
+      [53] ifge +28 (target=81)
+      [56] new #7
+        + Class [java/lang/StringBuilder]
+      [59] dup
+      [60] ldc #3
+        + String [<]
+      [62] invokespecial #24
+        + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
+      [65] invokestatic #22
+        + Methodref [com/kolita/arkhamcalc/l.c ()Ljava/text/NumberFormat;]
+      [68] ldc2_w #11
+        + Double [0.0010]
+      [71] invokevirtual #27
+        + Methodref [java/text/NumberFormat.format (D)Ljava/lang/String;]
+      [74] invokevirtual #25
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [77] invokevirtual #26
+        + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+      [80] areturn
+      [81] invokestatic #22
+        + Methodref [com/kolita/arkhamcalc/l.c ()Ljava/text/NumberFormat;]
+      [84] aload_0 v0
+      [85] getfield #21
+        + Fieldref [com/kolita/arkhamcalc/l.a D]
+      [88] invokevirtual #27
+        + Methodref [java/text/NumberFormat.format (D)Ljava/lang/String;]
+      [91] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 2):
+        - [36] Var: ..., Stack: (empty)
+        - [81] Var: ..., Stack: (empty)
+  + Method:       c()Ljava/text/NumberFormat;
+    Access flags: 0xa
+      = private static java.text.NumberFormat c()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 16, locals = 1, stack = 2):
+      [0] invokestatic #28
+        + Methodref [java/text/NumberFormat.getPercentInstance ()Ljava/text/NumberFormat;]
+      [3] dup
+      [4] astore_0 v0
+      [5] iconst_1
+      [6] invokevirtual #30
+        + Methodref [java/text/NumberFormat.setMinimumFractionDigits (I)V]
+      [9] aload_0 v0
+      [10] iconst_1
+      [11] invokevirtual #29
+        + Methodref [java/text/NumberFormat.setMaximumFractionDigits (I)V]
+      [14] aload_0 v0
+      [15] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: com/kolita/arkhamcalc/m
+  Superclass:    java/lang/Object
+  Major version: 0x32
+  Minor version: 0x0
+  Access flags:  0x31
+    = public final class com.kolita.arkhamcalc.m extends java.lang.Object
+
+Interfaces (count = 0):
+
+Constant Pool (count = 79):
+  + Class [com/kolita/arkhamcalc/m]
+  + Class [com/kolita/arkhamcalc/n]
+  + Class [java/lang/Math]
+  + Class [java/lang/Object]
+  + Double [0.16666666666666666]
+  + Double [2.0]
+  + Double [3.0]
+  + Double [4.0]
+  + Double [5.0]
+  + Double [6.0]
+  + Fieldref [com/kolita/arkhamcalc/m.a I]
+  + Fieldref [com/kolita/arkhamcalc/m.b I]
+  + Fieldref [com/kolita/arkhamcalc/m.c Z]
+  + Fieldref [com/kolita/arkhamcalc/m.d Z]
+  + Fieldref [com/kolita/arkhamcalc/m.e Z]
+  + Fieldref [com/kolita/arkhamcalc/m.f Z]
+  + Fieldref [com/kolita/arkhamcalc/m.g Z]
+  + Fieldref [com/kolita/arkhamcalc/m.h Z]
+  + Fieldref [com/kolita/arkhamcalc/m.i Z]
+  + Methodref [com/kolita/arkhamcalc/m.a ()D]
+  + Methodref [com/kolita/arkhamcalc/m.a (II)D]
+  + Methodref [com/kolita/arkhamcalc/m.a (IID)D]
+  + Methodref [com/kolita/arkhamcalc/m.b ()D]
+  + Methodref [com/kolita/arkhamcalc/m.b (I)D]
+  + Methodref [com/kolita/arkhamcalc/n.a (II)J]
+  + Methodref [java/lang/Math.pow (DD)D]
+  + Methodref [java/lang/Object.<init> ()V]
+  + NameAndType [<init> ()V]
+  + NameAndType [a ()D]
+  + NameAndType [a (II)D]
+  + NameAndType [a (II)J]
+  + NameAndType [a (IID)D]
+  + NameAndType [a I]
+  + NameAndType [b ()D]
+  + NameAndType [b (I)D]
+  + NameAndType [b I]
+  + NameAndType [c Z]
+  + NameAndType [d Z]
+  + NameAndType [e Z]
+  + NameAndType [f Z]
+  + NameAndType [g Z]
+  + NameAndType [h Z]
+  + NameAndType [i Z]
+  + NameAndType [pow (DD)D]
+  + Utf8 [()D]
+  + Utf8 [()V]
+  + Utf8 [(DD)D]
+  + Utf8 [(I)D]
+  + Utf8 [(II)D]
+  + Utf8 [(II)J]
+  + Utf8 [(IID)D]
+  + Utf8 [(IIZZ)V]
+  + Utf8 [(Z)V]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [I]
+  + Utf8 [StackMapTable]
+  + Utf8 [Z]
+  + Utf8 [a]
+  + Utf8 [b]
+  + Utf8 [c]
+  + Utf8 [com/kolita/arkhamcalc/m]
+  + Utf8 [com/kolita/arkhamcalc/n]
+  + Utf8 [d]
+  + Utf8 [e]
+  + Utf8 [f]
+  + Utf8 [g]
+  + Utf8 [h]
+  + Utf8 [i]
+  + Utf8 [java/lang/Math]
+  + Utf8 [java/lang/Object]
+  + Utf8 [pow]
+
+Fields (count = 9):
+  + Field:        a I
+    Access flags: 0x2
+      = private int a
+  + Field:        b I
+    Access flags: 0x2
+      = private int b
+  + Field:        c Z
+    Access flags: 0x2
+      = private boolean c
+  + Field:        d Z
+    Access flags: 0x2
+      = private boolean d
+  + Field:        e Z
+    Access flags: 0x2
+      = private boolean e
+  + Field:        f Z
+    Access flags: 0x2
+      = private boolean f
+  + Field:        g Z
+    Access flags: 0x2
+      = private boolean g
+  + Field:        h Z
+    Access flags: 0x2
+      = private boolean h
+  + Field:        i Z
+    Access flags: 0x2
+      = private boolean i
+
+Methods (count = 12):
+  + Method:       a(Z)V
+    Access flags: 0x11
+      = public final void a(boolean)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 6, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] iload_1 v1
+      [2] putfield #21
+        + Fieldref [com/kolita/arkhamcalc/m.e Z]
+      [5] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       b(Z)V
+    Access flags: 0x11
+      = public final void b(boolean)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 6, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] iload_1 v1
+      [2] putfield #22
+        + Fieldref [com/kolita/arkhamcalc/m.f Z]
+      [5] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       c(Z)V
+    Access flags: 0x11
+      = public final void c(boolean)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 6, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] iload_1 v1
+      [2] putfield #23
+        + Fieldref [com/kolita/arkhamcalc/m.g Z]
+      [5] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       d(Z)V
+    Access flags: 0x11
+      = public final void d(boolean)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 6, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] iload_1 v1
+      [2] putfield #24
+        + Fieldref [com/kolita/arkhamcalc/m.h Z]
+      [5] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       e(Z)V
+    Access flags: 0x11
+      = public final void e(boolean)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 6, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] iload_1 v1
+      [2] putfield #25
+        + Fieldref [com/kolita/arkhamcalc/m.i Z]
+      [5] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  - Method:       <init>(IIZZ)V
+    Access flags: 0x1
+      = public m(int,int,boolean,boolean)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 26, locals = 5, stack = 2):
+      [0] aload_0 v0
+      [1] invokespecial #33
+        + Methodref [java/lang/Object.<init> ()V]
+      [4] aload_0 v0
+      [5] iload_1 v1
+      [6] putfield #17
+        + Fieldref [com/kolita/arkhamcalc/m.a I]
+      [9] aload_0 v0
+      [10] iload_2 v2
+      [11] putfield #18
+        + Fieldref [com/kolita/arkhamcalc/m.b I]
+      [14] aload_0 v0
+      [15] iload_3 v3
+      [16] putfield #19
+        + Fieldref [com/kolita/arkhamcalc/m.c Z]
+      [19] aload_0 v0
+      [20] iload v4
+      [22] putfield #20
+        + Fieldref [com/kolita/arkhamcalc/m.d Z]
+      [25] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(I)D
+    Access flags: 0x11
+      = public final double a(int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 248, locals = 19, stack = 8):
+      [0] dconst_0
+      [1] aload_0 v0
+      [2] aload_0 v0
+      [3] getfield #17
+        + Fieldref [com/kolita/arkhamcalc/m.a I]
+      [6] aload_0 v0
+      [7] getfield #18
+        + Fieldref [com/kolita/arkhamcalc/m.b I]
+      [10] invokespecial #27
+        + Methodref [com/kolita/arkhamcalc/m.a (II)D]
+      [13] dadd
+      [14] dstore_2 v2
+      [15] dconst_0
+      [16] dstore v4
+      [18] dconst_0
+      [19] dstore v6
+      [21] aload_0 v0
+      [22] getfield #22
+        + Fieldref [com/kolita/arkhamcalc/m.f Z]
+      [25] ifeq +149 (target=174)
+      [28] aload_0 v0
+      [29] astore v5
+      [31] dconst_0
+      [32] dstore v8
+      [34] iconst_0
+      [35] istore v10
+      [37] goto +120 (target=157)
+      [40] aload v5
+      [42] getfield #17
+        + Fieldref [com/kolita/arkhamcalc/m.a I]
+      [45] iload v10
+      [47] ldc2_w #5
+        + Double [0.16666666666666666]
+      [50] invokestatic #28
+        + Methodref [com/kolita/arkhamcalc/m.a (IID)D]
+      [53] dstore v11
+      [55] aload v5
+      [57] getfield #21
+        + Fieldref [com/kolita/arkhamcalc/m.e Z]
+      [60] ifeq +10 (target=70)
+      [63] iconst_2
+      [64] iload v10
+      [66] imul
+      [67] goto +5 (target=72)
+      [70] iload v10
+      [72] istore v4
+      [74] iconst_0
+      [75] istore v13
+      [77] goto +64 (target=141)
+      [80] dload v11
+      [82] aload v5
+      [84] getfield #17
+        + Fieldref [com/kolita/arkhamcalc/m.a I]
+      [87] iload v10
+      [89] isub
+      [90] iload v13
+      [92] aload v5
+      [94] invokespecial #26
+        + Methodref [com/kolita/arkhamcalc/m.a ()D]
+      [97] invokestatic #28
+        + Methodref [com/kolita/arkhamcalc/m.a (IID)D]
+      [100] dmul
+      [101] dstore v14
+      [103] dload v8
+      [105] dload v14
+      [107] aload v5
+      [109] aload v5
+      [111] getfield #17
+        + Fieldref [com/kolita/arkhamcalc/m.a I]
+      [114] iload v10
+      [116] isub
+      [117] iload v13
+      [119] isub
+      [120] aload v5
+      [122] getfield #18
+        + Fieldref [com/kolita/arkhamcalc/m.b I]
+      [125] iload v4
+      [127] isub
+      [128] iload v13
+      [130] isub
+      [131] invokespecial #27
+        + Methodref [com/kolita/arkhamcalc/m.a (II)D]
+      [134] dmul
+      [135] dadd
+      [136] dstore v8
+      [138] iinc v13, 1
+      [141] iload v13
+      [143] iload v4
+      [145] iadd
+      [146] aload v5
+      [148] getfield #18
+        + Fieldref [com/kolita/arkhamcalc/m.b I]
+      [151] ificmplt -71 (target=80)
+      [154] iinc v10, 1
+      [157] iload v10
+      [159] aload v5
+      [161] getfield #18
+        + Fieldref [com/kolita/arkhamcalc/m.b I]
+      [164] ificmplt -124 (target=40)
+      [167] dload v8
+      [169] dstore v4
+      [171] goto +34 (target=205)
+      [174] aload_0 v0
+      [175] getfield #23
+        + Fieldref [com/kolita/arkhamcalc/m.g Z]
+      [178] ifeq +13 (target=191)
+      [181] aload_0 v0
+      [182] iconst_1
+      [183] invokespecial #30
+        + Methodref [com/kolita/arkhamcalc/m.b (I)D]
+      [186] dstore v6
+      [188] goto +17 (target=205)
+      [191] aload_0 v0
+      [192] getfield #24
+        + Fieldref [com/kolita/arkhamcalc/m.h Z]
+      [195] ifeq +10 (target=205)
+      [198] aload_0 v0
+      [199] iconst_2
+      [200] invokespecial #30
+        + Methodref [com/kolita/arkhamcalc/m.b (I)D]
+      [203] dstore v6
+      [205] dload v4
+      [207] dload v6
+      [209] dstore v11
+      [211] dstore v9
+      [213] dconst_1
+      [214] dload_2 v2
+      [215] dsub
+      [216] dload v9
+      [218] dsub
+      [219] dload v11
+      [221] dsub
+      [222] dstore v13
+      [224] dconst_1
+      [225] dload_2 v2
+      [226] dsub
+      [227] dstore v15
+      [229] dload v13
+      [231] dload v15
+      [233] iload_1 v1
+      [234] iconst_1
+      [235] isub
+      [236] i2d
+      [237] invokestatic #32
+        + Methodref [java/lang/Math.pow (DD)D]
+      [240] dmul
+      [241] dstore v17
+      [243] dconst_1
+      [244] dload v17
+      [246] dsub
+      [247] dreturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 3):
+        - [174] Var: ...[d][d][d], Stack: (empty)
+        - [191] Var: ..., Stack: (empty)
+        - [205] Var: ..., Stack: (empty)
+  + Method:       a(II)D
+    Access flags: 0x2
+      = private double a(int,int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 148, locals = 11, stack = 10):
+      [0] dconst_0
+      [1] dstore_3 v3
+      [2] iload_2 v2
+      [3] istore v5
+      [5] goto +19 (target=24)
+      [8] dload_3 v3
+      [9] iload_1 v1
+      [10] iload v5
+      [12] aload_0 v0
+      [13] invokespecial #29
+        + Methodref [com/kolita/arkhamcalc/m.b ()D]
+      [16] invokestatic #28
+        + Methodref [com/kolita/arkhamcalc/m.a (IID)D]
+      [19] dadd
+      [20] dstore_3 v3
+      [21] iinc v5, 1
+      [24] iload v5
+      [26] iload_1 v1
+      [27] ificmple -19 (target=8)
+      [30] aload_0 v0
+      [31] getfield #21
+        + Fieldref [com/kolita/arkhamcalc/m.e Z]
+      [34] ifeq +112 (target=146)
+      [37] dload_3 v3
+      [38] aload_0 v0
+      [39] iload_1 v1
+      [40] iload_2 v2
+      [41] istore_3 v3
+      [42] istore_2 v2
+      [43] astore_1 v1
+      [44] dconst_0
+      [45] dstore v7
+      [47] iconst_1
+      [48] istore v4
+      [50] goto +80 (target=130)
+      [53] iload_2 v2
+      [54] iload v4
+      [56] ldc2_w #5
+        + Double [0.16666666666666666]
+      [59] invokestatic #28
+        + Methodref [com/kolita/arkhamcalc/m.a (IID)D]
+      [62] dstore v9
+      [64] iload_3 v3
+      [65] iconst_2
+      [66] iload v4
+      [68] imul
+      [69] isub
+      [70] istore v5
+      [72] iconst_0
+      [73] istore v6
+      [75] goto +34 (target=109)
+      [78] iload v6
+      [80] iload v5
+      [82] ificmplt +24 (target=106)
+      [85] dload v7
+      [87] dload v9
+      [89] iload_2 v2
+      [90] iload v4
+      [92] isub
+      [93] iload v6
+      [95] aload_1 v1
+      [96] invokespecial #26
+        + Methodref [com/kolita/arkhamcalc/m.a ()D]
+      [99] invokestatic #28
+        + Methodref [com/kolita/arkhamcalc/m.a (IID)D]
+      [102] dmul
+      [103] dadd
+      [104] dstore v7
+      [106] iinc v6, 1
+      [109] iload v4
+      [111] iload v6
+      [113] iadd
+      [114] iload_3 v3
+      [115] ificmpge +12 (target=127)
+      [118] iload v4
+      [120] iload v6
+      [122] iadd
+      [123] iload_2 v2
+      [124] ificmple -46 (target=78)
+      [127] iinc v4, 1
+      [130] iload v4
+      [132] iload_3 v3
+      [133] ificmpge +9 (target=142)
+      [136] iload v4
+      [138] iload_2 v2
+      [139] ificmple -86 (target=53)
+      [142] dload v7
+      [144] dadd
+      [145] dstore_3 v3
+      [146] dload_3 v3
+      [147] dreturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 3):
+        - [8] Var: ...[d][i], Stack: (empty)
+        - [24] Var: ..., Stack: (empty)
+        - [146] Var: -1, Stack: (empty)
+  + Method:       b(I)D
+    Access flags: 0x2
+      = private double b(int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 221, locals = 18, stack = 8):
+      [0] dconst_0
+      [1] dstore_2 v2
+      [2] iconst_0
+      [3] istore v4
+      [5] goto +205 (target=210)
+      [8] aload_0 v0
+      [9] getfield #17
+        + Fieldref [com/kolita/arkhamcalc/m.a I]
+      [12] iload v4
+      [14] ldc2_w #5
+        + Double [0.16666666666666666]
+      [17] invokestatic #28
+        + Methodref [com/kolita/arkhamcalc/m.a (IID)D]
+      [20] dstore v5
+      [22] aload_0 v0
+      [23] getfield #21
+        + Fieldref [com/kolita/arkhamcalc/m.e Z]
+      [26] ifeq +10 (target=36)
+      [29] iconst_2
+      [30] iload v4
+      [32] imul
+      [33] goto +5 (target=38)
+      [36] iload v4
+      [38] istore v7
+      [40] iconst_0
+      [41] istore v8
+      [43] goto +152 (target=195)
+      [46] dload v5
+      [48] aload_0 v0
+      [49] getfield #17
+        + Fieldref [com/kolita/arkhamcalc/m.a I]
+      [52] iload v4
+      [54] isub
+      [55] iload v8
+      [57] aload_0 v0
+      [58] invokespecial #26
+        + Methodref [com/kolita/arkhamcalc/m.a ()D]
+      [61] invokestatic #28
+        + Methodref [com/kolita/arkhamcalc/m.a (IID)D]
+      [64] dmul
+      [65] dstore v9
+      [67] iconst_1
+      [68] istore v11
+      [70] goto +107 (target=177)
+      [73] aload_0 v0
+      [74] getfield #17
+        + Fieldref [com/kolita/arkhamcalc/m.a I]
+      [77] iload v8
+      [79] isub
+      [80] iload v4
+      [82] isub
+      [83] iload v11
+      [85] aload_0 v0
+      [86] astore v12
+      [88] ldc2_w #11
+        + Double [4.0]
+      [91] dstore v16
+      [93] aload v12
+      [95] getfield #19
+        + Fieldref [com/kolita/arkhamcalc/m.c Z]
+      [98] ifeq +8 (target=106)
+      [101] ldc2_w #9
+        + Double [3.0]
+      [104] dstore v16
+      [106] aload v12
+      [108] getfield #20
+        + Fieldref [com/kolita/arkhamcalc/m.d Z]
+      [111] ifeq +9 (target=120)
+      [114] dload v16
+      [116] dconst_1
+      [117] dadd
+      [118] dstore v16
+      [120] aload v12
+      [122] getfield #25
+        + Fieldref [com/kolita/arkhamcalc/m.i Z]
+      [125] ifeq +9 (target=134)
+      [128] dload v16
+      [130] dconst_1
+      [131] dsub
+      [132] dstore v16
+      [134] dconst_1
+      [135] dload v16
+      [137] ddiv
+      [138] invokestatic #28
+        + Methodref [com/kolita/arkhamcalc/m.a (IID)D]
+      [141] dstore v12
+      [143] dload v9
+      [145] dload v12
+      [147] dmul
+      [148] dstore v14
+      [150] dload_2 v2
+      [151] dload v14
+      [153] aload_0 v0
+      [154] iload v11
+      [156] iload_1 v1
+      [157] imul
+      [158] aload_0 v0
+      [159] getfield #18
+        + Fieldref [com/kolita/arkhamcalc/m.b I]
+      [162] iload v7
+      [164] isub
+      [165] iload v8
+      [167] isub
+      [168] invokespecial #27
+        + Methodref [com/kolita/arkhamcalc/m.a (II)D]
+      [171] dmul
+      [172] dadd
+      [173] dstore_2 v2
+      [174] iinc v11, 1
+      [177] iload v11
+      [179] aload_0 v0
+      [180] getfield #17
+        + Fieldref [com/kolita/arkhamcalc/m.a I]
+      [183] iload v8
+      [185] isub
+      [186] iload v4
+      [188] isub
+      [189] ificmple -116 (target=73)
+      [192] iinc v8, 1
+      [195] iload v8
+      [197] iload v7
+      [199] iadd
+      [200] aload_0 v0
+      [201] getfield #18
+        + Fieldref [com/kolita/arkhamcalc/m.b I]
+      [204] ificmplt -158 (target=46)
+      [207] iinc v4, 1
+      [210] iload v4
+      [212] aload_0 v0
+      [213] getfield #18
+        + Fieldref [com/kolita/arkhamcalc/m.b I]
+      [216] ificmplt -208 (target=8)
+      [219] dload_2 v2
+      [220] dreturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 8):
+        - [8] Var: ...[d][i], Stack: (empty)
+        - [36] Var: ...[d], Stack: (empty)
+        - [38] Var: ..., Stack: [i]
+        - [46] Var: ...[i][i], Stack: (empty)
+        - [73] Var: ...[d][i], Stack: (empty)
+        - [177] Var: ..., Stack: (empty)
+        - [195] Var: -2, Stack: (empty)
+        - [210] Var: -3, Stack: (empty)
+  + Method:       a()D
+    Access flags: 0x2
+      = private double a()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 17, locals = 1, stack = 4):
+      [0] aload_0 v0
+      [1] invokespecial #29
+        + Methodref [com/kolita/arkhamcalc/m.b ()D]
+      [4] ldc2_w #5
+        + Double [0.16666666666666666]
+      [7] dsub
+      [8] ldc2_w #15
+        + Double [6.0]
+      [11] dmul
+      [12] ldc2_w #13
+        + Double [5.0]
+      [15] ddiv
+      [16] dreturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       b()D
+    Access flags: 0x2
+      = private double b()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 43, locals = 3, stack = 4):
+      [0] ldc2_w #7
+        + Double [2.0]
+      [3] dstore_1 v1
+      [4] aload_0 v0
+      [5] getfield #19
+        + Fieldref [com/kolita/arkhamcalc/m.c Z]
+      [8] ifeq +7 (target=15)
+      [11] ldc2_w #9
+        + Double [3.0]
+      [14] dstore_1 v1
+      [15] aload_0 v0
+      [16] getfield #20
+        + Fieldref [com/kolita/arkhamcalc/m.d Z]
+      [19] ifeq +7 (target=26)
+      [22] dload_1 v1
+      [23] dconst_1
+      [24] dsub
+      [25] dstore_1 v1
+      [26] aload_0 v0
+      [27] getfield #25
+        + Fieldref [com/kolita/arkhamcalc/m.i Z]
+      [30] ifeq +7 (target=37)
+      [33] dload_1 v1
+      [34] dconst_1
+      [35] dadd
+      [36] dstore_1 v1
+      [37] dload_1 v1
+      [38] ldc2_w #15
+        + Double [6.0]
+      [41] ddiv
+      [42] dreturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 3):
+        - [15] Var: ...[d][d], Stack: (empty)
+        - [26] Var: ..., Stack: (empty)
+        - [37] Var: ..., Stack: (empty)
+  + Method:       a(IID)D
+    Access flags: 0xa
+      = private static double a(int,int,double)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 25, locals = 4, stack = 6):
+      [0] iload_0 v0
+      [1] iload_1 v1
+      [2] invokestatic #31
+        + Methodref [com/kolita/arkhamcalc/n.a (II)J]
+      [5] l2d
+      [6] dload_2 v2
+      [7] iload_1 v1
+      [8] i2d
+      [9] invokestatic #32
+        + Methodref [java/lang/Math.pow (DD)D]
+      [12] dmul
+      [13] dconst_1
+      [14] dload_2 v2
+      [15] dsub
+      [16] iload_0 v0
+      [17] iload_1 v1
+      [18] isub
+      [19] i2d
+      [20] invokestatic #32
+        + Methodref [java/lang/Math.pow (DD)D]
+      [23] dmul
+      [24] dreturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: com/kolita/arkhamcalc/n
+  Superclass:    java/lang/Object
+  Major version: 0x32
+  Minor version: 0x0
+  Access flags:  0x31
+    = public final class com.kolita.arkhamcalc.n extends java.lang.Object
+
+Interfaces (count = 0):
+
+Constant Pool (count = 12):
+  + Class [com/kolita/arkhamcalc/n]
+  + Class [java/lang/Object]
+  + Methodref [com/kolita/arkhamcalc/n.a (I)J]
+  + NameAndType [a (I)J]
+  + Utf8 [(I)J]
+  + Utf8 [(II)J]
+  + Utf8 [Code]
+  + Utf8 [StackMapTable]
+  + Utf8 [a]
+  + Utf8 [com/kolita/arkhamcalc/n]
+  + Utf8 [java/lang/Object]
+
+Fields (count = 0):
+
+Methods (count = 2):
+  + Method:       a(II)J
+    Access flags: 0x9
+      = public static long a(int,int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 17, locals = 2, stack = 6):
+      [0] iload_0 v0
+      [1] invokestatic #3
+        + Methodref [com/kolita/arkhamcalc/n.a (I)J]
+      [4] iload_0 v0
+      [5] iload_1 v1
+      [6] isub
+      [7] invokestatic #3
+        + Methodref [com/kolita/arkhamcalc/n.a (I)J]
+      [10] iload_1 v1
+      [11] invokestatic #3
+        + Methodref [com/kolita/arkhamcalc/n.a (I)J]
+      [14] lmul
+      [15] ldiv
+      [16] lreturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(I)J
+    Access flags: 0xa
+      = private static long a(int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 17, locals = 1, stack = 4):
+      [0] iload_0 v0
+      [1] iconst_1
+      [2] ificmpgt +5 (target=7)
+      [5] lconst_1
+      [6] lreturn
+      [7] iload_0 v0
+      [8] i2l
+      [9] iload_0 v0
+      [10] iconst_1
+      [11] isub
+      [12] invokestatic #3
+        + Methodref [com/kolita/arkhamcalc/n.a (I)J]
+      [15] lmul
+      [16] lreturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 1):
+        - [7] Var: ..., Stack: (empty)
+
+Class file attributes (count = 0):
+
