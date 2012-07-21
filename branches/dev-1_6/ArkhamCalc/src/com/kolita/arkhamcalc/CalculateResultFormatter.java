@@ -25,9 +25,9 @@ import java.text.NumberFormat;
  */
 public class CalculateResultFormatter
 {
-    private static final int COLOR_GREEN = 0xFF008000;
-    private static final int COLOR_YELLOW = 0xFFC4C100;
-    private static final int COLOR_RED = 0xFF800000;
+    private static final int COLOR_GREEN = 0xFF00CC00;
+    private static final int COLOR_YELLOW = 0xFFFFFF00;
+    private static final int COLOR_RED = 0xFFFF0000;
 
     private double mResult;
 
@@ -73,6 +73,7 @@ public class CalculateResultFormatter
     private static NumberFormat getNumberFormat()
     {
         NumberFormat numberFormat= NumberFormat.getPercentInstance();
+        numberFormat.setMinimumFractionDigits(1);
         numberFormat.setMaximumFractionDigits(1);
         return numberFormat;
     }
