@@ -25,6 +25,7 @@ public class Calculator
 {
     private int mDice;
     private int mTough;
+    private int mNumberOfChances;
     private boolean mIsBlessed;
     private boolean mIsCursed;
     private boolean mIsShotgun;
@@ -32,6 +33,16 @@ public class Calculator
     private boolean mIsRerollOnes;
     private boolean mIsSkids;
     private boolean mIsAddOne;
+    
+    public int getNumberOfChances()
+    {
+        return mNumberOfChances;
+    }
+    
+    public void setNumberOfChances(int value)
+    {
+        mNumberOfChances = value;
+    }
     
     public boolean getIsBlessed()
     {
@@ -107,6 +118,7 @@ public class Calculator
     {
         mDice = dice;
         mTough = tough;
+        mNumberOfChances = 1;
     }
 
     public Calculator(int dice, int tough, boolean isBlessed, boolean isCursed)
@@ -118,17 +130,9 @@ public class Calculator
     }
 
     /**
-     * Probability of success with one chance.
+     * Calculate probability of success given all calculator properties
      */
     public double calculate()
-    {
-        return calculate(1);
-    }
-
-    /**
-     * Probability of success in at least one of the 'numberOfChances'.
-     */
-    public double calculate(int numberOfChances)
     {
         double probSuccess = 0.0;
 
@@ -144,7 +148,7 @@ public class Calculator
             probRerollOnesSuccess = getProbRerollOnes(2);            
         }
 
-        return probSuccessWithChances(probSuccess, probMandySuccess, probRerollOnesSuccess, numberOfChances);
+        return probSuccessWithChances(probSuccess, probMandySuccess, probRerollOnesSuccess, mNumberOfChances);
     }
 
     private double baseCalc(int totalDice, int totalToughness)
