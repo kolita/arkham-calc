@@ -286,6 +286,7 @@ public class ArkhamCalc extends Activity
 
         //calculate
         Calculator calculator = new Calculator(dice, tough);
+        calculator.setNumberOfChances(chance);
         calculator.setIsBlessed(isBlessed);
         calculator.setIsCursed(isCursed);
         calculator.setIsShotgun(isShotgun);
@@ -293,7 +294,7 @@ public class ArkhamCalc extends Activity
         calculator.setIsRerollOnes(isRerollOnes);
         calculator.setIsSkids(isSkidsOnes);
         calculator.setIsAddOne(isAddOne);
-        double result = calculator.calculate(chance);
+        double result = calculator.calculate();
 
         //format and set ui
         CalculateResultFormatter formatter = new CalculateResultFormatter(result);
