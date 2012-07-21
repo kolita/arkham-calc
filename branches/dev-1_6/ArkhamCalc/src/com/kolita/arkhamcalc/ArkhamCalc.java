@@ -285,7 +285,9 @@ public class ArkhamCalc extends Activity
         boolean isAddOne = mAddOneCheckBox.isChecked();
 
         //calculate
-        Calculator calculator = new Calculator(dice, tough, isBlessed, isCursed);
+        Calculator calculator = new Calculator(dice, tough);
+        calculator.setIsBlessed(isBlessed);
+        calculator.setIsCursed(isCursed);
         calculator.setIsShotgun(isShotgun);
         calculator.setIsMandy(isMandy);
         calculator.setIsRerollOnes(isRerollOnes);
