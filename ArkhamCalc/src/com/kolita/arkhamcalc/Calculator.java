@@ -32,6 +32,26 @@ public class Calculator
     private boolean mIsRerollOnes;
     private boolean mIsSkids;
     private boolean mIsAddOne;
+    
+    public boolean getIsBlessed()
+    {
+        return mIsBlessed;
+    }
+    
+    public void setIsBlessed(boolean value)
+    {
+        mIsBlessed = value;
+    }
+    
+    public boolean getIsCursed()
+    {
+        return mIsCursed;
+    }
+    
+    public void setIsCursed(boolean value)
+    {
+        mIsCursed = value;
+    }
 
     public boolean getIsShotgun()
     {
@@ -81,12 +101,18 @@ public class Calculator
     public void setIsAddOne(boolean value)
     {
         mIsAddOne = value;
-    }	
-
-    public Calculator(int dice, int tough, boolean isBlessed, boolean isCursed)
+    }
+    
+    public Calculator(int dice, int tough)
     {
         mDice = dice;
         mTough = tough;
+    }
+
+    public Calculator(int dice, int tough, boolean isBlessed, boolean isCursed)
+    {
+        this(dice, tough);
+        
         mIsBlessed = isBlessed;
         mIsCursed = isCursed;
     }

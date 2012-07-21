@@ -79,6 +79,30 @@ public class TestCalculator extends TestCase {
         double percentageWins = (double)totalWins / NUMBER_ITERATIONS;
         assertEquals(percentageWins, new Calculator(requiredDice, requiredSuccesses, true, false).calculate(), EPS);
     }
+    
+    public void testCalculateBlessedProperty() {
+        int requiredDice = 6;
+        int requiredSuccesses = 2;
+
+        int totalWins = 0;
+        for (int i = 0; i < NUMBER_ITERATIONS; i++) {
+            int totalSuccesses = 0;
+            for (int j = 0; j < requiredDice; j++) {
+                int dieValue = getRandomDieValue();
+                if (dieValue >= 4) {
+                    totalSuccesses++;
+                }
+            }
+            if (totalSuccesses >= requiredSuccesses) {
+                totalWins++;
+            }
+        }
+
+        double percentageWins = (double)totalWins / NUMBER_ITERATIONS;
+        Calculator calc = new Calculator(requiredDice, requiredSuccesses);
+        calc.setIsBlessed(true);
+        assertEquals(percentageWins, calc.calculate(), EPS);
+    }    
 
     public void testCalculateCursed() {
         int requiredDice = 3;
@@ -101,6 +125,30 @@ public class TestCalculator extends TestCase {
         double percentageWins = (double)totalWins / NUMBER_ITERATIONS;
         assertEquals(percentageWins, new Calculator(requiredDice, requiredSuccesses, false, true).calculate(), EPS);
     }
+    
+    public void testCalculateCursedProperty() {
+        int requiredDice = 3;
+        int requiredSuccesses = 1;
+
+        int totalWins = 0;
+        for (int i = 0; i < NUMBER_ITERATIONS; i++) {
+            int totalSuccesses = 0;
+            for (int j = 0; j < requiredDice; j++) {
+                int dieValue = getRandomDieValue();
+                if (dieValue >= 6) {
+                    totalSuccesses++;
+                }
+            }
+            if (totalSuccesses >= requiredSuccesses) {
+                totalWins++;
+            }
+        }
+
+        double percentageWins = (double)totalWins / NUMBER_ITERATIONS;
+        Calculator calc = new Calculator(requiredDice, requiredSuccesses);
+        calc.setIsCursed(true);
+        assertEquals(percentageWins, calc.calculate(), EPS);
+    }    
 
     public void testCalculateNoSuccesses() {
         assertEquals(0.0, new Calculator(2, 3, false, false).calculate(), 0.0);
