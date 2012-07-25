@@ -10,5 +10,4 @@
 	<string name="email_to">arkhamcalc@gmail.com</string>
 	<string name="email_subject">ArkhamCalc Feedback</string>
 	<string name="toast_exception_email">Unable to find an e-mail client.</string>
-	<string name="multi_result_empty">-</string>
 </resources>

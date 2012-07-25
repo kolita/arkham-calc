@@ -27,9 +27,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
@@ -61,10 +58,6 @@ public class ArkhamCalc extends Activity
     private CheckBox mSkidsOnesCheckBox;
     private CheckBox mAddOneCheckBox;
     private TextView mResultTextView;
-    
-    private Button mMultiCalcAddButton;
-    private Button mMultiCalcResetButton;
-    private TextView mMultiResultTextView;
 
     private int mPreviousChanceValue;
     private boolean mRestoringState;
@@ -107,9 +100,6 @@ public class ArkhamCalc extends Activity
         mSkidsOnesCheckBox = (CheckBox) findViewById(R.id.skidsOnesCheckBox);
         mAddOneCheckBox = (CheckBox) findViewById(R.id.addOneCheckBox);
         mResultTextView = (TextView) findViewById(R.id.resultTextView);
-        mMultiCalcAddButton = (Button) findViewById(R.id.multiCalcAddButton);
-        mMultiCalcResetButton = (Button) findViewById(R.id.multiCalcResetButton);
-        mMultiResultTextView = (TextView) findViewById(R.id.multiResultTextView);
 
         //setup controls
         mDiceSeekBar.setMax(DICE_MAX - 1);
@@ -213,25 +203,12 @@ public class ArkhamCalc extends Activity
                 recalculate();
             }
         });
-        mMultiCalcAddButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                handleMultiCalcAdd();
-            }
-        });
-        mMultiCalcResetButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                handleMultiCalcReset();
-            }
-        });
-        mMultiResultTextView.setText(getResourceString(R.string.multi_result_empty));
 
         //first calculation
         setSeekBarValues();
         recalculate();
     }
-    
+
     @Override
     protected void onRestoreInstanceState(Bundle inState)
     {
@@ -362,19 +339,6 @@ public class ArkhamCalc extends Activity
             showToast(getResourceString(resourceStringId));
         }
     }
-    
-    private void handleMultiCalcAdd()
-    {
-        // TODO Auto-generated method stub
-        showToast("handleMultiCalcAdd");
-    }
-    
-    private void handleMultiCalcReset()
-    {
-        // TODO Auto-generated method stub
-        showToast("handleMultiCalcReset");
-    }    
-
 
     private void showToast(String toastText)
     {
