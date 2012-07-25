@@ -27,6 +27,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnLongClickListener;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
@@ -106,7 +108,7 @@ public class ArkhamCalc extends Activity
         mToughSeekBar.setMax(TOUGH_MAX - 1);
         mChanceSeekBar.setMax(CHANCE_MAX - 1);
 
-        //attach callbacks
+        //attach setOnSeekBarChangeListener
         mDiceSeekBar.setOnSeekBarChangeListener(new OnSeekBarProgressChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -133,6 +135,8 @@ public class ArkhamCalc extends Activity
                 handleOneTimeAbilityChancesChanged(mSkidsOnesCheckBox.isChecked(), R.string.skids_chances_toast);
             }
         });
+        
+        //attach setOnCheckedChangeListener
         mBlessCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -203,6 +207,57 @@ public class ArkhamCalc extends Activity
                 recalculate();
             }
         });
+        
+        //attach setOnLongClickListener
+        mBlessCheckBox.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startHelpActivity("Blessed / Cursed");
+                return true;
+            }
+        });
+        mCurseCheckBox.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startHelpActivity("Blessed / Cursed");
+                return true;
+            }
+        });
+        mMandyCheckBox.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startHelpActivity("Mandy");
+                return true;
+            }
+        });
+        mSkidsOnesCheckBox.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startHelpActivity("Skids");
+                return true;
+            }
+        });
+        mRerollOnesCheckBox.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startHelpActivity("Reroll Ones");
+                return true;
+            }
+        });
+        mAddOneCheckBox.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startHelpActivity("Add One");
+                return true;
+            }
+        });        
+        mShotgunCheckBox.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startHelpActivity("Shotgun");
+                return true;
+            }
+        });        
 
         //first calculation
         setSeekBarValues();
@@ -255,6 +310,18 @@ public class ArkhamCalc extends Activity
                 return true;
         }
         return false;
+    }
+    
+    /**
+     * Start the help activity with the specified topic opened. The topic passed
+     * into this method must exist in the help.xml 'topics' array.
+     * @param topic
+     */
+    private void startHelpActivity(String topic)
+    {
+        Intent helpIntent = new Intent(this, ArkhamCalcHelp.class);
+        helpIntent.putExtra(ArkhamCalcHelp.BUNDLE_TOPIC, topic);
+        startActivity(helpIntent);
     }
 
     private void sendFeedbackEmail()
