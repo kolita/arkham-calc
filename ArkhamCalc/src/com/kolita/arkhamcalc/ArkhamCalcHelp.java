@@ -27,6 +27,7 @@ import android.app.ExpandableListActivity;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.widget.ExpandableListAdapter;
+import android.widget.ExpandableListView;
 import android.widget.SimpleExpandableListAdapter;
 
 /**
@@ -36,6 +37,8 @@ import android.widget.SimpleExpandableListAdapter;
  */
 public class ArkhamCalcHelp extends ExpandableListActivity
 {
+    public static final String BUNDLE_TOPIC = "BUNDLE_TOPIC";
+    
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -50,6 +53,17 @@ public class ArkhamCalcHelp extends ExpandableListActivity
              getChildData(contents), R.layout.help_child_row,
              new String[] { "helpContent" }, new int[] {R.id.helpContentTextView});
         setListAdapter(adapter);
+       
+        //if this activity was started with the extra BUNDLE_TOPIC, expand and focus
+        //on the passed in topic. Assumes that the topic passed in is part of the
+        //help.xml 'topic' String array.
+        CharSequence bundleTopic = getIntent().getCharSequenceExtra(BUNDLE_TOPIC);
+        if (bundleTopic != null) {
+            int topicIndex = topics.indexOf(bundleTopic.toString());
+            ExpandableListView view = (ExpandableListView)findViewById(android.R.id.list);
+            view.expandGroup(topicIndex);
+            view.setSelectionFromTop(topicIndex, 0);
+        }
     }
     
     private List<String> getHelp(int helpId)
