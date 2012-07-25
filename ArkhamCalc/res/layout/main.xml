@@ -1,47 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical" 
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
 	android:layout_marginLeft="8px"
 	android:layout_marginRight="8px">
-	<LinearLayout android:id="@+id/multiCalcLayout"
-	    android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
-        <Button android:id="@+id/multiCalcAddButton"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Add"/>
-        <TextView android:id="@+id/multiResultTextView"
-            style="@style/ResultFont"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8px"
-            android:gravity="center_horizontal"
-            android:layout_alignParentTop="true"
-            android:layout_weight="1"
-            android:text="100%" />
-	    <Button android:id="@+id/multiCalcResetButton"
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-            android:layout_weight="1"	        
-	        android:text="Reset"/>
-	</LinearLayout>
 	<TextView android:id="@+id/resultTextView"
 		style="@style/ResultFont"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:layout_margin="8px"
 		android:gravity="center_horizontal"
-        android:layout_alignParentTop="true"
 		android:text="100%" />
 	<ScrollView android:layout_width="fill_parent"
-		android:layout_height="fill_parent"
-        android:layout_above="@id/multiCalcLayout"
-        android:layout_below="@id/resultTextView">
+		android:layout_height="fill_parent">
 		<LinearLayout android:orientation="vertical" 
 			android:layout_width="fill_parent"
 			android:layout_height="fill_parent">
@@ -169,4 +141,4 @@
 			</TableLayout>
 		</LinearLayout>
 	</ScrollView>
-</RelativeLayout>
+</LinearLayout>
