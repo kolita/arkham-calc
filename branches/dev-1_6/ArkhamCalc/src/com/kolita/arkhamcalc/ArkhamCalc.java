@@ -209,6 +209,27 @@ public class ArkhamCalc extends Activity
         });
         
         //attach setOnLongClickListener
+        mDiceValue.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startHelpActivity("Dice / Difficulty");
+                return true;
+            }
+        });
+        mToughValue.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startHelpActivity("Dice / Difficulty");
+                return true;
+            }
+        });
+        mChanceValue.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startHelpActivity("Chances");
+                return true;
+            }
+        });        
         mBlessCheckBox.setOnLongClickListener(new OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
