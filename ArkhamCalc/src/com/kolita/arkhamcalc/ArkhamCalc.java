@@ -21,7 +21,12 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
+import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -42,6 +47,9 @@ import android.widget.Toast;
  */
 public class ArkhamCalc extends Activity
 {
+    private static final String PREFS_NAME = "ArkhamCalcPreferences";
+    private static final String PREFS_KEY_FIRST_TIME_16 = "FirstTime16";
+    
     private static final int DICE_MAX = 16;
     private static final int TOUGH_MAX = 6;
     private static final int CHANCE_MAX = 6;
@@ -283,6 +291,8 @@ public class ArkhamCalc extends Activity
         //first calculation
         setSeekBarValues();
         recalculate();
+        
+        handleShowFirstTimeDialog();
     }
 
     @Override
@@ -332,6 +342,28 @@ public class ArkhamCalc extends Activity
         }
         return false;
     }
+    
+    /**
+     * Potentially show a dialog depending on if the user has ever opened
+     * this version of the app; otherwise do nothing.
+     */
+    private void handleShowFirstTimeDialog()
+    {
+        final SharedPreferences sharedPrefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        if (sharedPrefs.getString(PREFS_KEY_FIRST_TIME_16, null) != null) return;
+        
+        AlertDialog.Builder builder = new AlertDialog.Builder(this)
+            .setMessage(R.string.first_dialog_message)
+            .setNeutralButton(R.string.first_dialog_button, new OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                    
+                    sharedPrefs.edit().putString(PREFS_KEY_FIRST_TIME_16, "a").commit();
+                }
+            });
+        builder.create().show();
+    }    
     
     /**
      * Start the help activity with the specified topic opened. The topic passed
