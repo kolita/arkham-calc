@@ -54,10 +54,13 @@ public class ArkhamCalc extends Activity
     private static final int TOUGH_MAX = 6;
     private static final int CHANCE_MAX = 6;
 
+    private TextView mDiceLabel;
     private SeekBar mDiceSeekBar;
     private TextView mDiceValue;
+    private TextView mToughLabel;
     private SeekBar mToughSeekBar;
     private TextView mToughValue;
+    private TextView mChanceLabel;
     private SeekBar mChanceSeekBar;
     private TextView mChanceValue;
     private CheckBox mBlessCheckBox;
@@ -96,10 +99,13 @@ public class ArkhamCalc extends Activity
         setContentView(R.layout.main);
 
         //find controls
+        mDiceLabel = (TextView) findViewById(R.id.diceLabel);
         mDiceSeekBar = (SeekBar) findViewById(R.id.diceSeekBar);
         mDiceValue = (TextView) findViewById(R.id.diceValue);
+        mToughLabel = (TextView) findViewById(R.id.toughLabel);
         mToughSeekBar = (SeekBar) findViewById(R.id.toughSeekBar);
         mToughValue = (TextView) findViewById(R.id.toughValue);
+        mChanceLabel = (TextView) findViewById(R.id.chanceLabel);
         mChanceSeekBar = (SeekBar) findViewById(R.id.chanceSeekBar);
         mChanceValue = (TextView) findViewById(R.id.chanceValue);
         mBlessCheckBox = (CheckBox) findViewById(R.id.blessCheckBox);
@@ -217,21 +223,21 @@ public class ArkhamCalc extends Activity
         });
         
         //attach setOnLongClickListener
-        mDiceValue.setOnLongClickListener(new OnLongClickListener() {
+        mDiceLabel.setOnLongClickListener(new OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
                 startHelpActivity("Dice / Difficulty");
                 return true;
             }
         });
-        mToughValue.setOnLongClickListener(new OnLongClickListener() {
+        mToughLabel.setOnLongClickListener(new OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
                 startHelpActivity("Dice / Difficulty");
                 return true;
             }
         });
-        mChanceValue.setOnLongClickListener(new OnLongClickListener() {
+        mChanceLabel.setOnLongClickListener(new OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
                 startHelpActivity("Chances");
