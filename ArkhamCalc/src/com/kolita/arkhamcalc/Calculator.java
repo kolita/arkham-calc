@@ -25,6 +25,7 @@ public class Calculator
 {
     private int mDice;
     private int mTough;
+    private int mNumberOfChances;
     private boolean mIsBlessed;
     private boolean mIsCursed;
     private boolean mIsShotgun;
@@ -32,6 +33,36 @@ public class Calculator
     private boolean mIsRerollOnes;
     private boolean mIsSkids;
     private boolean mIsAddOne;
+    
+    public int getNumberOfChances()
+    {
+        return mNumberOfChances;
+    }
+    
+    public void setNumberOfChances(int value)
+    {
+        mNumberOfChances = value;
+    }
+    
+    public boolean getIsBlessed()
+    {
+        return mIsBlessed;
+    }
+    
+    public void setIsBlessed(boolean value)
+    {
+        mIsBlessed = value;
+    }
+    
+    public boolean getIsCursed()
+    {
+        return mIsCursed;
+    }
+    
+    public void setIsCursed(boolean value)
+    {
+        mIsCursed = value;
+    }
 
     public boolean getIsShotgun()
     {
@@ -81,28 +112,27 @@ public class Calculator
     public void setIsAddOne(boolean value)
     {
         mIsAddOne = value;
-    }	
-
-    public Calculator(int dice, int tough, boolean isBlessed, boolean isCursed)
+    }
+    
+    public Calculator(int dice, int tough)
     {
         mDice = dice;
         mTough = tough;
+        mNumberOfChances = 1;
+    }
+
+    public Calculator(int dice, int tough, boolean isBlessed, boolean isCursed)
+    {
+        this(dice, tough);
+        
         mIsBlessed = isBlessed;
         mIsCursed = isCursed;
     }
 
     /**
-     * Probability of success with one chance.
+     * Calculate probability of success given all calculator properties
      */
     public double calculate()
-    {
-        return calculate(1);
-    }
-
-    /**
-     * Probability of success in at least one of the 'numberOfChances'.
-     */
-    public double calculate(int numberOfChances)
     {
         double probSuccess = 0.0;
 
@@ -118,7 +148,7 @@ public class Calculator
             probRerollOnesSuccess = getProbRerollOnes(2);            
         }
 
-        return probSuccessWithChances(probSuccess, probMandySuccess, probRerollOnesSuccess, numberOfChances);
+        return probSuccessWithChances(probSuccess, probMandySuccess, probRerollOnesSuccess, mNumberOfChances);
     }
 
     private double baseCalc(int totalDice, int totalToughness)
