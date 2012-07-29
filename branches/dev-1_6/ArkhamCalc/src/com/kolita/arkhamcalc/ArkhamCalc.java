@@ -28,6 +28,7 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -49,6 +50,7 @@ public class ArkhamCalc extends Activity
 {
     private static final String PREFS_NAME = "ArkhamCalcPreferences";
     private static final String PREFS_KEY_FIRST_TIME_16 = "FirstTime16";
+    private static final String URL_WIKI = "http://code.google.com/p/arkham-calc/";
     
     private static final int DICE_MAX = 16;
     private static final int TOUGH_MAX = 6;
@@ -345,6 +347,8 @@ public class ArkhamCalc extends Activity
             case R.id.menu_item_help:
                 startActivity(new Intent(this, ArkhamCalcHelp.class));
                 return true;
+            case R.id.menu_item_wiki:
+                openWiki();
         }
         return false;
     }
@@ -394,6 +398,12 @@ public class ArkhamCalc extends Activity
         } catch (ActivityNotFoundException e) {
             showToast(getResourceString(R.string.toast_exception_email));
         }
+    }
+    
+    private void openWiki()
+    {
+        Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(URL_WIKI));
+        startActivity(webIntent);
     }
 
     private void recalculate()
