@@ -3,6 +3,12 @@
 = Version History =
 
 
+  * *v1.6*, released 7/28/12
+    * Long press labels on calculator to view associated help topics
+    * Improved layout and font on help screen
+    * Visit Wiki menu option
+    * Changed color of results label
+
   * *v1.5*, released 2/15/12
     * Added support for Android 4 (Ice Cream Sandwich)
     * Added Skids calc
