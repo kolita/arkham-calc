@@ -21,12 +21,20 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
+import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnLongClickListener;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
@@ -40,14 +48,21 @@ import android.widget.Toast;
  */
 public class ArkhamCalc extends Activity
 {
+    private static final String PREFS_NAME = "ArkhamCalcPreferences";
+    private static final String PREFS_KEY_FIRST_TIME_16 = "FirstTime16";
+    private static final String URL_WIKI = "http://code.google.com/p/arkham-calc/";
+    
     private static final int DICE_MAX = 16;
     private static final int TOUGH_MAX = 6;
     private static final int CHANCE_MAX = 6;
 
+    private TextView mDiceLabel;
     private SeekBar mDiceSeekBar;
     private TextView mDiceValue;
+    private TextView mToughLabel;
     private SeekBar mToughSeekBar;
     private TextView mToughValue;
+    private TextView mChanceLabel;
     private SeekBar mChanceSeekBar;
     private TextView mChanceValue;
     private CheckBox mBlessCheckBox;
@@ -86,10 +101,13 @@ public class ArkhamCalc extends Activity
         setContentView(R.layout.main);
 
         //find controls
+        mDiceLabel = (TextView) findViewById(R.id.diceLabel);
         mDiceSeekBar = (SeekBar) findViewById(R.id.diceSeekBar);
         mDiceValue = (TextView) findViewById(R.id.diceValue);
+        mToughLabel = (TextView) findViewById(R.id.toughLabel);
         mToughSeekBar = (SeekBar) findViewById(R.id.toughSeekBar);
         mToughValue = (TextView) findViewById(R.id.toughValue);
+        mChanceLabel = (TextView) findViewById(R.id.chanceLabel);
         mChanceSeekBar = (SeekBar) findViewById(R.id.chanceSeekBar);
         mChanceValue = (TextView) findViewById(R.id.chanceValue);
         mBlessCheckBox = (CheckBox) findViewById(R.id.blessCheckBox);
@@ -106,7 +124,7 @@ public class ArkhamCalc extends Activity
         mToughSeekBar.setMax(TOUGH_MAX - 1);
         mChanceSeekBar.setMax(CHANCE_MAX - 1);
 
-        //attach callbacks
+        //attach setOnSeekBarChangeListener
         mDiceSeekBar.setOnSeekBarChangeListener(new OnSeekBarProgressChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -133,6 +151,8 @@ public class ArkhamCalc extends Activity
                 handleOneTimeAbilityChancesChanged(mSkidsOnesCheckBox.isChecked(), R.string.skids_chances_toast);
             }
         });
+        
+        //attach setOnCheckedChangeListener
         mBlessCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -203,10 +223,84 @@ public class ArkhamCalc extends Activity
                 recalculate();
             }
         });
+        
+        //attach setOnLongClickListener
+        mDiceLabel.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startHelpActivity("Dice / Difficulty");
+                return true;
+            }
+        });
+        mToughLabel.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startHelpActivity("Dice / Difficulty");
+                return true;
+            }
+        });
+        mChanceLabel.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startHelpActivity("Chances");
+                return true;
+            }
+        });        
+        mBlessCheckBox.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startHelpActivity("Blessed / Cursed");
+                return true;
+            }
+        });
+        mCurseCheckBox.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startHelpActivity("Blessed / Cursed");
+                return true;
+            }
+        });
+        mMandyCheckBox.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startHelpActivity("Mandy");
+                return true;
+            }
+        });
+        mSkidsOnesCheckBox.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startHelpActivity("Skids");
+                return true;
+            }
+        });
+        mRerollOnesCheckBox.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startHelpActivity("Reroll Ones");
+                return true;
+            }
+        });
+        mAddOneCheckBox.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startHelpActivity("Add One");
+                return true;
+            }
+        });        
+        mShotgunCheckBox.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startHelpActivity("Shotgun");
+                return true;
+            }
+        });        
 
         //first calculation
         setSeekBarValues();
         recalculate();
+        
+        handleShowFirstTimeDialog();
     }
 
     @Override
@@ -253,8 +347,44 @@ public class ArkhamCalc extends Activity
             case R.id.menu_item_help:
                 startActivity(new Intent(this, ArkhamCalcHelp.class));
                 return true;
+            case R.id.menu_item_wiki:
+                openWiki();
         }
         return false;
+    }
+    
+    /**
+     * Potentially show a dialog depending on if the user has ever opened
+     * this version of the app; otherwise do nothing.
+     */
+    private void handleShowFirstTimeDialog()
+    {
+        final SharedPreferences sharedPrefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        if (sharedPrefs.getString(PREFS_KEY_FIRST_TIME_16, null) != null) return;
+        
+        AlertDialog.Builder builder = new AlertDialog.Builder(this)
+            .setMessage(R.string.first_dialog_message)
+            .setNeutralButton(R.string.first_dialog_button, new OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                    
+                    sharedPrefs.edit().putString(PREFS_KEY_FIRST_TIME_16, "a").commit();
+                }
+            });
+        builder.create().show();
+    }    
+    
+    /**
+     * Start the help activity with the specified topic opened. The topic passed
+     * into this method must exist in the help.xml 'topics' array.
+     * @param topic
+     */
+    private void startHelpActivity(String topic)
+    {
+        Intent helpIntent = new Intent(this, ArkhamCalcHelp.class);
+        helpIntent.putExtra(ArkhamCalcHelp.BUNDLE_TOPIC, topic);
+        startActivity(helpIntent);
     }
 
     private void sendFeedbackEmail()
@@ -268,6 +398,12 @@ public class ArkhamCalc extends Activity
         } catch (ActivityNotFoundException e) {
             showToast(getResourceString(R.string.toast_exception_email));
         }
+    }
+    
+    private void openWiki()
+    {
+        Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(URL_WIKI));
+        startActivity(webIntent);
     }
 
     private void recalculate()
@@ -285,13 +421,16 @@ public class ArkhamCalc extends Activity
         boolean isAddOne = mAddOneCheckBox.isChecked();
 
         //calculate
-        Calculator calculator = new Calculator(dice, tough, isBlessed, isCursed);
+        Calculator calculator = new Calculator(dice, tough);
+        calculator.setNumberOfChances(chance);
+        calculator.setIsBlessed(isBlessed);
+        calculator.setIsCursed(isCursed);
         calculator.setIsShotgun(isShotgun);
         calculator.setIsMandy(isMandy);
         calculator.setIsRerollOnes(isRerollOnes);
         calculator.setIsSkids(isSkidsOnes);
         calculator.setIsAddOne(isAddOne);
-        double result = calculator.calculate(chance);
+        double result = calculator.calculate();
 
         //format and set ui
         CalculateResultFormatter formatter = new CalculateResultFormatter(result);
