@@ -1,0 +1,39 @@
+android.annotation.SuppressLint
+android.annotation.TargetApi
+com.kolita.arkhamcalc.ArkhamCalc:
+    private static final java.lang.String PREFS_NAME
+    private static final java.lang.String PREFS_KEY_FIRST_TIME_16
+    private static final java.lang.String URL_WIKI
+    private static final int DICE_MAX
+    private static final int TOUGH_MAX
+    private static final int CHANCE_MAX
+com.kolita.arkhamcalc.ArkhamCalc$OnSeekBarProgressChangeListener:
+    public abstract void onProgressChanged(android.widget.SeekBar,int,boolean)
+com.kolita.arkhamcalc.ArkhamCalcHelp:
+    public static final java.lang.String BUNDLE_TOPIC
+com.kolita.arkhamcalc.BuildConfig
+com.kolita.arkhamcalc.CalculateResultFormatter:
+    private static final int COLOR_GREEN
+    private static final int COLOR_YELLOW
+    private static final int COLOR_RED
+com.kolita.arkhamcalc.Calculator:
+    39:39:public int getNumberOfChances()
+    49:49:public boolean getIsBlessed()
+    59:59:public boolean getIsCursed()
+    69:69:public boolean getIsShotgun()
+    79:79:public boolean getIsMandy()
+    89:89:public boolean getIsRerollOnes()
+    99:99:public boolean getIsSkids()
+    109:109:public boolean getIsAddOne()
+    126:130:public Calculator(int,int,boolean,boolean)
+com.kolita.arkhamcalc.MathHelper:
+    25:28:private MathHelper()
+com.kolita.arkhamcalc.R
+com.kolita.arkhamcalc.R$array
+com.kolita.arkhamcalc.R$attr
+com.kolita.arkhamcalc.R$drawable
+com.kolita.arkhamcalc.R$id
+com.kolita.arkhamcalc.R$layout
+com.kolita.arkhamcalc.R$menu
+com.kolita.arkhamcalc.R$string
+com.kolita.arkhamcalc.R$style

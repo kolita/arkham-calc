@@ -1,0 +1,148 @@
+com.kolita.arkhamcalc.ArkhamCalc -> com.kolita.arkhamcalc.ArkhamCalc:
+    android.widget.TextView mDiceLabel -> a
+    android.widget.SeekBar mDiceSeekBar -> b
+    android.widget.TextView mDiceValue -> c
+    android.widget.TextView mToughLabel -> d
+    android.widget.SeekBar mToughSeekBar -> e
+    android.widget.TextView mToughValue -> f
+    android.widget.TextView mChanceLabel -> g
+    android.widget.SeekBar mChanceSeekBar -> h
+    android.widget.TextView mChanceValue -> i
+    android.widget.CheckBox mBlessCheckBox -> j
+    android.widget.CheckBox mCurseCheckBox -> k
+    android.widget.CheckBox mShotgunCheckBox -> l
+    android.widget.CheckBox mMandyCheckBox -> m
+    android.widget.CheckBox mRerollOnesCheckBox -> n
+    android.widget.CheckBox mSkidsOnesCheckBox -> o
+    android.widget.CheckBox mAddOneCheckBox -> p
+    android.widget.TextView mResultTextView -> q
+    int mPreviousChanceValue -> r
+    boolean mRestoringState -> s
+    java.lang.reflect.Method mMenuItemShowAsAction -> t
+    void onCreate(android.os.Bundle) -> onCreate
+    void onRestoreInstanceState(android.os.Bundle) -> onRestoreInstanceState
+    boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
+    boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+    void recalculate() -> a
+    void setSeekBarValues() -> b
+    void showToast(java.lang.String) -> a
+    java.lang.String getResourceString(int) -> a
+    void access$0(com.kolita.arkhamcalc.ArkhamCalc) -> a
+    void access$1(com.kolita.arkhamcalc.ArkhamCalc) -> b
+    void access$2(com.kolita.arkhamcalc.ArkhamCalc,int) -> a
+    android.widget.CheckBox access$3(com.kolita.arkhamcalc.ArkhamCalc) -> c
+    void access$4(com.kolita.arkhamcalc.ArkhamCalc,boolean,int) -> a
+    android.widget.CheckBox access$5(com.kolita.arkhamcalc.ArkhamCalc) -> d
+    android.widget.CheckBox access$6(com.kolita.arkhamcalc.ArkhamCalc) -> e
+    android.widget.CheckBox access$7(com.kolita.arkhamcalc.ArkhamCalc) -> f
+    android.widget.CheckBox access$8(com.kolita.arkhamcalc.ArkhamCalc) -> g
+    void access$9(com.kolita.arkhamcalc.ArkhamCalc,boolean,int) -> b
+    void access$10(com.kolita.arkhamcalc.ArkhamCalc,java.lang.String) -> a
+com.kolita.arkhamcalc.ArkhamCalc$1 -> com.kolita.arkhamcalc.a:
+    com.kolita.arkhamcalc.ArkhamCalc this$0 -> a
+    void onProgressChanged(android.widget.SeekBar,int,boolean) -> onProgressChanged
+com.kolita.arkhamcalc.ArkhamCalc$10 -> com.kolita.arkhamcalc.b:
+    com.kolita.arkhamcalc.ArkhamCalc this$0 -> a
+    void onCheckedChanged(android.widget.CompoundButton,boolean) -> onCheckedChanged
+com.kolita.arkhamcalc.ArkhamCalc$11 -> com.kolita.arkhamcalc.c:
+    com.kolita.arkhamcalc.ArkhamCalc this$0 -> a
+    boolean onLongClick(android.view.View) -> onLongClick
+com.kolita.arkhamcalc.ArkhamCalc$12 -> com.kolita.arkhamcalc.d:
+    com.kolita.arkhamcalc.ArkhamCalc this$0 -> a
+    boolean onLongClick(android.view.View) -> onLongClick
+com.kolita.arkhamcalc.ArkhamCalc$13 -> com.kolita.arkhamcalc.e:
+    com.kolita.arkhamcalc.ArkhamCalc this$0 -> a
+    boolean onLongClick(android.view.View) -> onLongClick
+com.kolita.arkhamcalc.ArkhamCalc$14 -> com.kolita.arkhamcalc.f:
+    com.kolita.arkhamcalc.ArkhamCalc this$0 -> a
+    boolean onLongClick(android.view.View) -> onLongClick
+com.kolita.arkhamcalc.ArkhamCalc$15 -> com.kolita.arkhamcalc.g:
+    com.kolita.arkhamcalc.ArkhamCalc this$0 -> a
+    boolean onLongClick(android.view.View) -> onLongClick
+com.kolita.arkhamcalc.ArkhamCalc$16 -> com.kolita.arkhamcalc.h:
+    com.kolita.arkhamcalc.ArkhamCalc this$0 -> a
+    boolean onLongClick(android.view.View) -> onLongClick
+com.kolita.arkhamcalc.ArkhamCalc$17 -> com.kolita.arkhamcalc.i:
+    com.kolita.arkhamcalc.ArkhamCalc this$0 -> a
+    boolean onLongClick(android.view.View) -> onLongClick
+com.kolita.arkhamcalc.ArkhamCalc$18 -> com.kolita.arkhamcalc.j:
+    com.kolita.arkhamcalc.ArkhamCalc this$0 -> a
+    boolean onLongClick(android.view.View) -> onLongClick
+com.kolita.arkhamcalc.ArkhamCalc$19 -> com.kolita.arkhamcalc.k:
+    com.kolita.arkhamcalc.ArkhamCalc this$0 -> a
+    boolean onLongClick(android.view.View) -> onLongClick
+com.kolita.arkhamcalc.ArkhamCalc$2 -> com.kolita.arkhamcalc.l:
+    com.kolita.arkhamcalc.ArkhamCalc this$0 -> a
+    void onProgressChanged(android.widget.SeekBar,int,boolean) -> onProgressChanged
+com.kolita.arkhamcalc.ArkhamCalc$20 -> com.kolita.arkhamcalc.m:
+    com.kolita.arkhamcalc.ArkhamCalc this$0 -> a
+    boolean onLongClick(android.view.View) -> onLongClick
+com.kolita.arkhamcalc.ArkhamCalc$21 -> com.kolita.arkhamcalc.n:
+    com.kolita.arkhamcalc.ArkhamCalc this$0 -> a
+    android.content.SharedPreferences val$sharedPrefs -> b
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.kolita.arkhamcalc.ArkhamCalc$3 -> com.kolita.arkhamcalc.o:
+    com.kolita.arkhamcalc.ArkhamCalc this$0 -> a
+    void onProgressChanged(android.widget.SeekBar,int,boolean) -> onProgressChanged
+com.kolita.arkhamcalc.ArkhamCalc$4 -> com.kolita.arkhamcalc.p:
+    com.kolita.arkhamcalc.ArkhamCalc this$0 -> a
+    void onCheckedChanged(android.widget.CompoundButton,boolean) -> onCheckedChanged
+com.kolita.arkhamcalc.ArkhamCalc$5 -> com.kolita.arkhamcalc.q:
+    com.kolita.arkhamcalc.ArkhamCalc this$0 -> a
+    void onCheckedChanged(android.widget.CompoundButton,boolean) -> onCheckedChanged
+com.kolita.arkhamcalc.ArkhamCalc$6 -> com.kolita.arkhamcalc.r:
+    com.kolita.arkhamcalc.ArkhamCalc this$0 -> a
+    void onCheckedChanged(android.widget.CompoundButton,boolean) -> onCheckedChanged
+com.kolita.arkhamcalc.ArkhamCalc$7 -> com.kolita.arkhamcalc.s:
+    com.kolita.arkhamcalc.ArkhamCalc this$0 -> a
+    void onCheckedChanged(android.widget.CompoundButton,boolean) -> onCheckedChanged
+com.kolita.arkhamcalc.ArkhamCalc$8 -> com.kolita.arkhamcalc.t:
+    com.kolita.arkhamcalc.ArkhamCalc this$0 -> a
+    void onCheckedChanged(android.widget.CompoundButton,boolean) -> onCheckedChanged
+com.kolita.arkhamcalc.ArkhamCalc$9 -> com.kolita.arkhamcalc.u:
+    com.kolita.arkhamcalc.ArkhamCalc this$0 -> a
+    void onCheckedChanged(android.widget.CompoundButton,boolean) -> onCheckedChanged
+com.kolita.arkhamcalc.ArkhamCalc$OnSeekBarProgressChangeListener -> com.kolita.arkhamcalc.v:
+    int mPreviousProgress -> a
+    com.kolita.arkhamcalc.ArkhamCalc this$0 -> b
+    int getPreviousProgress() -> a
+    void onStartTrackingTouch(android.widget.SeekBar) -> onStartTrackingTouch
+    void onStopTrackingTouch(android.widget.SeekBar) -> onStopTrackingTouch
+com.kolita.arkhamcalc.ArkhamCalcHelp -> com.kolita.arkhamcalc.ArkhamCalcHelp:
+    void onCreate(android.os.Bundle) -> onCreate
+    java.util.List getHelp(int) -> a
+    java.util.List getGroupData(java.util.List) -> a
+    java.util.List getChildData(java.util.List) -> b
+com.kolita.arkhamcalc.CalculateResultFormatter -> com.kolita.arkhamcalc.w:
+    double mResult -> a
+    int getColor() -> a
+    java.lang.String getResultString() -> b
+    java.text.NumberFormat getNumberFormat() -> c
+com.kolita.arkhamcalc.Calculator -> com.kolita.arkhamcalc.x:
+    int mDice -> a
+    int mTough -> b
+    int mNumberOfChances -> c
+    boolean mIsBlessed -> d
+    boolean mIsCursed -> e
+    boolean mIsShotgun -> f
+    boolean mIsMandy -> g
+    boolean mIsRerollOnes -> h
+    boolean mIsSkids -> i
+    boolean mIsAddOne -> j
+    void setNumberOfChances(int) -> a
+    void setIsBlessed(boolean) -> a
+    void setIsCursed(boolean) -> b
+    void setIsShotgun(boolean) -> c
+    void setIsMandy(boolean) -> d
+    void setIsRerollOnes(boolean) -> e
+    void setIsSkids(boolean) -> f
+    void setIsAddOne(boolean) -> g
+    double calculate() -> a
+    double baseCalc(int,int) -> a
+    double getProbRerollOnes(int) -> b
+    double getProbSuccessWithoutSix() -> b
+    double getProbOneSuccess() -> c
+    double getProbExactSuccess(int,int,double) -> a
+com.kolita.arkhamcalc.MathHelper -> com.kolita.arkhamcalc.y:
+    long nCr(int,int) -> a
+    long factorial(int) -> a
