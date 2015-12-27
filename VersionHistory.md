@@ -1,0 +1,44 @@
+# Version History #
+
+
+  * **v1.6**, released 7/28/12
+    * Long press labels on calculator to view associated help topics
+    * Improved layout and font on help screen
+    * Visit Wiki menu option
+    * Changed color of results label
+
+  * **v1.5**, released 2/15/12
+    * Added support for Android 4 (Ice Cream Sandwich)
+    * Added Skids calc
+    * Increased chances slider to max 6
+    * Updating layout for improved usability
+    * Fixing orientation toast bug
+
+  * **v1.4**, released 11/21/11
+    * Added help screen
+    * Moved unit tests out of distributed .apk
+    * Showed >99.9% instead of 100%
+    * Showed <0.1% instead of 0% in cases where it's not impossible to succeed
+
+  * **v1.3**, released 9/18/11
+    * Added Reroll Ones calc
+    * Added Add One calc
+    * Feedback menu option
+    * Scrollview added to UI
+
+  * **v1.2**, released 7/31/11
+    * Added Mandy calc
+    * Increased toughness slider to max 6
+
+  * **v1.1**, released 7/10/11
+    * Added Shotgun calc
+    * Added Number of Chances slider
+
+  * **v1.0**, released 7/4/11
+    * Initial release
+    * Number of Dice, Toughness; Blessed, Cursed
+
+
+---
+
+Return to [Wiki Home](ArkhamCalc.md)
